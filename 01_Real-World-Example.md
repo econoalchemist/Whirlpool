@@ -1,5 +1,5 @@
 ## A Real-World Example:
-Before diving into how Whirlpool works, it is helpful to understand the implications of a fully transparant transaction ledger in the face of an ever increasingly adversarial world. This section will provide that background with a real-world example and an explaination of how bitcoin transaction are scrutinized in such a scenario using a ficticious character, Alice, to preserve the privacy of tose actually involved.
+Before diving into how Whirlpool works, it is helpful to understand the implications of a fully transparant transaction ledger in the face of an ever increasing adversarial environment. This section will provide that background with a real-world example and an explaination of how bitcoin transactions are scrutinized in such a scenario using a ficticious character, Alice, to preserve the privacy of those actually involved.
 
 Take the recent Canadian Freedom Convoy for instance, here is a timeline of actual events with a hypothetical character, Alice, to preserve the privacy of anyone who actually participated.
 
