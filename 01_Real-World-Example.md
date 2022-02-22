@@ -1,7 +1,7 @@
 ## A Real-World Example:
-Before diving into how Whirlpool works, it is helpful to understand the implications of a fully transparant transaction ledger in the face of an ever increasing adversarial environment. This section will provide that background with a real-world example and an explaination of how bitcoin transactions are scrutinized in such a scenario using a ficticious character, Alice, to preserve the privacy of those actually involved.
+Before diving into how Whirlpool works, it is helpful to understand the implications of a fully transparant transaction ledger in the face of an ever increasing adversarial environment. This section will provide that background with a real-world example and an explaination of how bitcoin transactions are scrutinized in such a scenario using a real example.
 
-Take the recent Canadian Freedom Convoy for instance, here is a timeline of actual events with a hypothetical character, Alice, to preserve the privacy of anyone who actually participated.
+Here is a time line of the recent Freedom Convoy with notable events as they relate to Bitcoin.
 
 - January 28, 2022: Truckers start arriving in Ottawa, ON
 - February 1, 2022: [@HonkHonkHodl](https://twitter.com/HonkHonkHodl) receives first bitcoin donation via [@tallycoinapp](https://twitter.com/tallycoinapp). ([Link to tweet](https://twitter.com/HonkHonkHodl/status/1488625113406717952?s=20&t=3OffQxFJg4Y0qIy9vi_RAg)). Not many people were using Bitcoin to donate to the Freedom Convoy, many more donations were being made with traditional crowd funding platforms. This would soon change.
