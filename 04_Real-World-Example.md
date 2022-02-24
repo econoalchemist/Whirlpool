@@ -60,7 +60,9 @@ Because CoinBase knows Alice's true identity and her on-chain activity is direct
 
 The entity in control of the Freedom Convoy donations makes several transactions that consolidate bitcoin and move the new balances to new addresses. Throughout the entirety of the Tally Coin fundraising campaign, the same Bitcoin donation address was used. 
 
-![](assets/tx02.png)
+<p align="center">
+ <img src="assets/tx02.png">
+</p> 
 
 In order to disburse donations to Freedom Convoy truckers, the entity in control of the bitcoin established 101 different wallets for the truckers. They made 3 deposits to each wallet. Unfortunately, they used the same address in each wallet for each of the deposits. This graph shows many donations being made to the known Tally Coin Bitcoin donation address. Then those donations are consolidated and moved to new addresses in three transactions leading up to the transaction where the bitcoin was dibursed to 100 wallets in what seems to be a test transaction. Each deposit was only 4,800 sats. 
 
@@ -80,6 +82,6 @@ The majority of the trucker deposits have remained unspent. The ones that have b
 
 Unfortunately, the Canadian government has blacklisted several if not all of these addresses, ready to impose strict penalties on anyone who is associated with these donations. For the trucker who sent their deposit to CoinBase, this means that they will be identified as a guilty party. The exchanges will seize and report any activity on their platforms related to any of these donations. For Alice, it is now possible to directly tie her identity to some of the donated bitcoin because of her deposit to her CoinBase account several transactions prior to the donation. This means that Alice will be reported and possibly face penalties in relation to supporting the Freedom Convoy. 
 
-![](assets/tx07.png)
+![](assets/tx07_1.png)
 
 ## How Whirlpool fixes this
