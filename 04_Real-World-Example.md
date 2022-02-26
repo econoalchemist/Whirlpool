@@ -44,7 +44,7 @@ Essentially what transpired in the timeline above is that in less than two weeks
 ## Follow the money
 This section will follow the flow of a donation on the Bitcoin blockchain to the Freedom Convoy Bitcoin address. Then beyond to the disbursed payements to the truckers. At points along this path, it will be pointed out where Whirlpool could have been used and how it would have helped prevent the targeting of specific individuals who allowed their identity to be linked with their on-chain activity. The Transaction ID's (txid), Bitcoin Addresses, and dates have been obfuscated but these are actual transactions surrounding the [@HonkHonkHodl](https://twitter.com/HonkHonkHodl) donations. 
 
-This demonstration follows the transactions of an entity named Alice. Alice has about 28 bitcoin in her wallet, in a single Unspent Transaction Output (UTXO). One day, Alice decides to use the UTXO to make a 0.3 BTC deposit to her CoinBase account. In that transaction, the 28 BTC is used as the only input and there are two outputs. The first output is the 0.3 BTC to her CoinBase account. The second output is her remaining 28 BTC. 
+This demonstration follows the transactions of an entity named Alice. Alice has about 28 bitcoin in her wallet, in a single Unspent Transaction Output (UTXO). One day, Alice decides to use the UTXO to make a 0.3 BTC deposit to a CoinBase account. On-chain heuristics would make the reasonable assumption that the CoinBase account is owned by Alice. In that transaction, the 28 BTC is used as the only input and there are two outputs. The first output is the 0.3 BTC to her CoinBase account. The second output is her remaining 28 BTC. 
 
 As time goes on, Alice makes three more transactions with this 28 BTC. Each time providing the 28 BTC as an input with a small amount being spent and the remainder being returned to her as change. On the fourth transaction, Alice made a donation to the Freedom Convoy. 
 
@@ -85,3 +85,76 @@ Unfortunately, the Canadian government has blacklisted several if not all of the
 ![](assets/tx07_1.png)
 
 ## How Whirlpool fixes this
+To understand how the Whirlpool CoinJoin implementation can be used as a tool for breaking on-chain heuristics and gaining forward looking anonymity, it is important to first understand the issues with simple Bitcoin transactions that have one input and two outputs. Here is a visual example to help elaborate the point, this is Alice's transaction that spent one output to CoinBase. 
+
+You can see that there is only one way to interpret this transaction, Alice owned the entire 28.49 BTC input, sent 0.3 BTC to CoinBase, and received 28.18 BTC back in change. Then further heuristics can be made to extrapolate information that is not embeded in the transaction, such as it being more likely than not that Alice owns the CoinBase account that the 0.3 BTC were deposited to. Going further then, it is possible to reasonably attach Alice's real identity with the 28.18 BTC change from the KYC records kept by CoinBase.
+
+![](assets/wp00.png)
+
+This is what a Whirlpool transaction looks like on-chain. There are always 5 inputs and 5 outputs. All of the outputs are the same denomination, 0.05 BTC in this case. You can view this transaction on the KYCP.org website for yourself [here](https://kycp.org/#/323df21f0b0756f98336437aa3d2fb87e02b59f1946b714a7b09df04d429dec2).
+
+![](assets/wp01.png)
+
+There are strict rules determined by the ZeroLink CoinJoin implementation in Whirlpool that are enforced by the coordinator. The coordinator is a blinded server that facilitates the CoinJoin transactions. Some of the rules that the coordinator enforces are:
+
+- Each CoinJoin transaction will have 5 inputs.
+- Each CoinJoin transaction will have 5 outputs.
+- All of the outputs from a CoinJoin transaction will be the same denomination. 
+- UTXOs do not cross from one pool to another, 0.05 BTC UTXOs do not get used as inputs in 0.01 BTC sized Whirlpool CoinJoin transactions for example. 
+- That no single wallet may have more than one input to a transaction. So all 5 inputs must come from different wallets. 
+- No two outputs from a CoinJoin transaction may be used together in a future CoinJoin transaction. 
+- Every CoinJoin transaction will have a minimum of two fresh participants to the liquidity pool and a maximum of three.
+- Every CoinJoin transaction will have a minimum of two re-mixing participants and a maximum of three. These participants may be referred to as "free riders".
+- Fresh participants cover the miners fee. 
+- Re-mixing participants continue mixing for no additional fee. 
+- Only UTXOs from a previious CoinJoin transaction (free riders) or UTXOs from a Transaction Zero (TX0) (fresh participants) will be allowed as inputs. 
+
+These rules are how Whirlpool breaks deterministic links and provides forward looking anonymity. There is nothing about any single Whirlpool CoinJoin transaction output that distinguishes it from any of the other 4 outputs. Every output has an equal liklihood to being linked to any given input, therefore no definite conclusions can be drawn about the ownership of any given output. 
+
+Another important feature of Whirlpool is this TX0 concept mentioned above. TX0 is what creates the UTXOs that can be used as fresh participants to a Whirlpool CoinJoin transaction. Every UTXO used as an input to a Whirlpool CoinJoin transaction must first come from a TX0. Very simply, TX0 will take for an input some bitcoin from your deposit wallet. This can be a single input or it can be several inputs. In the example below, the TX0 input was 0.81 BTC. 
+
+In this particular [example](https://kycp.org/#/333f45431e47b9543772013ac83a9b33cc58dc3245ccfd48b972107bb8405c13), the selected pool size was 0.05 BTC, meaning that all UTXOs from this pool will be 0.05 BTC. You can see that the single 0.81 BTC input was used to create the following outputs:
+
+- 18x 0.0501 BTC outputs - These will be fresh participants available for new Whirlpool CoinJoin transactions. They carry a little extra bitcoin so that they can cover the miners fee of the Whirlpool CoinJoin transaction that they will participate in.
+- 1x 0.0134 BTC output - This is called Doxxic Change, it is separated from the other UTXOs and the Samourai Wallet application will prompt you to label this UTXO as Doxxic Change and to change the spending status of this UTXO to "un-spendable". More details about Doxxic change will follow.
+- 1x 0.0025 BTC output - This is the fee paid to the Samourai Wallet developers for this service. 
+
+![](assets/wp02.png)
+
+At this stage, whatever on-chain history tied to the 0.81 BTC input is still linkable to each of the outputs mentioned above. However, as each of the 0.0501 BTC UTXOs gets included in a new Whirlpool CoinJoin transaction, the deterministic link to that history gets broken. After that, the on-chain heuristics cannot be used to make assumptions about the ownership of the Whirlpool CoinJoin UTXOs. This is how forward looking anonymity is achieved, all the UTXOs are the same size and have the same liklihood to being linked to any particular input. These UTXOs blend into a crowd so to speak. 
+
+To demonstrate this blending into a crowd effect, the next several pictures illustrate how many possibilities there are when trying to link one of the inputs from this first transaction to one of the outputs. If one of the outputs of any proceeding transaction is used as an input to another Whirlpool CoinJoin transaction then those outputs are marked in red and the paths expanded, again and again. By the end, any blue dot represents a transaction that the suspect entity could be the owner of. 
+
+5 inputs were used in this transaction, trying to follow the possible trail of a suspect entity, any output could belong to them. 3 of the outputs were used in another Whilpool CoinJoin. There are 1 of 5 possibilities. 
+
+![](assets/wp03.png)
+
+2 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 16 possible transactions to follow. 
+
+![](assets/wp04.png)
+
+3 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 24 possible transactions to follow. 
+
+![](assets/wp05.png)
+
+6 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 34 possible transactions to follow.
+
+![](assets/wp06.png)
+
+10 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 55 possible transactions to follow.
+
+![](assets/wp07.png)
+
+19 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 87 possible transactions and 1 unspent output to follow.
+
+![](assets/wp08.png)
+
+42 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 87 possible transactions and 1 unspent output to follow.
+
+![](assets/wp09.png)
+
+At this point it is becoming too difficult to count and the point is well illustrated by now. Each red dot represents another Whirlpool CoinJoin transaction that will lead to 5 additional outputs that could belong to the entity who owned the original input. Each blue dot represents a transaction that is not a Whirlpool CoinJoin but could contain the output of interest. 
+
+![](assets/wp10.png)
+
+To illustrate the level of additional complexity when taking into account the outputs that are
