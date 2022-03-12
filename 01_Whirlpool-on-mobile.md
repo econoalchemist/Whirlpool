@@ -11,7 +11,9 @@ This section will demonstrate how to install and setup a new [Samourai Wallet](h
 - Advanced coin control
 - Seperate wallets for deposit, pre-mix, & post-mix bitcoin
 
-Using Samourai Wallet in connection with your own RoninDojo full node provides you with a power house of private mobile Bitcoin tools. Before you get started, it will help to have a [recovery sheet](https://samouraiwallet.com/recovery) or notebook to write your seed phrase and passphrase information. 
+The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. In this configuration, your instance of Samourai Wallet will communicate with the Samourai Wallet hosted Dojo. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. In the default configuration, Samourai Wallet will use your XPUB in order to display your wallet balances with information provided by the Samourai Wallet Dojo. 
+
+Before you get started, it will help to have a [recovery sheet](https://samouraiwallet.com/recovery) or notebook to write your seed phrase and passphrase information. 
 
 You can download the Samourai Wallet application from an [F-Droid](https://sovereignty.tools/) repo, thier [website](https://samouraiwallet.com/download), or [Google Play Store](https://play.google.com/store/apps/details?id=com.samourai.wallet&hl=en_US&gl=US).
 
@@ -38,10 +40,14 @@ Next, you will be asked to choose a directory to store your encrypted wallet bac
   <img width="350" src="assets/SW07.png">
 </p>
 
-Next, you can toggle on the option to enable Tor. Then toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission.  
+Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node.
 
 <p align="center">
   <img width="350" src="assets/SW08.png">
+</p>
+
+Alternatively, if you want to use your own Dojo node instead, toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission.
+<p align="center">
   <img width="350" src="assets/SW09.png">
 </p>
 
@@ -79,3 +85,5 @@ Finally, you will be presented with your unique PayNym, you can claim it so that
   <img width="300" src="assets/SW18.png">
   <img width="300" src="assets/SW19.png">
 </p>
+
+
