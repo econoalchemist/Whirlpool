@@ -99,6 +99,7 @@ There are strict rules determined by the ZeroLink CoinJoin implementation in Whi
 
 - Each CoinJoin transaction will have 5 inputs.
 - Each CoinJoin transaction will have 5 outputs.
+- No address reuse.
 - All of the outputs from a CoinJoin transaction will be the same denomination. 
 - UTXOs do not cross from one pool to another, 0.05 BTC UTXOs do not get used as inputs in 0.01 BTC sized Whirlpool CoinJoin transactions for example. 
 - That no single wallet may have more than one input to a transaction. So all 5 inputs must come from different wallets. 
