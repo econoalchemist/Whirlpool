@@ -75,7 +75,7 @@ Finally, you will be presented with your unique PayNym, you can claim it so that
   <img width="300" src="assets/SW19.png">
 </p>
 
-Now you have a mobile Bitcoin wallet with built in privacy tools that communicates with your very own self-hosted full Bitcoin node over Tor. Congratulations, this is a major step along the path to sovereignty. 
+Now you have a mobile Bitcoin wallet with built in privacy tools that communicates over Tor. Congratulations, this is a great step along the path to sovereignty. Go out and earn some bitcoin in exchange for goods or services, buy some from an ATM, or earn some mining rewards. 
 
 Once you have received bitcoin that you would like to mix, simply follow these steps from your mobile Samourai Wallet:
 
@@ -103,5 +103,5 @@ Once you have received bitcoin that you would like to mix, simply follow these s
  <img width="350" src="assets/SW25.png">
 </p> 
 
-Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes, you can now close your mobile Samourai Wallet application and the desktop Whirlpool GUI will keep your resulting mix outputs available as free-riders for future mixing rounds. 
+Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. This is why it is a good idea to keep building on your new skills and use the desktop client so that your UTXOs mix 24/7 even when you close your mobile app. 
 
