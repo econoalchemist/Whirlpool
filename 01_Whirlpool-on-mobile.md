@@ -41,30 +41,17 @@ Next, you will be asked to choose a directory to store your encrypted wallet bac
   <img width="350" src="assets/SW07.png">
 </p>
 
-Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node.
+Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node. Then press the `Create a new wallet` button in Samourai Wallet. Or if you have a wallet to import then select the option to `Restore an existing wallet` instead.  
 
 <p align="center">
   <img width="350" src="assets/SW08.png">
 </p>
 
-*Alternatively, if you want to use your own Dojo node instead, toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. This 
-
-<p align="center">
-  <img width="350" src="assets/SW09.png">
-</p>
-
-This is where you want to select `Manage` in the lower left-hand corner of the `Dojo` window in your RoninDojo UI dashboard. Then scan the `Samourai Dojo` QR code from your mobile device. Once the details are received by the application, press the `Create a new wallet` button in Samourai Wallet. Or if you have a wallet to import then select the option to `Restore an existing wallet` instead.  
-
-<p align="center">
-  <img width="350" src="assets/SW10.png">
-  <img width="350" src="assets/SW11.png">
-</p>
-
-Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. Then the app will ask you if you would like to download the same recovery sheet that is linked above. 
+Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. Then the app will ask you if you would like to download the [recovery sheet](https://samouraiwallet.com/recovery). 
 
 <p align="center">
   <img width="350" src="assets/SW12.png">
-  <img width="350" src="assets/SW13.png">
+  <img width="350" src="assets/SW13.JPG">
 </p>
 
 The next screen will present your 12-word seed phrase. Do not share these words with anyone for any reason. These 12-words are a human-readable representation of your Bitcoin private key. Anyone who gains access to these words and passphrase can take your bitcoin. Do not take a screenshot of these words. Do not take a picture of these words. Do not save them in a text file or other digital format. Make sure you write these down in order and then secure this seed phrase like it was cash, gold, or jewelry. Many people choose to stamp their wallet recovery information (seed phrase and passphrase) into metal that can withstand extreme environments such as fire and flooding. You can find further information on this topic [here](https://www.econoalchemist.com/post/backup).
@@ -88,4 +75,33 @@ Finally, you will be presented with your unique PayNym, you can claim it so that
   <img width="300" src="assets/SW19.png">
 </p>
 
+Now you have a mobile Bitcoin wallet with built in privacy tools that communicates with your very own self-hosted full Bitcoin node over Tor. Congratulations, this is a major step along the path to sovereignty. 
+
+Once you have received bitcoin that you would like to mix, simply follow these steps from your mobile Samourai Wallet:
+
+- Select the blue `+` sign and then the `Whirlpool` button. 
+- This will launch the mobile Whirlpool client, again select the `Whirlpool` button. 
+
+<p align="center">
+ <img width="350" src="assets/SW20.png">
+ <img width="350" src="assets/SW21.png">
+</p> 
+
+- Select the option to `Mix UTXOs`.  
+- A list of the available UTXOs from your deposit wallet will be displayed. Select the UTXOs you would like to mix and then click on `NEXT`. Keep in mind, if any of these UTXOs have history that you do not want connected on-chain, consider selecting them independent of each other. 
+
+<p align="center">
+ <img width="350" src="assets/SW22.png">
+ <img width="350" src="assets/SW23.png">
+</p> 
+
+- Select the cycle priority (miners fee), select the pool size appropriate for the amount you are mixing, and select `REVIEW CYCLE DETAILS`. 
+- You will be presented with the details of the TX0 you are about to make. Select `BEGIN CYCLE` once ready and the transaction will be built and then broadcast from your RoninDojo Tanto to the Bitcoin network. 
+
+<p align="center">
+ <img width="350" src="assets/SW24.png">
+ <img width="350" src="assets/SW25.png">
+</p> 
+
+Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes, you can now close your mobile Samourai Wallet application and the desktop Whirlpool GUI will keep your resulting mix outputs available as free-riders for future mixing rounds. 
 
