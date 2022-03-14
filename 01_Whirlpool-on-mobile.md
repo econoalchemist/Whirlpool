@@ -7,12 +7,13 @@ This section will demonstrate how to install and setup a new [Samourai Wallet](h
 - Stonewall, a post-mix spending tool that breaks on-chain heuristics
 - StonewallX2, a post-mix spending tool that looks identical to Stonewall on-chain but is actually made with two peers
 - Stowaway, a post-mix spending tool that obfuscates the amount being spent
-- Ricochet, a post-mix spending tool that add additional hops between the final payment destination
+- Ricochet, a post-mix spending tool that adds additional hops between the final payment destination
 - Advanced coin control
 - Seperate wallets for deposit, pre-mix, & post-mix bitcoin
 
-The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. In this configuration, your instance of Samourai Wallet will communicate with the Samourai Wallet hosted Dojo. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. In the default configuration, Samourai Wallet will use your XPUB in order to display your wallet balances with information provided by the Samourai Wallet Dojo. 
+The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. However, if you are not using your own node then you are trusting someone else's. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. Every Bitcoin wallet, mobile or desktop, needs to gather information about wallet balances and transaction history from a Bitcoin node; it is best practice to use your own node but it is not a requirement. This section will demonstrate how to use Samourai Wallet without your own node as this is the simplest and fastest way to start. The other two methods covered in this guide build on these concepts and introduce the more advanced configuration of using your own node.  
 
+## Getting started
 Before you get started, it will help to have a [recovery sheet](https://samouraiwallet.com/recovery) or notebook to write your seed phrase and passphrase information. 
 
 You can download the Samourai Wallet application from an [F-Droid](https://sovereignty.tools/) repo, thier [website](https://samouraiwallet.com/download), or [Google Play Store](https://play.google.com/store/apps/details?id=com.samourai.wallet&hl=en_US&gl=US).
@@ -46,7 +47,8 @@ Next, you can toggle on the option to enable Tor. Leave the option to connect to
   <img width="350" src="assets/SW08.png">
 </p>
 
-Alternatively, if you want to use your own Dojo node instead, toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission.
+*Alternatively, if you want to use your own Dojo node instead, toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. This 
+
 <p align="center">
   <img width="350" src="assets/SW09.png">
 </p>
