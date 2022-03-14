@@ -219,3 +219,5 @@ Once signed in, you should be able to see your balances, mixing activity, and th
 <p align="center">
  <img src="assets/RoninUI26.png">
 </p> 
+
+Now when you initiate mixes from your mobile Samourai Wallet app, you can close the app afterwards and your UTXOs will continue to be registered as available inputs to mixes as free-riders so long as your desktop client stays running. Plus this is all being done using your own node as a backend and communicating with it via Tor. Just follow the exact same steps as covered in the last section to initiate Whirlpool mixes like normal. 
