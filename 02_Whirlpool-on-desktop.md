@@ -1,5 +1,5 @@
 # Whirlpool On Desktop With RoninDojo
-This section will demonstrate how to use Whirlpool on desktop with the Whirlpool GUI configured to run with your own Bitcoin full node, the Tanto by [RoninDojo](https://ronindojo.io/).
+This section will demonstrate how to use Whirlpool on desktop with the Whirlpool GUI configured to run with your own Bitcoin full node, the Tanto by [RoninDojo](https://ronindojo.io/). This will build on the information from the last section on using Whirlpool on mobile only.
 
 If you are not running your own Bitcoin node then you are trusting someone else's. RoninDojo is a FOSS developer team focused exclusively on building the most stable and tailored full node for [Samourai Wallet](https://samouraiwallet.com/) support. With Samourai Wallet and RoninDojo combined, users are empowered with a mobile-first Bitcoin wallet that features privacy-enhancing tools like a Whirlpool CoinJoin implementation and post-mix collaborative spending tools; all powered by the user's own self-hosted Bitcoin full node communicating with the mobile client over Tor. This guide demonstrates setting up a new plug & play full Bitcoin node from [RoninDojo](https://ronindojo.io/) called the Tanto.
 
@@ -122,19 +122,28 @@ Once the Indexer has caught up to the latest block height, you should see both I
   <img src="assets/RoninUI09.png">
 </p>
 
-You can click on `Manage` in the lower left-hand corner of the `Dojo` window and this will bring up the QR code that you can use to connect your Samourai Wallet. Setting up Samourai Wallet will be covered in the next section. Make sure to toggle `Display values` to make the QR codes legible. The other QR code is for connecting your own BTC-RPC explorer. The Explorer provides a way to use your own Dojo to feed data to a full fledged Bitcoin blockchain explorer over Tor. Copy the .onion URL & password for the Explorer, paste into Tor Browser, use `ronindojo` for the username, and bookmark page. 
+You can click on `Manage` in the lower left-hand corner of the `Dojo` window and this will bring up the QR code that you can use to connect your Samourai Wallet. Make sure to toggle `Display values` to make the QR codes legible. The other QR code is for connecting your own BTC-RPC explorer. The Explorer provides a way to use your own Dojo to feed data to a full fledged Bitcoin blockchain explorer over Tor. Copy the .onion URL & password for the Explorer, paste into Tor Browser, use `ronindojo` for the username, and bookmark page. 
 
 <p align="center">
   <img src="assets/RoninUI10.png">
 </p>
 
-You can even log into your RoninDojoUI from your mobile phone with the Tor Browser. From the dashboard, click on `Manage` in the lower left-hand corner of the `RoninDojo` window. This will bring up a QR code that you can scan to follow the .onion link to your RoninDojo UI. Then enter your RoninDojo UI password and bookmark this page. 
+In your Samourai Wallet, from the home screen, press the icon at the top that looks like the WiFi symbol. Toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. Then scan the `Samourai Dojo` QR code from your mobile device. 
+
+<p align="center">
+<img width="350" src="assets/SW09.png">
+<img width="350" src="assets/SW10.png">
+</p>
+
+Now your mobile Samourai Wallet will communicate with your own full node. There are a couple other important options to go over before covering the desktop Whirlpool GUI. 
+
+For example, you can log into your RoninDojo UI from your mobile phone with the Tor Browser. From the dashboard, click on `Manage` in the lower left-hand corner of the `RoninDojo` window. This will bring up a QR code that you can scan to follow the .onion link to your RoninDojo UI. Then enter your RoninDojo UI password and bookmark this page. 
 
 <p align="center">
   <img src="assets/RoninUI11.png">
 </p>
 
-Once you are logged into your RoninDojo UI on mobile, then you can just copy/paste the .onion URL and password for the Explorer into your Tor browser as well, then using `ronindojo` as a username again, you can book mark this page as well and now you have a mobile block explorer that uses your own Dojo as a backend and communicates with it via Tor. 
+Once you are logged into your RoninDojo UI on mobile, then you can just copy/paste the .onion URL and password for the Explorer into your Tor browser as well, leave the username blank, you can book mark this page as well and now you have a mobile block explorer that uses your own Dojo as a backend and communicates with it via Tor. 
 
 <p align="center">
   <img width="350" src="assets/RoninUI12.png">
@@ -149,6 +158,8 @@ First, you will need to download the Whirlpool client appropriate for your opera
 <p align="center">
  <img src="assets/RoninUI14.png">
 </p>
+
+*In a future release of the RoninDojo UI, the Whirlpool URL will be available from the web interface dashboard and you will no longer need to retrieve this information from the terminal as demonstrated here.*
 
 Once you have your Whilpool client installed and your Samourai Wallet connected to your RoninDojo Tanto, you can make an SSH connection to the RoninDojo and start the Whirlpool service. The Whirlpool .onion URL you need is not available through the RoninDojo UI dashboard. The SSH connection can be made with the same username password you used for the RoninDojo UI.
 
@@ -188,7 +199,7 @@ Now open the Whirlpool client application you installed earlier. Select the `Adv
 Give the GUI some time, Tor connections can take a little while. You may need to try this a couple times before the connection is made. But once the connection is made, you will be presented with a screen asking you to input the Whirlpool pairing payload from your Samourai Wallet. In Samourai Wallet, click on the 3-dot menu in the upper right-hand corner and select `Settings` > `Transactions` > `Pair to Whirlpool GUI` at the bottom. This will display a QR code that contains your Whirlpool payload. Simply click on the QR code option in the desktop GUI and this should launch your webcam then hold up the QR code on your mobile so the camera can scan it. 
 
 <p align="center">
- <img src="assets/RoninUI23.png">
+ <img src="assets/RoninUI23_1.png">
 </p> 
 
 Once received, then click on `Initialize GUI`.
