@@ -150,12 +150,14 @@ To demonstrate this blending into a crowd effect, the next several pictures illu
 
 ![](assets/wp08.png)
 
-42 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 87 possible transactions and 1 unspent output to follow.
+42 of the outputs lead to further Whirlpool CoinJoin transactions. There are 1 of 133 possible transactions and 2 unspent output to follow.
 
 ![](assets/wp09.png)
 
-At this point it is becoming too difficult to count and the point is well illustrated by now. Each red dot represents another Whirlpool CoinJoin transaction that will lead to 5 additional outputs that could belong to the entity who owned the original input. Each blue dot represents a transaction that is not a Whirlpool CoinJoin but could contain the output of interest. 
+At this point it is becoming too difficult to manually count and the idea is well illustrated by now. Each red dot represents another Whirlpool CoinJoin transaction that will lead to 5 additional outputs that could belong to the entity who owned the original input. Each blue dot represents a transaction that is not a Whirlpool CoinJoin but could contain the output of interest. 
 
 ![](assets/wp10.png)
 
-To illustrate the level of additional complexity when taking into account the outputs that are
+This just keeps going and going. This is the asymmetric advantage that breaking deterministic links has when an outside observer views the blockchain transaction data in an attempt to follow someone. 
+
+![](assets/wp11.png)
