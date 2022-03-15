@@ -56,7 +56,7 @@ By the time Alice made a donation to the Freedom Convoy, she used what was left 
 
 Because CoinBase knows Alice's true identity and her on-chain activity is directly linked to her CoinBase account, her true identity can be revealed as a donor to the Freedom Convoy if authorities investigate the matter. After Alice made her donation, more bitcoin was consolidated and moved down stream. 
 
-![](assets/tx01.png)
+![](assets/tx01_1.png)
 
 The entity in control of the Freedom Convoy donations makes several transactions that consolidate bitcoin and move the new balances to new addresses. Throughout the entirety of the Tally Coin fundraising campaign, the same Bitcoin donation address was used. 
 
@@ -161,3 +161,7 @@ At this point it is becoming too difficult to manually count and the idea is wel
 This just keeps going and going. This is the asymmetric advantage that breaking deterministic links has when an outside observer views the blockchain transaction data in an attempt to follow someone. 
 
 ![](assets/wp11.png)
+
+If Alice had donated to the Canadian Freedom Convoy with bitcoin from a Whirlpool output, then there would have been no deterministic way to link that donation back to Alice's prior transaction history. Any investigation of the matter going backwards through the transaction history would have lead to a cloud-looking transaction graph, as demonstrated above.
+
+Likewise, if any of the Canadian Freedom Convoy donation recipients would use Whirlpool to CoinJoin their bitcoin then there would not be a deterministic way for a KYC exchange to link their deposit to the donations in question. Also, if the organizer of the donations had been Whirlpooling donations as they came in then the trail of those funds on chain would have been obfuscated. Additionally, deposits to the truckers' 100 wallets could have been made using privacy-preserving collaborative transactions instead of batch spends.   
