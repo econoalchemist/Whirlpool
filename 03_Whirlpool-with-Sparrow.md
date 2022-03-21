@@ -4,11 +4,13 @@ Sparrow Wallet is a Bitcoin wallet designed to be connected with your own node a
 In this guide you will see how to:
 - Get started, connect your Sparrow Wallet using your own Bitcoin Core node. 
 - Generate addresses, setup a hot wallet in Sparrow for receiving & Whirlpool mixing. 
-- How to use Whirlpool & connect to your COLDCARD to automatically deposit from Whirlpool.
+- How to use Whirlpool & connect to your [COLDCARD](https://coldcard.com/) to automatically deposit from Whirlpool.
 - How to spend from air-gapped COLDCARD. 
+- How to use Whirlpool & connect to your [Passport](https://foundationdevices.com/) to automatically deposit from Whirlpool.
+- How to spend from air-gapped Passport.
 
 ## Bitcoin Core
-If you don't have your own Bitcoin Core node, you can use reputable public Electrum servers as demonstrated in the [UltraQuick guide](https://github.com/econoalchemist/ColdCard-UltraQuick). However, there are privacy tradeoffs that come with using the convenience of a public Electrum server. Luckily there are a number of resources available to help you spin up your own Bitcoin node, to learn more check out:
+If you don't have your own Bitcoin Core node, you can use reputable public Electrum servers as demonstrated in this COLDCARD [UltraQuick guide](https://github.com/econoalchemist/ColdCard-UltraQuick). However, there are privacy tradeoffs that come with using the convenience of a public Electrum server. Luckily there are a number of resources available to help you spin up your own Bitcoin node, to learn more check out:
 
 - [BitcoinCore.org](https://bitcoincore.org/en/about/)
 - [Ministry of Nodes](https://www.ministryofnodes.com.au/) 
@@ -55,11 +57,11 @@ Unfortunately, Bitcoin Core stores your public keys and balances unencrypted on 
 Now that Sparrow Wallet is connected with Bitcoin Core, this is a good time to get the hot wallet setup.
 
 ## Configuring Sparrow as a Whirlpool Wallet
-This section will show you how to set up the hot wallet that you can use for the Whirlpool CoinJoin implementation in Sparrow Wallet. Using Whirlpool will help prevent the mining pool from seeing what you do with your mining rewards (or anyone watching the movement of mining rewards on chain) and this will also help prevent anyone you spend your bitcoin with from knowing that you earned that bitcoin through mining. 
+This section will show you how to set up the hot wallet that you can use for the Whirlpool CoinJoin implementation in Sparrow Wallet. Using Whirlpool will help prevent anyone watching the movement of your transactions on chain from being able to follow your trail. This will also help prevent anyone you spend your bitcoin with from knowing your prior transaction history. 
 
-The important idea to understand here is that you are making a hot wallet in Sparrow that is totally separate from your COLDCARD wallet. You want to keep your COLDCARD wallet totally air-gapped and never have that signing key on a device that is connected to the internet. When you use Whirlpool however, Sparrow Wallet needs to sign CoinJoin transactions as they are created. The benefit of leaving your UTXOs in Sparrow Wallet to mix is that your UTXOs will continually be registered as available inputs when new liquidity enters the mixing pool. Your UTXOs will be able to continue re-mixing again and again for free, so you get more and more anonymity with each mix, this is the incentive to leave your UTXOs mixing. The downside is that you have a Bitcoin wallet connected to the internet with private keys on it, thus the term "hot wallet". 
+The important idea to understand here is that you are making a hot wallet in Sparrow that is totally separate from your hardware wallet. You want to keep your hardware wallet totally air-gapped and never have that signing key on a device that is connected to the internet. When you use Whirlpool however, Sparrow Wallet needs to sign CoinJoin transactions as they are created. The benefit of leaving your UTXOs in Sparrow Wallet to mix is that your UTXOs will continually be registered as available inputs when new liquidity enters the mixing pool. Your UTXOs will be able to continue re-mixing again and again for free, so you get more and more anonymity with each mix, this is the incentive to leave your UTXOs mixing. The downside is that you have a Bitcoin wallet connected to the internet with private keys on it, thus the term "hot wallet". 
 
-The hot wallet will be used to deposit the mining rewards to, then they will be mixed, and once the UTXOs are in the post-mix hot wallet, you can choose to set a minimum number of mixes you want to achieve and then have them automatically deposited to your COLDCARD. This is where things get interesting, when you have a post-mix UTXO deposited to the COLDCARD straight from a CoinJoin, on-chain it is impossible to tell that this has been moved to a different wallet. It looks like it is just an unspent CoinJoin output. And so long as it remains unspent, then while other UTXOs from that last CoinJoin transaction continue to mix, your anonymity continues to grow. 
+The hot wallet will be used to deposit bitcoin to, then it will be mixed, and once the UTXOs are in the post-mix hot wallet, you can choose to set a minimum number of mixes you want to achieve and then have them automatically deposited to your hardware. This is where things get interesting, when you have a post-mix UTXO deposited to a hardware wallet straight from a CoinJoin, on-chain it is impossible to tell that this has been moved to a different wallet. It looks like it is just an unspent CoinJoin output. And so long as it remains unspent, then while other UTXOs from that last CoinJoin transaction continue to mix, your anonymity continues to grow. 
 
 To get started, open the Sparrow Wallet application, you should be presented with a blank home page and you should see that the toggle switch in the lower right-hand corner is colored yellow if you are using a public Electrum server, green if you are using Bitcoin Core, or blue if you are using your own Electrum server. 
 
@@ -70,7 +72,7 @@ Navigate to `file` > `New Wallet`. Then name your new wallet whatever you want a
   <img width="450" src="assets/sparrow101.png">
 </p>
 
-The next you will be presented with is going to ask you for some specific information about how you want to configure your new wallet. For the purposes of a Whirlpool hot wallet, the following default options are fine:
+The next screen you will be presented with is going to ask you for some specific information about how you want to configure your new wallet. For the purposes of a Whirlpool hot wallet, the following default options are fine:
 
 - Policy Type: `Single Signature`
 - Script Type: `Native Segwit (P2WPKH)`
@@ -98,7 +100,7 @@ Ensure that you write these words down, in order, in a note book or other piece 
 
 The passphrase is optional but recommended. If anyone ever gains access to your seed words, then the passphrase will be the only thing protecting your bitcoin. Using a high entropy passphrase will make it difficult for anyone to guess your passphrase. Ensure that you also write this passphrase down, you will not be able to restore your wallet without it in the event that you need to attempt to recover your bitcoin. There is no way for the wallet to know what your passphrase is and any passphrase you enter will be accepted. If you enter the passphrase incorrectly in the future due to forgetting or losing it, you will lose access to your bitcoin. Also, consider storing your passphrase seperately from the seed phrase because if anyone finds them together then for sure they will swipe your bitcoin. 
   
-Many people choose to stamp their seed words and passphrase into a metal medium because it can withstand extreme environments like fire and flooding better than paper. For this kind of wallet though, you may only be using it as a pass through to get mining rewards through Whirlpool before depositing them to your COLDCARD. Perhaps given the short time you will have bitcoin in this wallet is reason enough to not go through the trouble of stamping the information into metal. The choice is totally up to you and there are many options out there like the [SEEDPLATE](https://bitcoinseedbackup.com/) from Coinkite.  
+Many people choose to stamp their seed words and passphrase into a metal medium because it can withstand extreme environments like fire and flooding better than paper. For this kind of wallet though, you may only be using it as a pass through to get some anonymity on your bitcoin before depositing it to your hardware wallet. Perhaps given the short time you will have bitcoin in this wallet is reason enough to not go through the trouble of stamping the information into metal. The choice is totally up to you and there are many options out there like the [SEEDPLATE](https://bitcoinseedbackup.com/) from Coinkite, the [Domino](https://bitcoinmagazine.com/guides/how-to-use-bitplates-domino-bitcoin-seed) from BitPlates, or even DIY solutions like [stainless steel washers](https://www.econoalchemist.com/post/backup).  
   
 After clicking on <kbd>Confirm Backup</kbd> you will see a dialog box popup asking you if you have written the seed words down, click on <kbd>Re-enter Words</kbd>.
   
@@ -123,16 +125,16 @@ You will be asked if you would like to add a password to this wallet. This passw
 </p>
 
 ## Using Whirlpool
-Now that you have your wallet all setup, you are ready to start using Whirlpool. You will need some bitcoin deposited into your wallet first. To get a receiving address, navigate to the `Receive` tab on the left-hand side menu and you will be presented with a QR code and the text of your first bitcoin address. You could copy/paste this address into your SlushPool account and have your mining rewards automatically deposited there. Changing your SlishPool reward address in between each payout can help you preserve your privacy. 
+Now that you have your wallet all setup, you are ready to start using Whirlpool. You will need some bitcoin deposited into your wallet first. To get a receiving address, navigate to the `Receive` tab on the left-hand side menu and you will be presented with a QR code and the text of your first bitcoin address. Consider using a [non-KYC](https://bitcoiner.guide/nokyconly/) method to acquire bitcoin.   
 
 <p align="center">
  <img src="assets/sparrow109.png">
 </p>
 
-Once you receive your first payout, you will see the transaction appear in Sparrow Wallet, under the `Transactions` tab on the left-hand side menu. In this example, 0.01 BTC was received. 
+Once you receive your first deposit, you will see the transaction appear in Sparrow Wallet, under the `Transactions` tab on the left-hand side menu. In this example, 0.01 BTC was received. 
 
 <p align="center">
- <img src="assets/sparrow110.png">
+ <img src="assets/sparrow110_1.png">
 </p>
 
 Now that you have some bitcoin, navigate to the `UTXOs` tab in the left-hand side menu and then select the UTXO you are interested in. You will see the `Mix Selected` button appear once you select the UTXO(s). Click on that button and then click `Next` in the two pop-up explainer windows that describe the Whirlpool process.  
