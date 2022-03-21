@@ -338,7 +338,7 @@ Navigate to the `UTXOs` tab on the left-hand side and the `Postmix` tab on the r
 A window will pop up and from the `Mix to wallet` drop-down menu, select the COLDCARD or Passport Watch-Only wallet that you imported. Then you can set the minimum number of mixes you want each UTXO to achieve before being deposited to your hardware wallet. Keep in mind, each UTXO will have a 25% chance of being mixed again even after it hits this number. You can leave `Index range` on the default `Full` setting to use both even and odd indexed addresses. Then click on <kbd>Restart Whirlpool</kbd>. 
 
 <p align="center">
- <img src="assets/sparrow118_1.png">
+ <img src="assets/sparrow118_2.png">
 </p>
 
 Then you will notice that the button at the bottom has changed to display the watch-only wallet you have selected for the automatic deposits.
