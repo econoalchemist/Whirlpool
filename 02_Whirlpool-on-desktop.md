@@ -7,7 +7,7 @@ If you are not running your own Bitcoin node then you are trusting someone else'
   <img src="assets/titleimage.png">
  </p>
  
-The Tanto comes pre assembled and pre-loaded with the RoninDojo software, there is no need to build a material list and order several pieces of hardware from multiple vendors. The Tanto features an aluminium case and bottom plate, painted black with a sleek RoninDojo logo in red. Inside the case, the Tanto is powered by a RockPro64 board, an interface card, and an M.2 NVMe 1TB SSD. The Tanto also includes a 32GB microSD card pre-loaded with the RoninDojo software image and power supply. Everything you need to get started is included. 
+The Tanto comes pre assembled and pre-loaded with the RoninDojo software, there is no need to build a material list and order several pieces of hardware from multiple vendors. The Tanto features a milled aluminium case and bottom plate, painted black with a sleek RoninDojo logo in red. Inside the case, the Tanto is powered by a RockPro64 board, an interface card, and an M.2 NVMe 1TB SSD. The Tanto also includes a 32GB microSD card pre-loaded with the RoninDojo software image and power supply. Everything you need to get started is included. 
 
 Additionally, the Tanto includes a the RoninSteel stainless steel seed phrase back up plate. Check out [this guide](https://bitcoinmagazine.com/guides/how-to-bitcoin-seed-backup-roninsteel) to see a demonstration of the RoninSteel.
 
@@ -96,7 +96,7 @@ Once there is a green check mark next to each service, you can click on the `Tak
   <img src="assets/RoninUI05.png">
 </p>
 
-Once you are at your dashboard, you can see the progress of the Bitcoin Initial Blockchain Download (IBD) and the vitals of your Tanto. The IBD will take about two days to complete, the Tanto is connecting to other Bitcoin nodes and downloading the entire Bitcoin blockchain all the back to the first block from January 2009. Once the IBD completes, you will have your own full copy of the blockchain and you will use your own copy to verify your transactions against.  
+Once you are at your dashboard, you can see the progress of the Bitcoin Initial Blockchain Download (IBD) and the vitals of your Tanto. The IBD will take about two days to complete, the Tanto is connecting to other Bitcoin nodes and downloading the entire Bitcoin blockchain all the way back to the first block from January 2009. Once the IBD completes, you will have your own full copy of the blockchain and you will use your own copy to verify your transactions against and display your balances in your mobile wallet.  
 
 <p align="center">
   <img src="assets/RoninUI06.png">
@@ -128,7 +128,7 @@ You can click on `Manage` in the lower left-hand corner of the `Dojo` window and
   <img src="assets/RoninUI10.png">
 </p>
 
-In your Samourai Wallet, from the home screen, press the icon at the top that looks like the WiFi symbol. Toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. Then scan the `Samourai Dojo` QR code from your mobile device. 
+In your Samourai Wallet, from the home screen, press the icon at the top that looks like the WiFi symbol. Toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. Then scan the `Samourai Dojo` QR code in your Tanto dashboard from your mobile device. Make sure you toggle on the option to display values in your Tanto dashboard so the QR code is legible. 
 
 <p align="center">
 <img width="350" src="assets/SW09.png">
@@ -151,7 +151,7 @@ Once you are logged into your RoninDojo UI on mobile, then you can just copy/pas
 </p>
 
 ## The Whirlpool GUI
-This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the backround from your desktop client and powered by your own full node. When you mix from mobile only, the mixing stops as soon as you shut down your mobile Whirlpool client in Samourai Wallet. 
+This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the backround from your desktop client and powered by your own full node. When you mix from mobile only, the mixing stops as soon as you shut down your mobile Whirlpool client in Samourai Wallet. With the GUI configured, you can shut off your mobile and the mixing will continue from your PC. 
 
 First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
 
@@ -220,4 +220,4 @@ Once signed in, you should be able to see your balances, mixing activity, and th
  <img src="assets/RoninUI26.png">
 </p> 
 
-Now when you initiate mixes from your mobile Samourai Wallet app, you can close the app afterwards and your UTXOs will continue to be registered as available inputs to mixes as free-riders so long as your desktop client stays running. Plus this is all being done using your own node as a backend and communicating with it via Tor. Just follow the exact same steps as covered in the last section to initiate Whirlpool mixes like normal. 
+Now when you initiate mixes from your mobile Samourai Wallet app, you can close the app afterwards and your UTXOs will continue to be registered as available inputs to mixes as free-riders so long as your desktop client stays running. Plus this is all being done using your own node as a backend and communicating with it via Tor. Just follow the exact same steps as covered in the last section to initiate Whirlpool mixes on mobile like normal. 
