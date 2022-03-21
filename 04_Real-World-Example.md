@@ -169,3 +169,10 @@ This just keeps going and going. This is the asymmetric advantage that breaking 
 If Alice had donated to the Canadian Freedom Convoy with bitcoin from a Whirlpool output, then there would have been no deterministic way to link that donation back to Alice's prior transaction history. Any investigation of the matter going backwards through the transaction history would have lead to a cloud-looking transaction graph, as demonstrated above.
 
 Likewise, if any of the Canadian Freedom Convoy donation recipients would use Whirlpool to CoinJoin their bitcoin then there would not be a deterministic way for a KYC exchange to link their deposit to the donations in question. Also, if the organizer of the donations had been Whirlpooling donations as they came in then the trail of those funds on chain would have been obfuscated. Additionally, deposits to the truckers' 100 wallets could have been made using privacy-preserving collaborative transactions instead of batch spends.   
+
+
+To learn more about Whirlpool anonymity, read [this article](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7).
+
+Read [this article](https://medium.com/samourai-wallet/knowing-your-coin-privacy-using-kycp-org-7b3b4385d8b) to learn more about the blocchain explorer used in this demonstration, [KYCP.org](https://kycp.org/#/).
+
+Check out this [Stephan Livera podcast](https://stephanlivera.com/episode/179/) with [@ErgoBTC](https://twitter.com/ErgoBTC) on the subject of unwinding CoinJoins: tumblers, Wasabi, & JoinMarket.  
