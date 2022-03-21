@@ -103,4 +103,44 @@ Once you have received bitcoin that you would like to mix, simply follow these s
  <img width="350" src="assets/SW25.png">
 </p> 
 
-Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. This is why it is a good idea to keep building on your new skills and use the desktop client so that your UTXOs mix 24/7 even when you close your mobile app. 
+Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. 
+
+However, there is a way to achieve 24/7 mixing, even when you close the application on your mobile. You can install the Whirlpool GUI on your desktop, connect it to your mobile wallet and the desktop GUI will keep your UTXOs mixing. 
+
+First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
+
+<p align="center">
+ <img src="assets/RoninUI14.png">
+</p>
+
+Now open the Whirlpool client application you installed earlier. Select the `Standalone: Standalone GUI` option.
+
+<p align="center">
+ <img src="assets/WhirlpoolGUI00.png">
+</p>
+
+Give the GUI some time, Tor connections can take a little while. You may need to try this a couple times before the connection is made. But once the connection is made, you will be presented with a screen asking you to input the Whirlpool pairing payload from your Samourai Wallet. In Samourai Wallet, click on the 3-dot menu in the upper right-hand corner and select `Settings` > `Transactions` > `Pair to Whirlpool GUI` at the bottom. This will display a QR code that contains your Whirlpool payload. Simply click on the QR code option in the desktop GUI and this should launch your webcam then hold up the QR code on your mobile so the camera can scan it. 
+
+<p align="center">
+ <img src="assets/WhirlpoolGUI01.png">
+</p> 
+
+Once received, then click on `Initialize GUI`.
+
+<p align="center">
+ <img src="assets/WhirlpoolGUI02.png">
+</p> 
+
+Next, enter the passphrase for your Samourai Wallet and click on `Sign in`.
+
+<p align="center">
+ <img src="assets/WhirlpoolGUI03.png">
+</p> 
+
+Once signed in, you should be able to see your balances, mixing activity, and then you can set targets for how many mixes you wish to achieve. You can even generate deposit addresses from the Whirlpool GUI.
+
+<p align="center">
+ <img src="assets/WhirlpoolGUI04.png">
+</p> 
+
+Now when you initiate mixes from your mobile Samourai Wallet app, you can close the app afterwards and your UTXOs will continue to be registered as available inputs to mixes as free-riders so long as your desktop client stays running. This configuration is using the default Samourai Wallet node as a backend. For network privacy, the communication happens over Tor. This can also be configured to use your own node instead which will be covered in the next section. 
