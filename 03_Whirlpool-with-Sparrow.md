@@ -53,7 +53,7 @@ Then click on the <kbd>Server</kbd> tab on the left-hand side. Click on the <kbd
   <img src="assets/Sparrow21.png">
 </p>
 
-Unfortunately, Bitcoin Core stores your public keys and balances unencrypted on the computer it is running on. Although your bitcoin are not directly at risk of theft, if this computer is regularly connected to the internet, it is at risk to hackers - which has the potential to make you a target if your balance and geographic location are discovered. To learn more about Sparrow Wallet best practices, check out [this Sparrow Wallet resource](https://www.sparrowwallet.com/docs/best-practices.html). 
+Unfortunately, Bitcoin Core stores your public keys and balances un-encrypted on the computer it is running on. Although your bitcoin are not directly at risk of theft, if this computer is regularly connected to the internet, it is at risk to hackers - which has the potential to make you a target if your balance and geographic location are discovered. To learn more about Sparrow Wallet best practices, check out [this Sparrow Wallet resource](https://www.sparrowwallet.com/docs/best-practices.html). 
 
 Now that Sparrow Wallet is connected with Bitcoin Core, this is a good time to get the hot wallet setup.
 
@@ -99,7 +99,7 @@ Next, you will be presented with a screen full of blank cells for your seed word
 
 Ensure that you write these words down, in order, in a note book or other piece of paper that you can keep secure in the way you would with gold, cash, or jewelry. Never share these words with anyone, they will have access to your bitcoin. Do not take a screen shot of these words. Do not take a photograph of these words. Do not say them out loud. Do not put them in a text file.
 
-The passphrase is optional but recommended. If anyone ever gains access to your seed words, then the passphrase will be the only thing protecting your bitcoin. Using a high entropy passphrase will make it difficult for anyone to guess your passphrase. Ensure that you also write this passphrase down, you will not be able to restore your wallet without it in the event that you need to attempt to recover your bitcoin. There is no way for the wallet to know what your passphrase is and any passphrase you enter will be accepted. If you enter the passphrase incorrectly in the future due to forgetting or losing it, you will lose access to your bitcoin. Also, consider storing your passphrase seperately from the seed phrase because if anyone finds them together then for sure they will swipe your bitcoin. 
+The passphrase is optional but recommended. If anyone ever gains access to your seed words, then the passphrase will be the only thing protecting your bitcoin. Using a high entropy passphrase will make it difficult for anyone to guess your passphrase. Ensure that you also write this passphrase down, you will not be able to restore your wallet without it in the event that you need to attempt to recover your bitcoin. There is no way for the wallet to know what your passphrase is and any passphrase you enter will be accepted. If you enter the passphrase incorrectly in the future due to forgetting or losing it, you will lose access to your bitcoin. Also, consider storing your passphrase separately from the seed phrase because if anyone finds them together then for sure they will swipe your bitcoin. 
   
 Many people choose to stamp their seed words and passphrase into a metal medium because it can withstand extreme environments like fire and flooding better than paper. For this kind of wallet though, you may only be using it as a pass through to get some anonymity on your bitcoin before depositing it to your hardware wallet. Perhaps given the short time you will have bitcoin in this wallet is reason enough to not go through the trouble of stamping the information into metal. The choice is totally up to you and there are many options out there like the [SEEDPLATE](https://bitcoinseedbackup.com/) from Coinkite, the [Domino](https://bitcoinmagazine.com/guides/how-to-use-bitplates-domino-bitcoin-seed) from BitPlates, or even DIY solutions like [stainless steel washers](https://www.econoalchemist.com/post/backup).  
   
@@ -151,7 +151,7 @@ Then if you have an "SCODE" you can enter it in the third window. The "SCODE" ca
  <img width="350" src="assets/sparrow113.png">
 </p>
 
-Then you will be presented with a preview describing which pool is appropriate for your BTC amount, the anonset, the pool fee, and how many UTXOs you will have as eligable inputs for CoinJoins. Then click on <kbd>Preview Premix</kbd>
+Then you will be presented with a preview describing which pool is appropriate for your BTC amount, the anonset, the pool fee, and how many UTXOs you will have as eligible inputs for CoinJoins. Then click on <kbd>Preview Premix</kbd>
 
 <p align="center">
  <img src="assets/sparrow114.png">
@@ -170,7 +170,7 @@ You'll also notice that four additional tabs showed up on the right-hand side of
 - The `Deposit` tab will be where you generate receiving addresses, this works just like any other bitcoin wallet, you can send from here too just like any regular Bitcoin wallet.
 - The `Premix` tab is where you can view the history of your pre-mix UTXOs, you do not want to manually receive or send bitcoin from this wallet. 
 - The `Postmix` tab is where you will see your UTXOs after they have been mixed. All the UTXOs in this wallet have been through at least one CoinJoin transaction. So long as you leave these UTXOs in here, they will continually be registered as available UTXOs when new liquidity enters the Whirlpool and they will re-mix for free. So the longer you leave UTXOs in here, the more mixes they will get and the more anonymity you will achieve. So long as your desktop GUI is connected.  
-- The `Badbank` tab is where your txic change from the "tx0" gets sequestered from the rest of your funds. You want to be careful what you do with this toxic change. If you combine it with your postmix UTXOs then you will be degrading the privacy gains you got in Whirlpool. 
+- The `Badbank` tab is where your toxic change from the "tx0" gets sequestered from the rest of your funds. You want to be careful what you do with this toxic change. If you combine it with your postmix UTXOs then you will be degrading the privacy gains you got in Whirlpool. 
 
 <p align="center">
  <img src="assets/sparrow116.png">
@@ -281,7 +281,7 @@ From the menu of wallets that pop up, scroll down to `Passport` and select <kbd>
 This should launch your webcam, now you can pick your Passport back up and press <kbd>CONTINUE</kbd> to initiate the series of QR codes. If you want to resize the QR codes on the passport screen, you can press the <kbd>Resize</kbd> button to change the QR code resolution to three possible sizes. 
 
 <p align="center">
-  <img widt="750" src="assets/passport112.jpg">
+  <img width="750" src="assets/passport112.jpg">
 </p>
 
 ![](assets/sparrow02_1.png)
@@ -327,7 +327,7 @@ Now you can power off and secure your Passport in a safe place until you want to
 When you are ready to sign a transaction to spend bitcoin, it is necessary to create a Partially Signed Bitcoin Transaction (PSBT). You can deposit bitcoin with your Passport stored away but to spend bitcoin, the Passport needs to sign the transaction. Sparrow Wallet is used to build the transaction based on your available Unspent Transaction Outputs (UTXOs) and the information you enter when constructing the transaction. The PSBT details are passed between Sparrow Wallet and the Passport using the QR code exchange method or the microSD card. This is covered below. 
 
 ## Mixing Straight to a Hardware Wallet
-One really cool feature of Whirlpool is that you can mix straight to your hardware wallet. You can set the number of mixes you want each UTXO to achieve and as your UTXOs re-mixes hit that number they will be deposited to your hwardware wallet straight from a CoinJoin transaction. Additionally, Sparrow Wallet will add an additional source of randomness to help you avoid creating paterns that could be used as on-chain heuristics; each UTXO that hits your set number of re-mixes will have a 25% chance of being mixed again. When you receive deposits to your hardware wallet straight out of a CoinJoin transaction, it looks as though that UTXO is still in Whirlpool to any outside observer looking on-chain. 
+One really cool feature of Whirlpool is that you can mix straight to your hardware wallet. You can set the number of mixes you want each UTXO to achieve and as your UTXOs re-mixes hit that number they will be deposited to your hardware wallet straight from a CoinJoin transaction. Additionally, Sparrow Wallet will add an additional source of randomness to help you avoid creating paterns that could be used as on-chain heuristics; each UTXO that hits your set number of re-mixes will have a 25% chance of being mixed again. When you receive deposits to your hardware wallet straight out of a CoinJoin transaction, it looks as though that UTXO is still in Whirlpool to any outside observer looking on-chain. 
 
 Navigate to the `UTXOs` tab on the left-hand side and the `Postmix` tab on the right-hand side, these are all of your mixing UTXOs. At the bottom, click on <kbd>Mix to</kbd>. 
 
