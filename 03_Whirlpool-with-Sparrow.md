@@ -166,18 +166,18 @@ You can check all the addresses you are sending to with the different tabs in th
 
 You'll also notice that four additional tabs showed up on the right-hand side of Sparrow Wallet. These are basically four separate wallets you have so that you can manage your bitcoin safely.
 
-- The `Deposit` tab will be where you generate receiving addresses, this works just like any other bitcoin wallet, you can send from here too if you really wanted to.
+- The `Deposit` tab will be where you generate receiving addresses, this works just like any other bitcoin wallet, you can send from here too just like any regular Bitcoin wallet.
 - The `Premix` tab is where you can view the history of your pre-mix UTXOs, you do not want to manually receive or send bitcoin from this wallet. 
-- The `Postmix` tab is where you will see your UTXOs after they have been mixed. All the UTXOs in this wallet have been through at least one CoinJoin transaction. So long as you leave these UTXOs in here, they will continually be registered as available UTXOs when new liquidity enters the Whirlpool and they will re-mix for free. So the longer you leave UTXOs in here, the more mixes they will get and the more anonymity you will achieve. 
-- The `Badbank` tab is where your txic change from the "tx0" gets sequestered from the rest of your funds. You want to be careful what you do with this toxic change. If you combine it with your postmix UTXOs then you will be defeating the privacy gains you got in Whirlpool. 
+- The `Postmix` tab is where you will see your UTXOs after they have been mixed. All the UTXOs in this wallet have been through at least one CoinJoin transaction. So long as you leave these UTXOs in here, they will continually be registered as available UTXOs when new liquidity enters the Whirlpool and they will re-mix for free. So the longer you leave UTXOs in here, the more mixes they will get and the more anonymity you will achieve. So long as your desktop GUI is connected.  
+- The `Badbank` tab is where your txic change from the "tx0" gets sequestered from the rest of your funds. You want to be careful what you do with this toxic change. If you combine it with your postmix UTXOs then you will be degrading the privacy gains you got in Whirlpool. 
 
 <p align="center">
  <img src="assets/sparrow116.png">
 </p> 
 
-Next, you'll see how to configure your COLDCARD as a Watch-Only wallet in Sparrow Wallet which allows you to keep an eye on your balance and generate receiving addresses while keeping the COLDCARD totally air-gapped. Once the Watch-Only wallet is imported then it can be set to deposit to directly from Whirlpool CoinJoins. 
+Next, you'll see how to configure a hardware wallet as a Watch-Only wallet in Sparrow Wallet which allows you to keep an eye on your balance and generate receiving addresses while keeping the hardware wallet totally air-gapped. Once the Watch-Only wallet is imported then it can be set to deposit to directly from Whirlpool CoinJoins. 
 
-## Sparrow as a Watch-Only wallet
+## Sparrow as a Watch-Only wallet for COLDCARD
 In order to keep your COLDCARD air-gapped, the Partially Signed Bitcoin Transaction (PSBT) can be utilized to spend bitcoin from the COLDCARD without ever connecting it to the internet. Basically, the public information from the COLDCARD called an XPUB will be used to import the necessary information into Sparrow Wallet on our desktop. By doing this, Sparrow Wallet will be able to generate receive addresses and QR codes, monitor the COLDCARD's balance, and initiate PSBT's. All without exposing any of the private information from the COLDCARD, like the signing key. 
 
 You will use the microSD card to transfer information between the desktop and the COLDCARD. Ensure the microSD card is inserted to the COLDCARD. 
@@ -196,10 +196,10 @@ First, the `.json` file needs to be exported from the COLDCARD, which will conta
 
 This is going to write the file to the microSD card, then you can connect that microSD card to your desktop computer with your USB adaptor. Copy/paste the exported `.json` file to your desktop from the microSD card. Note the file location and now you will switch back to Sparrow Wallet to get it ready to import the `.json` file. 
 
-In Sparrow Wallet, create a new wallet by selecting `File` > `New Wallet`, then you will be asked to name this wallet. Name the wallet whatever you want then click on <kbd>Create Wallet</kbd>. You will notice in the Sparrow Wallet interface lower right-hand corner that the color has changed to green on the toggle switch. This indicates that your wallet is using your instance of BitcoinCore as the back end.
+In Sparrow Wallet, create a new wallet by selecting `File` > `New Wallet`, then you will be asked to name this wallet. Name the wallet whatever you want then click on <kbd>Create Wallet</kbd>. 
 
 <p align="center">
-  <img src="assets/Sparrow22.png">
+  <img src="assets/Sparrow22_1.png">
 </p>
 
 You will see the following screen, you can leave all the settings on the defaults. Then select <kbd>Airgapped Hardware Wallet</kbd>. 
