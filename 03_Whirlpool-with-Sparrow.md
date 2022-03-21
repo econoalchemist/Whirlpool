@@ -179,7 +179,7 @@ You'll also notice that four additional tabs showed up on the right-hand side of
 Next, you'll see how to configure a hardware wallet as a Watch-Only wallet in Sparrow Wallet which allows you to keep an eye on your balance and generate receiving addresses while keeping the hardware wallet totally air-gapped. Once the Watch-Only wallet is imported then it can be set to deposit to directly from Whirlpool CoinJoins. 
 
 ## How to Connect COLDCARD
-In order to keep your COLDCARD air-gapped, the Partially Signed Bitcoin Transaction (PSBT) can be utilized to spend bitcoin from the COLDCARD without ever connecting it to the internet. Basically, the public information from the COLDCARD called an XPUB will be used to import the necessary information into Sparrow Wallet on our desktop. By doing this, Sparrow Wallet will be able to generate receive addresses and QR codes, monitor the COLDCARD's balance, and initiate PSBT's. All without exposing any of the private information from the COLDCARD, like the signing key. 
+In order to keep your COLDCARD air-gapped, the public information from the COLDCARD called an XPUB will be used to import the necessary information into Sparrow Wallet on your desktop. By doing this, Sparrow Wallet will be able to generate receive addresses and QR codes, monitor the COLDCARD's balance, initiate PSBT's, and deposit directly from Whirlpool. All without exposing any of the private information from the COLDCARD, like the signing key. 
 
 You will use the microSD card to transfer information between the desktop and the COLDCARD. Ensure the microSD card is inserted to the COLDCARD. 
 
@@ -238,7 +238,14 @@ You can also save a list of deposit addresses from your COLDCARD and compare thi
   <img src="assets/Sparrow64.png">
 </p>
 
-After applying the changes, you can now navigate through your watch-only wallet in Sparrow Wallet. On the left-hand side of the Sparrow Wallet interface there are six tabs. The <kbd>Transactions</kbd> tab is where you can see information related to the transactions in this watch-only wallet. The <kbd>Send</kbd> tab is where you can create the PSBTs to then export for signing by the COLDCARD. The <kbd>Receive</kbd> tab is where you can generate receive address for your COLDCARD without having to plug in your COLDCARD and log into it. The <kbd>Addresses</kbd> tab shows several deposit and change addresses as well as any balances. The <kbd>UTXOs</kbd> tab shows any unspent transaction outputs and a small graph charting the history. Finally, the <kbd>Settings</kbd> tab is where you can see detailed information about the watch-only wallet such as the master fingerprint, derivation path, & xpub.   
+After applying the changes, you can now navigate through your watch-only wallet in Sparrow Wallet. On the left-hand side of the Sparrow Wallet interface there are six tabs:
+
+- The <kbd>Transactions</kbd> tab is where you can see information related to the transactions in this watch-only wallet. 
+- The <kbd>Send</kbd> tab is where you can create the PSBTs to then export for signing by the COLDCARD. 
+- The <kbd>Receive</kbd> tab is where you can generate receive address for your COLDCARD without having to plug in your COLDCARD and log into it. 
+- The <kbd>Addresses</kbd> tab shows several deposit and change addresses as well as any balances. 
+- The <kbd>UTXOs</kbd> tab shows any unspent transaction outputs and a small graph charting the history. 
+- The <kbd>Settings</kbd> tab is where you can see detailed information about the watch-only wallet such as the master fingerprint, derivation path, & xpub.   
 
 Now you can click on the <kbd>Receive</kbd> tab on the left-hand side of the Sparrow Wallet interface. Then you will be presented with a bitcoin receiving address, a QR code, and some additional details. You can scan this QR code with your mobile Bitcoin wallet, for example, and deposit some bitcoin to your COLDCARD. You should see the transaction show up in Sparrow Wallet after a moment along with a pop-up notification. Also, in BitcoinCore, the transactions should show up there as well. The transaction will remain in a pending status until it receives some blockchain confirmations. In the mean-time, you can click on the <kbd>Transactions</kbd> tab and review further details about your transaction. You can also copy/paste your transaction ID in [mempool.space](https://mempool.space/) to watch for your first confirmation, or use whatever your preferred block explorer is. [Tor Browser](https://www.torproject.org/download/) is a privacy-focused browser.  
 
@@ -248,10 +255,12 @@ Now you can click on the <kbd>Receive</kbd> tab on the left-hand side of the Spa
   <img src="assets/Sparrow30.png">
   </p>
 
-Now you can power off and secure your COLDCARD in a safe place until you want to sign a transaction and spend from it, several addresses will be cataloged in Sparrow Wallet so you can continue depositing to your COLDCARD via Sparrow Wallet without having to reconnect it every time. It is best practice to confirm each receiving address on the COLDCARD itself and or your saved `.csv` file and additionally to only use each address once.
+Now you can power off and secure your COLDCARD in a safe place until you want to sign a transaction and spend from it(covered below). Several addresses will be cataloged in Sparrow Wallet so you can continue depositing to your COLDCARD via Sparrow Wallet without having to reconnect it every time. It is best practice to confirm each receiving address on the COLDCARD itself and/or your saved `.csv` file and additionally to only use each address once.
 
 ## How to Connect Passport
 To import a single signature wallet via QR code, first login to your Passport and enter your passphrase if you are using one. Then from the main menu navigate to `Pair Wallet` > `Sparrow` > `Single-sig` > `QR Code`. Once you press <kbd>CONTINUE</kbd> the Passport will start flashing a series of QR codes, so hold off pressing that for a moment while you prepare Sparrow Wallet on your desktop. 
+
+If you don't have a webcam for your PC, you can also import the necessary information via file transfer on a microSD card. Refer to [this guide](https://bitcoinmagazine.com/technical/how-to-use-passport-hardware-bitcoin-wallet) for details. 
 
 <p align="center">
   <img width="300" src="assets/passport107.jpg">
@@ -295,18 +304,16 @@ After applying the changes, you can now navigate through your watch-only wallet 
 
 ![](assets/sparrow06.png)
 
-On the left-hand side of the Sparrow Wallet interface there are six tabs. The <kbd>Transactions</kbd> tab is where you can see information related to the transactions in this watch-only wallet. The <kbd>Send</kbd> tab is where you can create the PSBTs to then sign with Passport via QR code or microSD card. The <kbd>Receive</kbd> tab is where you can generate receive address for your Passport without having to retrieve the Passport and log into it. The <kbd>Addresses</kbd> tab shows several deposit and change addresses as well as any balances. The <kbd>UTXOs</kbd> tab shows any unspent transaction outputs and a small graph charting the history. Finally, the <kbd>Settings</kbd> tab is where you can see detailed information about the watch-only wallet such as the master fingerprint, derivation path, & xpub.  
+On the left-hand side of the Sparrow Wallet interface there are six tabs:
 
-If you imported your Passport wallet from file, you still need to scan an address to verify with your Passport. Navigate to the `Receive` tab in Sparrow Wallet, this will bring up a Bitcoin receive address along with the QR code.  
+- The <kbd>Transactions</kbd> tab is where you can see information related to the transactions in this watch-only wallet. 
+- The <kbd>Send</kbd> tab is where you can create the PSBTs to then sign with Passport via QR code or microSD card. 
+- The <kbd>Receive</kbd> tab is where you can generate receive address for your Passport without having to retrieve the Passport and log into it. 
+- The <kbd>Addresses</kbd> tab shows several deposit and change addresses as well as any balances. 
+- The <kbd>UTXOs</kbd> tab shows any unspent transaction outputs and a small graph charting the history. 
+- The <kbd>Settings</kbd> tab is where you can see detailed information about the watch-only wallet such as the master fingerprint, derivation path, & xpub.  
 
-<p align="center">
-  <img width="900" src="assets/sparrow09.png">
-  <img width="900" src="assets/sparrow11.jpg">
- </p> 
-
-Now you can scan this Sparrow Wallet QR code with your Passport to verify the wallet import was completed successfully. Your Passport should still be waiting for you to verify that the import was successful. Scan this QR code with your Passport and you should see a prompt on the Passport saying "Pairing Complete". 
-
-Back in Sparrow Wallet you can click on the <kbd>Receive</kbd> tab on the left-hand side menu any time you want to generate a new receive address. You can scan this QR code with your mobile Bitcoin wallet, for example, and deposit some bitcoin to your Passport. You should see the transaction show up in Sparrow Wallet after a moment along with a pop-up notification. Also, in BitcoinCore, the transactions should show up there as well. The transaction will remain in a pending status until it receives some blockchain confirmations. In the mean-time, you can click on the <kbd>Transactions</kbd> tab and review further details about your transaction. You can also copy/paste your transaction ID in [mempool.space](https://mempool.space/) to watch for your first confirmation, or use whatever your preferred block explorer is. [Tor Browser](https://www.torproject.org/download/) is a privacy-focused browser.  
+You can click on the <kbd>Receive</kbd> tab on the left-hand side menu any time you want to generate a new receive address. You can scan this QR code with your mobile Bitcoin wallet or use the address for your mining pool, for example, and deposit some bitcoin to your Passport. You should see the transaction show up in Sparrow Wallet after a moment along with a pop-up notification. Also, in BitcoinCore, the transactions should show up there as well. The transaction will remain in a pending status until it receives some blockchain confirmations. In the mean-time, you can click on the <kbd>Transactions</kbd> tab and review further details about your transaction. You can also copy/paste your transaction ID in [mempool.space](https://mempool.space/) to watch for your first confirmation, or use whatever your preferred block explorer is. [Tor Browser](https://www.torproject.org/download/) is a privacy-focused browser.  
 
 <p align="center">
   <img width="900" src="assets/sparrow12.png">
@@ -331,7 +338,7 @@ Navigate to the `UTXOs` tab on the left-hand side and the `Postmix` tab on the r
 A window will pop up and from the `Mix to wallet` drop-down menu, select the COLDCARD or Passport Watch-Only wallet that you imported. Then you can set the minimum number of mixes you want each UTXO to achieve before being deposited to your hardware wallet. Keep in mind, each UTXO will have a 25% chance of being mixed again even after it hits this number. You can leave `Index range` on the default `Full` setting to use both even and odd indexed addresses. Then click on <kbd>Restart Whirlpool</kbd>. 
 
 <p align="center">
- <img src="assets/sparrow118.png">
+ <img src="assets/sparrow118_1.png">
 </p>
 
 Then you will notice that the button at the bottom has changed to display the watch-only wallet you have selected for the automatic deposits.
