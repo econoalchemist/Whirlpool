@@ -102,7 +102,7 @@ Once you are at your dashboard, you can see the progress of the Bitcoin Initial 
   <img src="assets/RoninUI06.png">
 </p>
 
-Some other vitals you can monitor are uptime, version, temperature, CPU load, and memory usage. Let this process run for a couple of days. Tanto will log you out automatically after some idle time but the processes continue to run in the background. 
+Some other vitals you can monitor are up time, version, temperature, CPU load, and memory usage. Let this process run for a couple of days. Tanto will log you out automatically after some idle time but the processes continue to run in the background. 
 
 The IBD took a total of 2 days, 21 hours, 49 minutes in this demonstration. 
 
@@ -151,7 +151,7 @@ Once you are logged into your RoninDojo UI on mobile, then you can just copy/pas
 </p>
 
 ## The Whirlpool GUI
-This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the backround from your desktop client and powered by your own full node. When you mix from mobile only, the mixing stops as soon as you shut down your mobile Whirlpool client in Samourai Wallet. With the GUI configured, you can shut off your mobile and the mixing will continue from your PC. 
+This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the background from your desktop client and powered by your own full node. When you mix from mobile only, the mixing stops as soon as you shut down your mobile Whirlpool client in Samourai Wallet. With the GUI configured, you can shut off your mobile and the mixing will continue from your PC. 
 
 First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
 
@@ -161,7 +161,7 @@ First, you will need to download the Whirlpool client appropriate for your opera
 
 *In a future release of the RoninDojo UI, the Whirlpool URL will be available from the web interface dashboard and you will no longer need to retrieve this information from the terminal as demonstrated here.*
 
-Once you have your Whilpool client installed and your Samourai Wallet connected to your RoninDojo Tanto, you can make an SSH connection to the RoninDojo and start the Whirlpool service. The Whirlpool .onion URL you need is not available through the RoninDojo UI dashboard. The SSH connection can be made with the same username password you used for the RoninDojo UI.
+Once you have your Whirlpool client installed and your Samourai Wallet connected to your RoninDojo Tanto, you can make an SSH connection to the RoninDojo and start the Whirlpool service. The Whirlpool .onion URL you need is not available through the RoninDojo UI dashboard. The SSH connection can be made with the same username password you used for the RoninDojo UI.
 
 Once connected, navigate to `Samourai Toolkit` > `Whirlpool`:
 
