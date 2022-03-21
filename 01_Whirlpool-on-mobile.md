@@ -1,5 +1,5 @@
 # Whirlpool On Mobile
-This section will demonstrate how to install and setup a new [Samourai Wallet](https://samouraiwallet.com/) on Android. Samourai Wallet is a mobile first, privacy-focused Bitcoin wallet. Some of the privacy-enhancing tools built into Samourai Wallet are:
+This section will demonstrate how to install and setup a new [Samourai Wallet](https://samouraiwallet.com/) on Android. Samourai Wallet is a mobile first, privacy-focused Bitcoin wallet. Additional, connecting Samourai Wallet to the Desktop Whirlpool GUI will be covered. Some of the privacy-enhancing tools built into Samourai Wallet are:
 
 - Whirlpool, a zero-link CoinJoin implementation
 - BIP47, a reusable payment code protocol
@@ -113,7 +113,7 @@ First, you will need to download the Whirlpool client appropriate for your opera
  <img src="assets/RoninUI14.png">
 </p>
 
-Now open the Whirlpool client application you installed earlier. Select the `Standalone: Standalone GUI` option.
+After installing the Whirlpool client application, launch it and then select the `Standalone: Standalone GUI` option.
 
 <p align="center">
  <img src="assets/WhirlpoolGUI00.png">
