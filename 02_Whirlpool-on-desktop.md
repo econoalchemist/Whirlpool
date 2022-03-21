@@ -190,7 +190,7 @@ This is where you can retrieve the .onion URL you need to use in the Whirlpool c
  <img src="assets/RoninUI21.png">
 </p>
 
-Now open the Whirlpool client application you installed earlier. Select the `Advanced: remote CLI` option and where it says `https://my-cli-host:8899` paste the .onion URL from your RoninDojo terminal. Depending on whether or not your are running a Tor daemon or just the Tor browser, you may need to select either `9050` or `9150` for appending the Tor proxy. Leave the API key blank, this will automatically be handled once initialized. Then click on `Connect`. 
+Now open the Whirlpool client application you installed earlier. Select the `Advanced: remote CLI` option and where it says `https://my-cli-host:8899` paste the .onion URL from your RoninDojo terminal. Depending on whether or not your are running a Tor daemon or just the Tor browser, you may need to select either `9050` or `9150` for appending the Tor proxy. Leave the API key blank, this will automatically be handled once initialized. Then click on <kbd>Connect</kbd>. 
  
 <p align="center">
  <img src="assets/RoninUI22.png">
@@ -202,13 +202,13 @@ Give the GUI some time, Tor connections can take a little while. You may need to
  <img src="assets/RoninUI23_1.png">
 </p> 
 
-Once received, then click on `Initialize GUI`.
+Once received, then click on <kbd>Initialize GUI</kbd>.
 
 <p align="center">
  <img src="assets/RoninUI24.png">
 </p> 
 
-Next, enter the passphrase for your Samourai Wallet and click on `Sign in`.
+Next, enter the passphrase for your Samourai Wallet and click on <kbd>Sign in</kbd>.
 
 <p align="center">
  <img src="assets/RoninUI25.png">
