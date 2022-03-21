@@ -413,18 +413,18 @@ On the Passport screen you will be shown the amount of bitcoin being spent & the
 
 Once the transaction is signed by the Passport, a QR code will be displayed on the Passport screen. Back on your desktop, in Sparrow Wallet, select the `Scan QR` button with the camera icon.  
 
-![](assets/sparrow23.png)
+![](assets/sparrowPP_1.png)
 
 This will launch your desktop webcam and you can hold the Passport in front of your webcam so that Sparrow Wallet can read the details of the signed transaction.
 
-![](assets/sparrow26.png)
+![](assets/sparrowPP_4.png)
 
 Once Sparrow Wallet picks up the details of the signed transaction, then you can broadcast the transaction to the Bitcoin network by pressing the <kbd>Broadcast Transaction</kbd> button.  
 
-![](assets/sparrow24.png)
+![](assets/sparrowPP_2.png)
 
 At the time of broadcast you should see the transaction in BitcoinCore as well as receive a notification in Sparrow Wallet. Again, you can copy the transaction ID and paste in your preferred block explorer to watch for confirmations.
                                                           
-![](assets/sparrow25.png)
+![](assets/sparrowPP_3.png)
 
 The main point here is that your Passport is the required signing device while your Sparrow Wallet is your interface, transaction builder, & broadcaster. In this configuration, Sparrow Wallet can do many things like catalog addresses and build transactions but without the signature from your Passport, Sparrow Wallet cannot authorize spending of any bitcoin secured by the Passport. 
