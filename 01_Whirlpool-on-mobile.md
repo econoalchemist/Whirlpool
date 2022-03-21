@@ -9,7 +9,7 @@ This section will demonstrate how to install and setup a new [Samourai Wallet](h
 - Stowaway, a post-mix spending tool that obfuscates the amount being spent
 - Ricochet, a post-mix spending tool that adds additional hops between the final payment destination
 - Advanced coin control
-- Seperate wallets for deposit, pre-mix, & post-mix bitcoin
+- Separate wallets for deposit, pre-mix, & post-mix bitcoin
 
 The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. However, if you are not using your own node then you are trusting someone else's. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. Every Bitcoin wallet, be it mobile or desktop, needs to gather information about wallet balances and transaction history from a Bitcoin node; it is best practice to use your own node but it is not a requirement as many wallet developers provide publicly accessible nodes. This section will demonstrate how to use Samourai Wallet without your own node as this is the simplest and fastest way to start. The other two methods covered in this guide build on these concepts and introduce the more advanced configuration of using your own node.  
 
@@ -104,4 +104,3 @@ Once you have received bitcoin that you would like to mix, simply follow these s
 </p> 
 
 Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. This is why it is a good idea to keep building on your new skills and use the desktop client so that your UTXOs mix 24/7 even when you close your mobile app. 
-
