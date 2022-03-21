@@ -11,7 +11,7 @@ This section will demonstrate how to install and setup a new [Samourai Wallet](h
 - Advanced coin control
 - Seperate wallets for deposit, pre-mix, & post-mix bitcoin
 
-The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. However, if you are not using your own node then you are trusting someone else's. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. Every Bitcoin wallet, mobile or desktop, needs to gather information about wallet balances and transaction history from a Bitcoin node; it is best practice to use your own node but it is not a requirement. This section will demonstrate how to use Samourai Wallet without your own node as this is the simplest and fastest way to start. The other two methods covered in this guide build on these concepts and introduce the more advanced configuration of using your own node.  
+The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. However, if you are not using your own node then you are trusting someone else's. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. Every Bitcoin wallet, be it mobile or desktop, needs to gather information about wallet balances and transaction history from a Bitcoin node; it is best practice to use your own node but it is not a requirement as many wallet developers provide publicly accessible nodes. This section will demonstrate how to use Samourai Wallet without your own node as this is the simplest and fastest way to start. The other two methods covered in this guide build on these concepts and introduce the more advanced configuration of using your own node.  
 
 ## Getting started
 Before you get started, it will help to have a [recovery sheet](https://samouraiwallet.com/recovery) or notebook to write your seed phrase and passphrase information. 
@@ -47,7 +47,7 @@ Next, you can toggle on the option to enable Tor. Leave the option to connect to
   <img width="350" src="assets/SW08.png">
 </p>
 
-Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. Then the app will ask you if you would like to download the [recovery sheet](https://samouraiwallet.com/recovery). 
+Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. After entering your passphrase, the app will ask you if you would like to download the [recovery sheet](https://samouraiwallet.com/recovery). 
 
 <p align="center">
   <img width="350" src="assets/SW12.png">
@@ -96,7 +96,7 @@ Once you have received bitcoin that you would like to mix, simply follow these s
 </p> 
 
 - Select the cycle priority (miners fee), select the pool size appropriate for the amount you are mixing, and select `REVIEW CYCLE DETAILS`. 
-- You will be presented with the details of the TX0 you are about to make. Select `BEGIN CYCLE` once ready and the transaction will be built and then broadcast from your RoninDojo Tanto to the Bitcoin network. 
+- You will be presented with the details of the TX0 you are about to make. Select `BEGIN CYCLE` once ready and the transaction will be built and then broadcast to the Bitcoin network. 
 
 <p align="center">
  <img width="350" src="assets/SW24.png">
