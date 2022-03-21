@@ -113,7 +113,7 @@ First, you will need to download the Whirlpool client appropriate for your opera
  <img src="assets/RoninUI14.png">
 </p>
 
-After installing the Whirlpool client application, launch it and then select the `Standalone: Standalone GUI` option.
+After installing the Whirlpool client application, launch it and then select the `Standalone: Standalone GUI` option. Then click on <kbd>Continue</kbd>.
 
 <p align="center">
  <img src="assets/WhirlpoolGUI00.png">
@@ -125,13 +125,13 @@ Give the GUI some time, Tor connections can take a little while. You may need to
  <img src="assets/WhirlpoolGUI01.png">
 </p> 
 
-Once received, then click on `Initialize GUI`.
+Once received, then click on <kbd>Initialize GUI</kbd>.
 
 <p align="center">
  <img src="assets/WhirlpoolGUI02.png">
 </p> 
 
-Next, enter the passphrase for your Samourai Wallet and click on `Sign in`.
+Next, enter the passphrase for your Samourai Wallet and click on <kbd>Sign in</kbd>.
 
 <p align="center">
  <img src="assets/WhirlpoolGUI03.png">
