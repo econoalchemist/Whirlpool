@@ -344,7 +344,7 @@ A window will pop up and from the `Mix to wallet` drop-down menu, select the COL
 Then you will notice that the button at the bottom has changed to display the watch-only wallet you have selected for the automatic deposits.
 
 <p align="center">
- <img src="assets/sparrow119.png">
+ <img src="assets/sparrow119_1.png">
 </p>
 
 Now you can just leave your UTXOs to re-mix and as they achieve enough mixes they will be automatically deposited to your hardware wallet. Next, you'll see how to spend from your COLDCARD or Passport using Sparrow Wallet and keeping your hardware wallet fully air-gapped. 
