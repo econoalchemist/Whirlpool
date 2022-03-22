@@ -1,4 +1,4 @@
-# Whirlpool On Desktop With RoninDojo
+# Method 2: Whirlpool On Desktop with RoninDojo
 This section will demonstrate how to use Whirlpool on desktop with the Whirlpool GUI configured to run with your own Bitcoin full node, the Tanto by [RoninDojo](https://ronindojo.io/). This will build on the information from the last section on using Whirlpool on mobile only.
 
 If you are not running your own Bitcoin node then you are trusting someone else's. RoninDojo is a FOSS developer team focused exclusively on building the most stable and tailored full node for [Samourai Wallet](https://samouraiwallet.com/) support. With Samourai Wallet and RoninDojo combined, users are empowered with a mobile-first Bitcoin wallet that features privacy-enhancing tools like a Whirlpool CoinJoin implementation and post-mix collaborative spending tools; all powered by the user's own self-hosted Bitcoin full node communicating with the mobile client over Tor. This guide demonstrates setting up a new plug & play full Bitcoin node from [RoninDojo](https://ronindojo.io/) called the Tanto.
@@ -32,7 +32,7 @@ All together the Tanto includes:
   <img src="assets/Tanto03.jpg">
   </p>
 
-## Connecting
+## Step 1: Connecting
 Connecting the Tanto is very simple:
 
 - Plug one end of an Ethernet cable into the back of the Tanto.
@@ -51,7 +51,7 @@ Next, just plug one end of the power cable for the included power supply into yo
 
 The Tanto will automatically power on and start the initial configuration process. Ensure that the power is not interrupted during the automatic initial configuration process. This process takes roughly 10 minutes and you will notice the red light illuminate underneath the Tanto once this process is finished. Then, you will be ready to login to the Tanto through the web interface. 
 
-## Configuring
+## Step 2: Configuring
 Configuring the Tanto is also very easy, it only takes a few minutes and the basic steps are to set your password then login. 
 
 Visit the official [RoninDojo Wiki](https://wiki.ronindojo.io/en/setup/tanto-setup) for detailed instructions and more. 
@@ -96,7 +96,8 @@ Once there is a green check mark next to each service, you can click on the `Tak
   <img src="assets/RoninUI05.png">
 </p>
 
-Once you are at your dashboard, you can see the progress of the Bitcoin Initial Blockchain Download (IBD) and the vitals of your Tanto. The IBD will take about two days to complete, the Tanto is connecting to other Bitcoin nodes and downloading the entire Bitcoin blockchain all the way back to the first block from January 2009. Once the IBD completes, you will have your own full copy of the blockchain and you will use your own copy to verify your transactions against and display your balances in your mobile wallet.  
+## Step 3: Initial Blockchain Download (IBD)
+Once you are at your dashboard, you can see the progress of the Bitcoin IBD and the vitals of your Tanto. The IBD will take about two days to complete, the Tanto is connecting to other Bitcoin nodes and downloading the entire Bitcoin blockchain all the way back to the first block from January 2009. Once the IBD completes, you will have your own full copy of the blockchain and you will use your own copy to verify your transactions against and display your balances in your mobile wallet.  
 
 <p align="center">
   <img src="assets/RoninUI06.png">
@@ -110,6 +111,7 @@ The IBD took a total of 2 days, 21 hours, 49 minutes in this demonstration.
   <img src="assets/RoninUI07.png">
 </p>
 
+## Step 4: Indexing
 Now that the entire Bitcoin blockchain has been downloaded, it needs to be indexed so that it is searchable. The indexing process begins automatically once the IBD is finished, this process can take an additional day. You may notice that the Indexer status in the lower right-hand corner remains on 0%, don't panic! Simply navigate to the `Logs` option on the left-hand side menu and then the `Indexer` tab. You should see something like this screenshot below where the blocks are getting indexed in chunks of 2,000. Just let this process run to completion, again this can take another 24 hours. 
 
 <p align="center">
@@ -122,6 +124,7 @@ Once the Indexer has caught up to the latest block height, you should see both I
   <img src="assets/RoninUI09.png">
 </p>
 
+## Step 5: Connecting to Mobile
 You can click on `Manage` in the lower left-hand corner of the `Dojo` window and this will bring up the QR code that you can use to connect your Samourai Wallet. Make sure to toggle `Display values` to make the QR codes legible. The other QR code is for connecting your own BTC-RPC explorer. The Explorer provides a way to use your own Dojo to feed data to a full fledged Bitcoin blockchain explorer over Tor. Copy the .onion URL & password for the Explorer, paste into Tor Browser, use `ronindojo` for the username, and bookmark page. 
 
 <p align="center">
@@ -150,7 +153,7 @@ Once you are logged into your RoninDojo UI on mobile, then you can just copy/pas
   <img width="350" src="assets/RoninUI13.png">
 </p>
 
-## The Whirlpool GUI
+## Install the Whirlpool GUI
 This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the background from your desktop client and powered by your own full node. 
 
 First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
@@ -161,6 +164,7 @@ First, you will need to download the Whirlpool client appropriate for your opera
 
 *In a future release of the RoninDojo UI, the Whirlpool URL will be available from the web interface dashboard and you will no longer need to retrieve this information from the terminal as demonstrated here.*
 
+## Step 7: Connecting Tanto with the Whirlpool GUI
 Once you have your Whirlpool client installed and your Samourai Wallet connected to your RoninDojo Tanto, you can make an SSH connection to the RoninDojo and start the Whirlpool service. The Whirlpool .onion URL you need is not available through the RoninDojo UI dashboard. The SSH connection can be made with the same username password you used for the RoninDojo UI.
 
 Once connected, navigate to `Samourai Toolkit` > `Whirlpool`:
@@ -190,13 +194,15 @@ This is where you can retrieve the .onion URL you need to use in the Whirlpool c
  <img src="assets/RoninUI21.png">
 </p>
 
-Now open the Whirlpool client application you installed earlier. Select the `Advanced: remote CLI` option and where it says `https://my-cli-host:8899` paste the .onion URL from your RoninDojo terminal. Depending on whether or not your are running a Tor daemon or just the Tor browser, you may need to select either `9050` or `9150` for appending the Tor proxy. Leave the API key blank, this will automatically be handled once initialized. Then click on <kbd>Connect</kbd>. 
+Now open the Whirlpool client application you installed earlier. Select the `Advanced: remote CLI` option and where it says `https://my-cli-host:8899` paste the .onion URL from your RoninDojo terminal. Depending on whether or not your are running a Tor daemon or just the Tor browser, you may need to select either `9050` or `9150` for appending the Tor proxy. Leave the API key blank, this will automatically be handled once initialized. Then click on <kbd>Connect</kbd>. Give the GUI some time, Tor connections can take a little while. You may need to try this a couple times before the connection is made. 
  
 <p align="center">
  <img src="assets/RoninUI22.png">
 </p> 
 
-Give the GUI some time, Tor connections can take a little while. You may need to try this a couple times before the connection is made. But once the connection is made, you will be presented with a screen asking you to input the Whirlpool pairing payload from your Samourai Wallet. In Samourai Wallet, click on the 3-dot menu in the upper right-hand corner and select `Settings` > `Transactions` > `Pair to Whirlpool GUI` at the bottom. This will display a QR code that contains your Whirlpool payload. Simply click on the QR code option in the desktop GUI and this should launch your webcam then hold up the QR code on your mobile so the camera can scan it. 
+
+## Step 8: Connecting Samourai Wallet to the Whirlpool GUI
+Once the connection is made, you will be presented with a screen asking you to input the Whirlpool pairing payload from your Samourai Wallet. In Samourai Wallet, click on the 3-dot menu in the upper right-hand corner and select `Settings` > `Transactions` > `Pair to Whirlpool GUI` at the bottom. This will display a QR code that contains your Whirlpool payload. Simply click on the QR code option in the desktop GUI and this should launch your webcam then hold up the QR code on your mobile so the camera can scan it. 
 
 <p align="center">
  <img src="assets/RoninUI23_1.png">
