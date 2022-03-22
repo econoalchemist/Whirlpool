@@ -1,4 +1,4 @@
-# Whirlpool On Mobile
+# Method 1: Whirlpool On Mobile
 This section will demonstrate how to install and setup a new [Samourai Wallet](https://samouraiwallet.com/) on Android. Samourai Wallet is a mobile first, privacy-focused Bitcoin wallet. Additional, connecting Samourai Wallet to the Desktop Whirlpool GUI will be covered. Some of the privacy-enhancing tools built into Samourai Wallet are:
 
 - Whirlpool, a zero-link CoinJoin implementation
@@ -13,11 +13,13 @@ This section will demonstrate how to install and setup a new [Samourai Wallet](h
 
 The Whirlpool implementation can be used directly from the mobile Samourai Wallet application without any additional configuration. However, if you are not using your own node then you are trusting someone else's. Using Samourai Wallet in connection with your own Dojo on the RoninDojo Tanto provides you with the most privacy conscience solution as you are not trusting someone else's node, you are using your own node. Every Bitcoin wallet, be it mobile or desktop, needs to gather information about wallet balances and transaction history from a Bitcoin node; it is best practice to use your own node but it is not a requirement as many wallet developers provide publicly accessible nodes. This section will demonstrate how to use Samourai Wallet without your own node as this is the simplest and fastest way to start. The other two methods covered in this guide build on these concepts and introduce the more advanced configuration of using your own node.  
 
-## Getting started
+## Step 1: Preparation
 Before you get started, it will help to have a [recovery sheet](https://samouraiwallet.com/recovery) or notebook to write your seed phrase and passphrase information. 
 
+## Step 2: Download
 You can download the Samourai Wallet application from an [F-Droid](https://sovereignty.tools/) repo, thier [website](https://samouraiwallet.com/download), or [Google Play Store](https://play.google.com/store/apps/details?id=com.samourai.wallet&hl=en_US&gl=US).
 
+## Step 3: Initialize
 Simply install the application and follow the on-screen system prompts. Once you launch the application, select `MAINNET`.
 
 <p align="center">
@@ -75,6 +77,7 @@ Finally, you will be presented with your unique PayNym, you can claim it so that
   <img width="300" src="assets/SW19.png">
 </p>
 
+## Step 4: Whirlpool on Mobile
 Now you have a mobile Bitcoin wallet with built in privacy tools that communicates over Tor. Congratulations, this is a great step along the path to sovereignty. Go out and earn some bitcoin in exchange for goods or services, buy some from an ATM, or earn some mining rewards. 
 
 Once you have received bitcoin that you would like to mix, simply follow these steps from your mobile Samourai Wallet:
@@ -105,7 +108,8 @@ Once you have received bitcoin that you would like to mix, simply follow these s
 
 Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. 
 
-However, there is a way to achieve 24/7 mixing, even when you close the application on your mobile. You can install the Whirlpool GUI on your desktop, connect it to your mobile wallet and the desktop GUI will keep your UTXOs mixing. 
+## Step 5: Whirlpool with Standalone GUI
+Going a step further, there is a way to achieve 24/7 mixing, even when you close the application on your mobile. You can install the Whirlpool GUI on your desktop, connect it to your mobile wallet and the desktop GUI will keep your UTXOs mixing. 
 
 First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
 
