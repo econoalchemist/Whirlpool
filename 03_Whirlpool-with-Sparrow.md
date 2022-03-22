@@ -157,7 +157,7 @@ Then you will be presented with a preview describing which pool is appropriate f
  <img src="assets/sparrow114.png">
 </p>  
 
-You will be presented with the overview of the transaction you are creating called "tx0". This transaction it what splits your input into the several outputs you are creating that will be used as inputs to the CoinJoin transactions you are about to participate in when Whirlpooling. 
+You will be presented with the overview of the transaction you are creating called "tx0". This transaction is what splits your input into the several outputs you are creating that will be used as inputs to the CoinJoin transactions you are about to participate in when Whirlpooling. 
 
 You can check all the addresses you are sending to with the different tabs in the `Send` section. There is a graph which gives you a visual indication of how the transaction is being split up; noting the Whirlpool fee, Badbank Change, the Premix UTXOs, and the miners fee. If everything looks good, click on `Broadcast Premix Transaction`. 
 
