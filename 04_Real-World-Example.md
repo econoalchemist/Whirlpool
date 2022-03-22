@@ -130,7 +130,7 @@ At this stage, whatever on-chain history tied to the 0.81 BTC input is still lin
 
 To demonstrate this blending into a crowd effect, the next several pictures illustrate how many possibilities there are when trying to link one of the inputs from this first transaction to one of the outputs. If one of the outputs of any proceeding transaction is used as an input to another Whirlpool CoinJoin transaction then those outputs are marked in red and the paths expanded, again and again. By the end, any blue dot or un-expanded red dot represents a transaction that the suspect entity could be the owner of. 
 
-5 inputs were used in this transaction, trying to follow the possible trail of a suspect entity, any output could belong to them. 3 of the outputs were used in another Whilpool CoinJoin. There are 1 of 5 possibilities. 
+5 inputs were used in this transaction, trying to follow the possible trail of a suspect entity, any output could belong to them. 3 of the outputs were used in another Whirlpool CoinJoin. There are 1 of 5 possibilities. 
 
 ![](assets/wp03.png)
 
