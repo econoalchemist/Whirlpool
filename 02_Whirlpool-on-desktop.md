@@ -153,7 +153,7 @@ Once you are logged into your RoninDojo UI on mobile, then you can just copy/pas
   <img width="350" src="assets/RoninUI13.png">
 </p>
 
-## Install the Whirlpool GUI
+## Step 6: Install the Whirlpool GUI
 This section will demonstrate how to connect the Whirlpool desktop client to your Tanto full node and your Samourai Wallet. With this configuration, you will be able to have your UTXOs mixing non-stop in the background from your desktop client and powered by your own full node. 
 
 First, you will need to download the Whirlpool client appropriate for your operating system. The different options along with accompanying developer signatures can be found [here](https://samouraiwallet.com/download) and detailed installation instructions can be found [here](https://docs.samourai.io/whirlpool/desktop). Be aware you will likely need to install Open JDK as well which is covered in the installation instructions. 
