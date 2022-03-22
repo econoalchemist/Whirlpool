@@ -10,7 +10,7 @@ In this guide you will see how to:
 - How to spend from air-gapped COLDCARD.
 - How to spend from air-gapped Passport.
 
-## Bitcoin Core
+## Step 1: Connect with Bitcoin Core
 If you don't have your own Bitcoin Core node, you can use reputable public Electrum servers as demonstrated in this COLDCARD [UltraQuick guide](https://coldcard.com/docs/ultra-quick). However, there are privacy tradeoffs that come with using the convenience of a public Electrum server. Luckily there are a number of resources available to help you spin up your own Bitcoin node, to learn more check out:
 
 - [BitcoinCore.org](https://bitcoincore.org/en/about/)
@@ -57,7 +57,7 @@ Unfortunately, Bitcoin Core stores your public keys and balances un-encrypted on
 
 Now that Sparrow Wallet is connected with Bitcoin Core, this is a good time to get the hot wallet setup.
 
-## Configuring Sparrow as a Whirlpool Wallet
+## Step 2: Configuring Sparrow as a Whirlpool Wallet
 This section will show you how to set up the hot wallet that you can use for the Whirlpool CoinJoin implementation in Sparrow Wallet. Using Whirlpool will help prevent anyone watching the movement of your transactions on chain from being able to follow your trail. This will also help prevent anyone you spend your bitcoin with from knowing your prior transaction history. 
 
 The important idea to understand here is that you are making a hot wallet in Sparrow that is totally separate from your hardware wallet. You want to keep your hardware wallet totally air-gapped and never have that signing key on a device that is connected to the internet. When you use Whirlpool however, Sparrow Wallet needs to sign CoinJoin transactions as they are created. The benefit of leaving your UTXOs in Sparrow Wallet to mix is that your UTXOs will continually be registered as available inputs when new liquidity enters the mixing pool. Your UTXOs will be able to continue re-mixing again and again for free, so you get more and more anonymity with each mix, this is the incentive to leave your UTXOs mixing. The downside is that you have a Bitcoin wallet connected to the internet with private keys on it, thus the term "hot wallet". 
@@ -125,7 +125,7 @@ You will be asked if you would like to add a password to this wallet. This passw
  <img src="assets/sparrow108.png">
 </p>
 
-## Using Whirlpool
+## Step 3: Using Whirlpool
 Now that you have your wallet all setup, you are ready to start using Whirlpool. You will need some bitcoin deposited into your wallet first. To get a receiving address, navigate to the `Receive` tab on the left-hand side menu and you will be presented with a QR code and the text of your first bitcoin address. Consider using a [non-KYC](https://bitcoiner.guide/nokyconly/) method to acquire bitcoin.   
 
 <p align="center">
@@ -178,7 +178,7 @@ You'll also notice that four additional tabs showed up on the right-hand side of
 
 Next, you'll see how to configure a hardware wallet as a Watch-Only wallet in Sparrow Wallet which allows you to keep an eye on your balance and generate receiving addresses while keeping the hardware wallet totally air-gapped. Once the Watch-Only wallet is imported then it can be set to deposit to directly from Whirlpool CoinJoins. 
 
-## How to Connect COLDCARD
+## Step 4(A): How to Connect COLDCARD
 In order to keep your COLDCARD air-gapped, the public information from the COLDCARD called an XPUB will be used to import the necessary information into Sparrow Wallet on your desktop. By doing this, Sparrow Wallet will be able to generate receive addresses and QR codes, monitor the COLDCARD's balance, initiate PSBT's, and deposit directly from Whirlpool. All without exposing any of the private information from the COLDCARD, like the signing key. 
 
 You will use the microSD card to transfer information between the desktop and the COLDCARD. Ensure the microSD card is inserted to the COLDCARD. 
@@ -257,7 +257,7 @@ Now you can click on the <kbd>Receive</kbd> tab on the left-hand side of the Spa
 
 Now you can power off and secure your COLDCARD in a safe place until you want to sign a transaction and spend from it(covered below). Several addresses will be cataloged in Sparrow Wallet so you can continue depositing to your COLDCARD via Sparrow Wallet without having to reconnect it every time. It is best practice to confirm each receiving address on the COLDCARD itself and/or your saved `.csv` file and additionally to only use each address once.
 
-## How to Connect Passport
+## Step 4(B): How to Connect Passport
 To import a single signature wallet via QR code, first login to your Passport and enter your passphrase if you are using one. Then from the main menu navigate to `Pair Wallet` > `Sparrow` > `Single-sig` > `QR Code`. Once you press <kbd>CONTINUE</kbd> the Passport will start flashing a series of QR codes, so hold off pressing that for a moment while you prepare Sparrow Wallet on your desktop. 
 
 If you don't have a webcam for your PC, you can also import the necessary information via file transfer on a microSD card. Refer to [this guide](https://bitcoinmagazine.com/technical/how-to-use-passport-hardware-bitcoin-wallet) for details. 
@@ -326,7 +326,7 @@ Now you can power off and secure your Passport in a safe place until you want to
 
 When you are ready to sign a transaction to spend bitcoin, it is necessary to create a Partially Signed Bitcoin Transaction (PSBT). You can deposit bitcoin with your Passport stored away but to spend bitcoin, the Passport needs to sign the transaction. Sparrow Wallet is used to build the transaction based on your available Unspent Transaction Outputs (UTXOs) and the information you enter when constructing the transaction. The PSBT details are passed between Sparrow Wallet and the Passport using the QR code exchange method or the microSD card. This is covered below. 
 
-## Mixing Straight to a Hardware Wallet
+## Step 5: Mixing Straight to a Hardware Wallet
 One really cool feature of Whirlpool is that you can mix straight to your hardware wallet. You can set the number of mixes you want each UTXO to achieve and as your UTXOs re-mixes hit that number they will be deposited to your hardware wallet straight from a CoinJoin transaction. Additionally, Sparrow Wallet will add an additional source of randomness to help you avoid creating paterns that could be used as on-chain heuristics; each UTXO that hits your set number of re-mixes will have a 25% chance of being mixed again. When you receive deposits to your hardware wallet straight out of a CoinJoin transaction, it looks as though that UTXO is still in Whirlpool to any outside observer looking on-chain. 
 
 Navigate to the `UTXOs` tab on the left-hand side and the `Postmix` tab on the right-hand side, these are all of your mixing UTXOs. At the bottom, click on <kbd>Mix to</kbd>. 
@@ -349,7 +349,7 @@ Then you will notice that the button at the bottom has changed to display the wa
 
 Now you can just leave your UTXOs to re-mix and as they achieve enough mixes they will be automatically deposited to your hardware wallet. Next, you'll see how to spend from your COLDCARD or Passport using Sparrow Wallet and keeping your hardware wallet fully air-gapped. 
  
-## Signing with the COLDCARD
+## Step 6(A): Signing with the COLDCARD
 When you are ready to sign a transaction to spend bitcoin, it is necessary to create a PSBT in order to maintain the air-gapped benefit. You can deposit bitcoin with your COLDCARD disconnected but to spend bitcoin, the COLDCARD needs to sign the transaction. Sparrow Wallet is used to build the transaction based on your available Unspent Transaction Outputs (UTXOs) and the information you enter when constructing the transaction. The PSBT details are passed between Sparrow Wallet and the COLDCARD using the microSD card. 
 
 To create a PSBT, navigate to the <kbd>Spend</kbd> tab on the left-hand side in Sparrow Wallet. There, you can paste the address you are sending to, add a label, enter an amount to send, and choose a miners fee rate, etc. Once you have everything set, click on <kbd>Create Transaction</kbd>. On the next screen, double check the details then click on <kbd>Finalize Transaction for signing</kbd>. Then you will be asked what you want to do with the finalized PSBT. In this case, click on <kbd>Save Transaction</kbd> and Sparrow Wallet will launch the file explorer. Navigate to the microSD card and save the PSBT there. Then safely eject the microSD card.  
@@ -389,7 +389,7 @@ At the time of broadcast you should see the transaction in BitcoinCore as well a
 
 The main point here is that your COLDCARD is the required signing device while your Sparrow Wallet is your interface, transaction builder, & broadcaster. In this configuration, Sparrow Wallet can do many things like catalog addresses and build transactions but without the signature from your COLDCARD, Sparrow Wallet cannot authorize spending of any of your bitcoin. 
 
-## Signing with the Passport
+## Step 6(B): Signing with the Passport
 To create a PSBT, navigate to the <kbd>Send</kbd> tab on the left-hand side in Sparrow Wallet. There, you can paste the address you are sending to, add a label, enter an amount to send, and choose a miners fee rate, etc. Once you have everything set, click on <kbd>Create Transaction</kbd>. On the next screen, double check the details then click on <kbd>Finalize Transaction for signing</kbd>. Then you will be asked what you want to do with the finalized PSBT. In this case, click on <kbd>Show QR</kbd> and Sparrow Wallet will launch an animated series of QR codes.  
 
 <p align="center">
