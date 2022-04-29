@@ -1,5 +1,5 @@
 # A Real-World Example:
-Now that you have seen how to use Whirlpool, it may be helpful to understand the implications of a fully transparent transaction ledger in the face of an ever increasing adversarial environment. This section will provide that background with a real-world example and an explanation of how bitcoin transactions are scrutinized in such a scenario.
+Before diving into how to use Whirlpool, it may be helpful to understand the implications of a fully transparent transaction ledger in the face of an ever increasing adversarial environment. This section will provide that background with a real-world example and an explanation of how bitcoin transactions are scrutinized in such a scenario.
 
 ## Timeline
 Here is a time line of the recent Canadian Freedom Convoy with notable events as they relate to Bitcoin.
