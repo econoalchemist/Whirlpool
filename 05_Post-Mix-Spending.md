@@ -14,6 +14,13 @@ Both Samourai Wallet and Sparrow Wallet have support for the following address f
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
 
+The wallet software uses different derivation paths to achieve the separate wallets. The Deposit wallet can handle a variety of address types, hence the `m/44'`, `m/49'`, `m/84'`, `m/47'` for each of the BIP designations. 
+
+<p align="center">
+  <img width="400" src="assets/derivationSamourai.png">
+  <img width="400" src="assets/derivationSparrow.png">
+</p>
+  
 - **Deposit Wallet**: this is the wallet you would make your deposits to. UTXOs in this wallet can be used to create inputs for Whirlpool CoinJoins through what is called a "Transaction Zero" (tx0). You can also just spend from this wallet like any other Bitcoin wallet. 
 - **Pre-Mix Wallet**: this is where UTXOs go once they leave the deposit wallet through a tx0. UTXOs that reside here are registered as available inputs for Whirlpool CoinJoins. You do not want to deposit directly to this wallet or spend directly from this wallet, your software interface makes this very easy to manage. 
 - **Post-Mix Wallet**: this is where your UTXOs go once they have been through a Whirlpool CoinJoin. These UTXOs can reside here for as long as you would like them to continue being randomly selected as free-riders to additional Whirlpool CoinJoins for free. 
