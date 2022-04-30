@@ -9,7 +9,7 @@ Both Samourai Wallet and Sparrow Wallet have support for the following address f
 - Pay to Public Key Hash (P2PKH), addresses that look like `17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ` also referred to as "legacy". 
 - Pay to Script Hash (P2SH), addresses that look like `3EEJFjZURxShNr2AoJtbfcvCB749yzP7LP` also referred to as "nested segwit".
 - Pay to Witness Public Key Hash (P2WPKH), addresses that look like `bc1qqmmc3s46efrdq0jglhf8l8jg0xw37exgne6q3k` also referred to as "native segwit" or "Bech32".
-- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7` also referred to as "Taproot".
+- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7` also referred to as "Taproot". Samourai Wallet has support to spend to these addresses, Sparrow Wallet has support to spend to and receive from these addresses. 
 - Testnet Pay to Witness Public Key Hash (P2WPKH), addresses that look like `tb1qqakszcjex7zvjg7slarps5mpdngwlwsc5ll8v7` these are only for testing and retain no value.
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
@@ -17,8 +17,7 @@ Having support for all these address types does not mean that they all work with
 The wallet software uses different derivation paths to achieve the separate wallets. The Deposit wallet can handle a variety of address types, hence the `m/44'`, `m/49'`, `m/84'`, `m/47'` for each of the BIP designations. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84` derivation. 
 
 <p align="center">
-  <img width="400" src="assets/derivationSamourai.png">
-  <img width="400" src="assets/derivationSparrow.png">
+ <img src="assets/derivationSW1.png">
 </p>
   
 - **Deposit Wallet**: this is the wallet you would make your deposits to. UTXOs in this wallet can be used to create inputs for Whirlpool CoinJoins through what is called a "Transaction Zero" (tx0). You can also just spend from this wallet like any other Bitcoin wallet. 
@@ -106,7 +105,7 @@ The "Waterfall Technique" is where you start with the largest pool size you can 
 Another technique that is currently in development with Samourai Wallet is doing an Atomic Swap with Monero. This would require you to have a separate Monero wallet like [Monerujo](https://www.monerujo.io/) because monero will not be implemented in Samourai Wallet. But basically you could construct the Bitcoin transaction that trustlessly swaps your bitcoin with a peer for their Monero to your Monero wallet and your toxic change goes to their Bitcoin wallet. Then at a later time you could swap back for bitcoin or you could spend that Monero, the options are wide open for you. 
 
 ## Whirlpool UTXOs
-After moving from your deposit wallet to your pre-mix wallet through a tx0, your pre-mix UTXOs are ready to be included in Whirlpool CoinJoins. Your wallet and the Whirlpool coordinator automatically take care of this in the background after you initiate your tx0. Each output from a Whirlpool CoinJoin is 1 of 5 equal sized outputs. To an external observer looking at a block explorer, they have no way to make a determination with certainty that a particular output belongs to a particular input. All of the 5 outputs have an equal probability of belonging to any of the 5 inputs. This concept is best illustrated with [KYCP.org](https://kycp.org/#/323df21f0b0756f98336437aa3d2fb87e02b59f1946b714a7b09df04d429dec2). 
+After moving from your deposit wallet to your pre-mix wallet through a tx0, your pre-mix UTXOs are ready to be included in Whirlpool CoinJoins. Your wallet and the Whirlpool coordinator automatically take care of this in the background after you initiate your tx0. Each output from a Whirlpool CoinJoin is 1 of 5 equal sized outputs. To an external observer looking at a block explorer, they have no way to make a determination with certainty that a particular output belongs to a particular input. All of the 5 outputs have an equal probability of belonging to any of the 5 inputs. This concept is illustrated well with [KYCP.org](https://kycp.org/#/323df21f0b0756f98336437aa3d2fb87e02b59f1946b714a7b09df04d429dec2). 
 
 ![](assets/wp01.png)
 
@@ -119,7 +118,7 @@ Here is another way to look at the same Whirlpool CoinJoin transaction, as a tab
 Because all the outputs are the same size and have the same liklihood of belonging to any given input, there is no distinguishing characteristic about them. This is anonymity, the quality or state of being indistinguishable from a crowd. Once this anonymity is achieved, you want to ensure you preserve it so that you can continue spending bitcoin on a public blockchain without revealing details that would reveal prior on-chain transaction history that exposes further details about you as an entity. To learn more about anonymity sets in relation to Whirlpool CoinJoins, read [this article](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7). 
 
 ## BIP47 & PayNyms
-
+[BIP47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki)
 
 ## Post-Mix Spending Tools - Richochet
 
