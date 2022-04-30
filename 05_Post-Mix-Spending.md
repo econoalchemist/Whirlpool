@@ -14,7 +14,7 @@ Both Samourai Wallet and Sparrow Wallet have support for the following address f
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
 
-The wallet software uses different derivation paths to achieve the separate wallets. The Deposit wallet can handle a variety of address types, hence the `m/44'`, `m/49'`, `m/84'`, `m/47'` for each of the BIP designations. 
+The wallet software uses different derivation paths to achieve the separate wallets. The Deposit wallet can handle a variety of address types, hence the `m/44'`, `m/49'`, `m/84'`, `m/47'` for each of the BIP designations. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84` derivation. 
 
 <p align="center">
   <img width="400" src="assets/derivationSamourai.png">
