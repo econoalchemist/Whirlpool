@@ -63,7 +63,7 @@ There are 4 pool sizes in Whirlpool: 0.5, 0.05, 0.01, 0.001 BTC. This means that
 - 9,900 x 0.00101000 BTC UTXOs for Whirlpool inputs carrying a small extra amount for the miners fee. Again, 1k sats used as an example here.
 - 1 x 0.00095000 BTC UTXO as toxic change. 
 
-Note that the Whirlpool coordinator fee remains the same regardless of how much bitcoin you are mixing. If you mix 1 BTC or 100 BTC in the 0.5 pool, you will pay 0.0175 BTC for the coordinator fee either way. 
+Note that the Whirlpool coordinator fee remains the same regardless of how much bitcoin you are mixing. If you mix 1 BTC or 100 BTC in the 0.5 pool as an example, you will pay 0.0175 BTC for the coordinator fee either way. 
 
 Also note that the miner fee included with each pre-mix UTXO can accumulate to a large amount in miner fees as the number of pre-mix UTXOs increases. In the 0.001 pool example above, the total in miner fees is 0.099 BTC. 
 
@@ -84,9 +84,9 @@ You can view this transaction [on KYCP.org](https://kycp.org/#/323df21f0b0756f98
 
 ![](assets/wp13.png)
 
-Each of the 16 equal sized outputs will be individually selected for inputs to down stream Whirlpool CoinJoins. These outputs reside in the "Pre-Mix" wallet as available inputs to Whirlpool CoinJoins. As new Whirlpool transactions are initiated, the coordinator will look for available inputs such as these. The Whirlpool coordinator enforces strict rules that ensure no two outputs from the same tx0 wind up in the same Whirlpool CoinJoin transaction. Each of these 16 outputs carries a small amount of extra bitcoin so that once they are selected as inputs, they can help cover the miners fee for the Whirlpool CoinJoin transaction. 
+Each of the 16 equal sized outputs will be individually selected for inputs to down stream Whirlpool CoinJoins. These outputs reside in the Pre-Mix wallet temporarily as available inputs to Whirlpool CoinJoins. As new Whirlpool transactions are initiated, the coordinator will look for available inputs such as these. The Whirlpool coordinator enforces strict rules that ensure no two outputs from the same tx0 wind up in the same Whirlpool CoinJoin transaction. Each of these 16 outputs carries a small amount of extra bitcoin so that once they are selected as inputs, they can help cover the miners fee for the Whirlpool CoinJoin transaction. 
 
-The coordinator will randomly switch between creating transactions that have either 2 fresh participant UTXOs and 3 re-mix UTXOs or 3 fresh participant UTXOs and 2 re-mix UTXOs. The fresh particpant UTXOs always cover the miner fee and the re-mix UTXOs always get to mix for free. This way, you only pay the Whirlpool coordinator fee once and then your UTXOs can remain in your "Post-Mix" wallet remixing for free for as long as you want to keep them there.
+The coordinator will randomly switch between creating transactions that have either 2 fresh participant UTXOs and 3 re-mix UTXOs or 3 fresh participant UTXOs and 2 re-mix UTXOs. The fresh particpant UTXOs always cover the miner fee and the "free-rider" UTXOs always get to re-mix for free. This way, you only pay the Whirlpool coordinator fee once and then your UTXOs can remain in your Post-Mix wallet remixing for free for as long as you want to keep them there.
 
 ## Toxic Change
 Special considerations should be given to toxic change from the tx0. By default, Samourai Wallet will prompt you to mark the toxic change UTXO as "unspendable" during the tx0 initiation. Marking this UTXO in such a way prevents your wallet from displaying it as an available UTXO and excludes it from your displayed balance. 
@@ -95,9 +95,7 @@ Special considerations should be given to toxic change from the tx0. By default,
 <img width="400" src="assets/toxic.png">
 </p>
 
-In Sparrow Wallet, the toxic change UTXO is automatically sent to your Bad Bank wallet after the tx0, but you can go to that wallet 
-
-You can always navigate to the 3-dot menu in the upper right-hand corner of the Samourai Wallet application and select `Show unspent outputs`, scroll to the bottom of the list and you will see your toxic change listed under `DO Not Spend`. Select the UTXO of interested and then you can update the spending status to "Spedable" if you want to. Then it will be displayed as part of your Deposit wallet balance and spendable again.
+You can always navigate to the 3-dot menu in the upper right-hand corner of the Samourai Wallet application and select `Show unspent outputs`, scroll to the bottom of the list and you will see your toxic change listed under `DO Not Spend`. Select the UTXO of interest and then you can update the spending status to "Spedable" if you want to. Then it will be displayed as part of your Deposit wallet balance and spendable again.
 
 <p align="center">
 <img width="400" src="assets/toxic1.png">
@@ -107,11 +105,11 @@ In Sparrow Wallet, the toxic change is automatically sent to your bad bank walle
 
 ![](assets/toxic2.png)
 
-The issue with toxic change is that on-chain, it is still linked with the tx0 it came from. This means that it is also linked to all the previous transaction history of all the inputs to that tx0. So if an external observer was tracking the movement of bitcoin belonging to a known entity, then they would know that this toxic change output belongs to that entity. Therefore, using on-chain heuristics, the external observer could reasonably concluded that any bitcoin combined with the toxic change in a future transaction also belongs to the known entity. 
+The issue with toxic change is that on-chain, it is still linked with the tx0 it came from. This means that it is also linked to all the previous transaction history of all the inputs to that tx0. So if an external observer was tracking the movement of bitcoin belonging to a known entity, then they would know that this toxic change output belongs to that entity. Therefore, using on-chain heuristics, the external observer could reasonably assume that any bitcoin combined with the toxic change in a future transaction also belongs to the known entity. 
 
-Using that logic, combining a toxic change UTXO with a post-mix UTXO would undo the anonymity benefits gained in Whirlpool. However, because of the wallet structure, you would really need to go out of your way and do something weird to commingle a toxic change UTXO and a Whirlpool output. 
+Using that logic, combining a toxic change UTXO with a Post-Mix UTXO would undo the anonymity benefits gained in Whirlpool. However, because of the wallet structure, you would really need to go out of your way and do something weird to commingle a toxic change UTXO and a Whirlpool output. 
 
-The "Waterfall Technique" is where you start with the largest pool size you can given the available UTXOs in your deposit wallet. Then you take that toxic change output and use it alone in the next largest pool size you can, then repeat this process until you are left with the smallest possible toxic change amount. 
+The "Waterfall Technique" is where you start with the largest pool size you can given your available UTXOs in the Deposit wallet. Then you take that toxic change output and use it alone in the next largest pool size you can, then repeat this process until you are left with the smallest possible toxic change amount. 
 
 Another technique that is currently in development with Samourai Wallet is doing an Atomic Swap with Monero. This would require you to have a separate Monero wallet like [Monerujo](https://www.monerujo.io/) because monero will not be implemented in Samourai Wallet. But basically you could construct the Bitcoin transaction that trustlessly swaps your bitcoin with a peer for their Monero to your Monero wallet and your toxic change goes to their Bitcoin wallet. Then at a later time you could swap back for bitcoin or you could spend that Monero, the options are wide open for you. 
 
