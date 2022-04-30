@@ -6,27 +6,38 @@ In both Samourai Wallet and Sparrow Wallet, the Whirlpool implementation is such
 
 Both Samourai Wallet and Sparrow Wallet have support for the following address formats:
 
-- Pay to Public Key Hash (P2PKH), addresses that look like `17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ` also referred to as "legacy". 
-- Pay to Script Hash (P2SH), addresses that look like `3EEJFjZURxShNr2AoJtbfcvCB749yzP7LP` also referred to as "nested segwit".
-- Pay to Witness Public Key Hash (P2WPKH), addresses that look like `bc1qqmmc3s46efrdq0jglhf8l8jg0xw37exgne6q3k` also referred to as "native segwit" or "Bech32".
-- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7` also referred to as "Taproot". Samourai Wallet has support to spend to these addresses, Sparrow Wallet has support to spend to and receive from these addresses. 
-- Testnet Pay to Witness Public Key Hash (P2WPKH), addresses that look like `tb1qqakszcjex7zvjg7slarps5mpdngwlwsc5ll8v7` these are only for testing and retain no value.
+- Pay to Public Key Hash (P2PKH), addresses that look like `17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ`, also referred to as "legacy". 
+- Pay to Script Hash (P2SH), addresses that look like `3EEJFjZURxShNr2AoJtbfcvCB749yzP7LP`, also referred to as "nested segwit".
+- Pay to Witness Public Key Hash (P2WPKH), addresses that look like `bc1qqmmc3s46efrdq0jglhf8l8jg0xw37exgne6q3k`, also referred to as "native segwit" or "Bech32".
+- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7`, also referred to as "Taproot". Samourai Wallet has support to spend to these addresses, Sparrow Wallet has support to spend to and receive from these addresses. 
+- Testnet Pay to Witness Public Key Hash (P2WPKH), addresses that look like `tb1qqakszcjex7zvjg7slarps5mpdngwlwsc5ll8v7`, these are only for testing and retain no value.
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
 
-The wallet software uses different derivation paths to achieve the separate wallets. The Deposit wallet can handle a variety of address types, hence the `m/44'`, `m/49'`, `m/84'`, `m/47'` for each of the BIP designations. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84` derivation. 
+The wallet software uses different derivation paths to achieve the separate wallets. Derivation paths use different numbers to represent diffenet details about the key path: `m / purpose' / coin_type' / identity'`. In the example below, the Deposit wallet can handle a variety of address types, hence the `m/44'|m/49'|m/84'|m/47'` for each of the different purposes. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84'` purpose. 
 
 <p align="center">
  <img src="assets/derivationSW2.png">
 </p>
   
 - **Deposit Wallet**: this is the wallet you would make your deposits to. UTXOs in this wallet can be used to create inputs for Whirlpool CoinJoins through what is called a "Transaction Zero" (tx0). You can also just spend from this wallet like any other Bitcoin wallet. 
-- **Pre-Mix Wallet**: this is where UTXOs go once they leave the deposit wallet through a tx0. UTXOs that reside here are registered as available inputs for Whirlpool CoinJoins. You do not want to deposit directly to this wallet or spend directly from this wallet, your software interface makes this very easy to manage. 
+- **Pre-Mix Wallet**: this is where UTXOs go once they leave the deposit wallet through a tx0. UTXOs do not reside here for long, this is just a pass through where UTXOs are registered as available inputs for Whirlpool CoinJoins. You do not want to deposit directly to this wallet or spend directly from this wallet, your software interface makes this very easy to manage. 
 - **Post-Mix Wallet**: this is where your UTXOs go once they have been through a Whirlpool CoinJoin. These UTXOs can reside here for as long as you would like them to continue being randomly selected as free-riders to additional Whirlpool CoinJoins for free. 
 - **Bad Bank Wallet**: this is where your toxic change goes from your tx0s. 
 
+In Samourai Wallet, you can toggle from your Deposit wallet to your Post-mix wallet by pressing the Samourai icon in the upper left-hand corner. 
+
+<p align="center">
+ <img width="400" src="assets/wallets00.png">
+ <img width="400" src="assets/wallets01.png">
+</p>
+
+In Sparrow Wallet, you can toggle between the four wallets using the tabs on the far left-hand side of the interface. 
+
+![](assets/wallets02.png)
+
 ## Pools & tx0
-There are 4 pool sizes in Whirlpool: 0.5, 0.05, 0.01, 0.001 BTC. This means that each Whirlpool CoinJoin output will be the same as the pool size. When you select UTXOs from your deposit wallet for Whirlpool CoinJoins, they go through a tx0 first. The results of this tx0 vary based on which pool size you select. For example, if you want to Whirlpool 10 bitcoin, the different pool sizes would produce these results through tx0:
+There are 4 pool sizes in Whirlpool: 0.5, 0.05, 0.01, 0.001 BTC. This means that each Whirlpool output will be the same as the pool size. When you select UTXOs from your deposit wallet for Whirlpool CoinJoins, they go through a tx0 first. The results of this tx0 vary based on which pool size you select. For example, if you want to Whirlpool 10 bitcoin, the different pool sizes would produce these results through tx0:
 
 ### 0.5 Pool
 - 10.00000000 BTC in.
