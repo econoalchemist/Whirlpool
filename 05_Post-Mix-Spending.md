@@ -81,13 +81,17 @@ The coordinator will randomly switch between creating transactions that have eit
 ## Toxic Change
 Special considerations should be given to toxic change from the tx0. By default, Samourai Wallet will prompt you to mark the toxic change UTXO as "unspendable" during the tx0 initiation. Marking this UTXO in such a way prevents your wallet from displaying it as an available UTXO and excludes it from your displayed balance. 
 
-![](assets/toxic.jpg)
+<p align="center">
+<img width="400" src="assets/toxic.png">
+</p>
 
 In Sparrow Wallet, the toxic change UTXO is automatically sent to your Bad Bank wallet after the tx0, but you can go to that wallet 
 
 You can always navigate to the 3-dot menu in the upper right-hand corner of the Samourai Wallet application and select `Show unspent outputs`, scroll to the bottom of the list and you will see your toxic change listed under `DO Not Spend`. Select the UTXO of interested and then you can update the spending status to "Spedable" if you want to. Then it will be displayed as part of your Deposit wallet balance and spendable again.
 
-![](assets/toxic1.png)
+<p align="center">
+<img width="400" src="assets/toxic1.png">
+</p>
 
 In Sparrow Wallet, the toxic change is automatically sent to your bad bank wallet after the tx0. You can go to the Bad Bank wallet tab and spend that UTXO from there at anytime. 
 
