@@ -127,7 +127,23 @@ Here is another way to look at the same Whirlpool CoinJoin transaction, as a tab
 Because all the outputs are the same size and have the same liklihood of belonging to any given input, there is no distinguishing characteristic about them. This is anonymity, the quality or state of being indistinguishable from a crowd. Once this anonymity is achieved, you want to ensure you preserve it so that you can continue spending bitcoin on a public blockchain without revealing details that would reveal prior on-chain transaction history that exposes further details about you as an entity. To learn more about anonymity sets in relation to Whirlpool CoinJoins, read [this article](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7). 
 
 ## BIP47 & PayNyms
-[BIP47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki)
+[BIP47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) enables reusable payment codes that can be displayed like a static Bitcoin address on a website or a shop window for example. The advantage with the payment code is that external observers cannot see any transaction history or balances from the payment code like they can with a Bitcoin address. 
+
+At a high-level, details are combined from the payment codes belonging to both transaction participants, resulting in an index of addresses that is only known to the two participants. This way, anyone who approaches a publicly displayed payment code and connects to it with the on-chain notification transaction will be able to send payments to the resulting addresses that are unique to that particular connection. There is no need for an active server to deliver a fresh address each time, as is the case with a payment server like [BTCPayserver](https://btcpayserver.org/). 
+
+This is an example of a BIP47 payment code:
+
+`PM8TJK7rnkDXabzmo4ZyxX49JxdLWhbFANDr4eBCwk1shDEs1qDysW5hFCFr6hschwJe4ny7C7GcSnsNPzBYvE6giabxfJyNSrAWRJYCoHMo7iveHned`
+
+This can also be displayed as a QR code:
+
+<p align="center">
+ <img width="400" src="assets/icysun189_QRcode.png">
+</p>
+
+PayNyms on the other hand, are an implementation of BIP47 used in Samourai Wallet and Sparrow Wallet. PayNyms are derived from hashing your payment code to generate a unique robot avatar and a unique name. The avatar and name make it easier for humans to interpret and handle. Samourai Wallet maintains a directory of PayNyms if you want to explore, search, and connect with others: [https://paynym.is/](https://paynym.is/).
+
+![](icysun189.png)
 
 ## Post-Mix Spending Tools - Richochet
 
