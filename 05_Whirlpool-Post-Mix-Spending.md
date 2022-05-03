@@ -138,12 +138,35 @@ This is an example of a BIP47 payment code:
 This can also be displayed as a QR code:
 
 <p align="center">
- <img width="400" src="assets/icysun189_QRcode.png">
+ <img width="300" src="assets/icysun189_QRcode.png">
 </p>
 
 PayNyms on the other hand, are an implementation of BIP47 used in Samourai Wallet and Sparrow Wallet. PayNyms are derived from hashing your payment code to generate a unique robot avatar and a unique name. The avatar and name make it easier for humans to interpret and handle. Samourai Wallet maintains a directory of PayNyms if you want to explore, search, and connect with others: [https://paynym.is/](https://paynym.is/).
 
-![](assets/icysun189.png)
+<p align="center">
+ <img src="assets/icysun189.png">
+</p>
+
+PayNyms can be used in a couple of different ways. You can use them to make direct payments to someone else's PayNym by making the on-chain connection and generating the index of secret addresses. There is no need for collaboration from the receiver; you can just scan their payment code, make the on-chain connection, and start sending payments to them. 
+
+The other way to use PayNyms is through collaborative transactions like Stowaway and StonewallX2 which will be covered in later sections. 
+
+First, making the on-chain connection will be demonstrated. 
+
+- Find the payment code you are interested in, paynym.is was used in this example. 
+- In Samourai Wallet, press the `blue "+" sign` then the `PayNym icon`.
+- Press `SCAN QR CODE`, alternatively you can paste a copied payment code if you have it on your clipboard.
+- Scan the QR code for the payment code you want to establish a connection with. 
+
+![](assets/paynym09.png)
+
+- The PayNym details will populate on your screen, press `FOLLOW`.
+- Confirm that you want to follow this PayNym. 
+- Once followed, then you can connect, press `CONNECT`.
+- A dialog will appear telling you the total amount for the connection, 15k sats + miners fee. Press `OK, FOLLOW`.
+- The PayNym contact status will change to display both `Following` & `Connected`, you will also see the pending confirmations. 
+
+![](assets/paynym10.png)
 
 ## Post-Mix Spending Tools - Richochet
 
