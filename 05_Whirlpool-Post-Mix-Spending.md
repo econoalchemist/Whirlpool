@@ -168,6 +168,19 @@ First, making the on-chain connection will be demonstrated.
 
 ![](assets/paynym10.png)
 
+Once your on-chain connection has been confirmed, you can navigate back to your PayNym and press the paper airplane icon to initiate a payment to your contact from your deposit wallet. Simply enter the amount, review transaction, and broadcast.
+
+![](assets/paynym17.png)
+
+Alternativively, you spend from your Post-Mix wallet directly to your PayNym contact. 
+
+- Navigate to your Post-Mix wallet, press the `blue "+" sign` and select `Send`.
+- Press the avatar icon in the uppeer right-hand corner. 
+- Select your contact from the list that pops up. 
+- Enter your amount, review transaction, and broadcast.
+
+![](assets/paynym18.png)
+
 ## Post-Mix Spending Tools - Richochet
 
 ## Post-Mix Spending Tools - Stowaway
