@@ -143,7 +143,7 @@ This can also be displayed as a QR code:
 
 PayNyms on the other hand, are an implementation of BIP47 used in Samourai Wallet and Sparrow Wallet. PayNyms are derived from hashing your payment code to generate a unique robot avatar and a unique name. The avatar and name make it easier for humans to interpret and handle. Samourai Wallet maintains a directory of PayNyms if you want to explore, search, and connect with others: [https://paynym.is/](https://paynym.is/).
 
-![](icysun189.png)
+![](assets/icysun189.png)
 
 ## Post-Mix Spending Tools - Richochet
 
