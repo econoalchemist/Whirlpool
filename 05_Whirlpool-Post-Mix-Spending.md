@@ -151,6 +151,7 @@ PayNyms can be used in a couple of different ways. You can use them to make dire
 
 The other way to use PayNyms is through collaborative transactions like Stowaway and StonewallX2 which will be covered in later sections. 
 
+### Samourai Wallet 
 First, making the on-chain connection will be demonstrated. 
 
 - Find the payment code you are interested in, paynym.is was used in this example. 
@@ -180,6 +181,45 @@ Alternativively, you spend from your Post-Mix wallet directly to your PayNym con
 - Enter your amount, review transaction, and broadcast.
 
 ![](assets/paynym18.png)
+
+### Sparrow Wallet
+Sparrow Wallet also has all the same features as just described with sending direct PayNym payments with Samourai Wallet. The layout of the interface is just a little different. 
+
+- In Sparrow Wallet, navigate to `Tools` > `Show PayNym`.
+- Copy a payment code and paste it in the `Find Contact` dialog box. 
+- Then click on `Add Contact`.
+
+<p align="center">
+ <img width="400" src="assets/paynym19.png">
+ <img width="400" src="assets/paynym20.png">
+</p>
+
+- Once the PayNym is added, you will have the option to make the on-chain connection by clicking `Link Contact`.
+- A dialog box will appear informing you that this notification transaction will cost 546 sats. Click `Send` to initiate.
+
+<p align="center">
+ <img width="400" src="assets/paynym21.png">
+ <img width="400" src="assets/paynym22.png">
+</p>
+
+- You can send directly from your deposit wallet by navigating to the `Deposit` tab and then the `Send` tab. 
+- Click on the drop-down menu from the `Pay To` dialog box and select `PayNym or Payment Code`.
+- Select your connected PayNym contact then click on `Send Directly`. 
+
+<p align="center">
+ <img width="400" src="assets/paynym23.png">
+ <img width="400" src="assets/paynym24.png">
+</p>
+
+- Enter a label. 
+- Enter an amount.
+- Follow the prompts to create, sign, and broadcast your transaction. 
+- All of those steps can be followed from the Post-Mix wallet to spend from there as well. 
+
+<p align="center">
+ <img width="400" src="assets/paynym25.png">
+ <img width="400" src="assets/paynym26.png">
+</p>
 
 ## Post-Mix Spending Tools - Richochet
 
