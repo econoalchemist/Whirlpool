@@ -221,10 +221,10 @@ Sparrow Wallet also has all the same features as just described with sending dir
  <img width="400" src="assets/paynym26.png">
 </p>
 
-## Post-Mix Spending Tools - Richochet
-
 ## Post-Mix Spending Tools - Stowaway
+
+## Post-Mix Spending Tools - StonewallX2
 
 ## Post-Mix Spending Tools - Stonewall
 
-## Post-Mix Spending Tools - StonewallX2
+## Post-Mix Spending Tools - Richochet
