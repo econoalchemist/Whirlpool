@@ -226,19 +226,37 @@ Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount be
 
 ![](assets/stowaway00.png)
 
-The above image illustrates a Stowaway transaction on-chain. 
+- The above image illustrates a Stowaway transaction on-chain. 
+- You can see that the three inputs were 0.01, 0.00993439, & 0.01644414 for total of 0.03637853 input.
+- The two outputs where 0.00484087 and 0.03144414 (and 0.00009352 for a miners fee)
+- The spender sent 0.015 to the receiver in this transaction, but that amount does not match any inputs or outputs as it is obfuscated. 
+- The receiver collaborated by providing the 0.01644414 input and received this amount back plus the 0.015 payment for the total 0.03144414 output.
+- The 0.00484087 output was the spender's change.
 
-You can see that the three inputs were 0.01, 0.00993439, & 0.01644414 for total of 0.03637853 input.
+An external observer would have no way of knowing this transaction is anything different than what is presented at face value. The common input ownership heuristics are broken because of the multiple inputs and outputs, the consideration must be made that multiple people contributed to the inputs. 
 
-The two outputs where 0.00484087 and 0.03144414 (and 0.00009352 for a miners fee)
+Anyone you are sending a Stowaway transaction to will need to be using Samourai Wallet or Sparrow Wallet with their PayNym. At a minimum the PayNyms should be following each other but it is not necessary to make the on-chain notification transaction to "connect" the PayNyms. 
 
-The spender sent 0.015 to the receiver in this transaction, but that amount does not match any inputs or outputs as it is obfuscated. 
+Collaborators will need to have a way of communicating with eachother out of band, like with a messaging app, phone call, etc.
 
-The receiver collaborated by providing the 0.01644414 input and received this amount back plus the 0.015 payment for the total 0.03144414 output.
+### Samourai Wallet
+To compose a Stowaway transaction in Samourai Wallet:
 
-The 0.00484087 output was the spender's change.
+- navigate to your Post-Mix wallet.
+- Select the `blue "+" sign` then `Send`.
+- Toggle on `Cahoots`.
+- Select `Stowaway`.
+- Select `Online`. 
 
-An external observer would have no way of knowing this transaction is anything different than what is presented at face value. The common input ownership heuristics are broken because of the multiple inputs and outputs, the consideration must be made that multiple people contributed to the inputs.  
+![](assets/stowaway10.png)
+
+- Select your collaborator from your contact list.
+- Enter the amount you would like to send. Select `Review Transaction` when finished. 
+- Set your miner fee amount and select `Begin Stowaway`.
+
+![](assets/stowaway11.png)
+
+
 
 ## Post-Mix Spending Tools - StonewallX2
 
