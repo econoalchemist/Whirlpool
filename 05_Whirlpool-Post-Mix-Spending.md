@@ -222,6 +222,23 @@ Sparrow Wallet also has all the same features as just described with sending dir
 </p>
 
 ## Post-Mix Spending Tools - Stowaway
+Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount being spent. The person you collaborate with will be the one receiving the spend. You provide some inputs, the receiver provides some inputs, you receive your change output, the receiver gets their change plus the amount you sent them thus the actual amount spent is hidden in that total. 
+
+![](assets/stowaway00.png)
+
+The above image illustrates a Stowaway transaction on-chain. 
+
+You can see that the three inputs were 0.01, 0.00993439, & 0.01644414 for total of 0.03637853 input.
+
+The two outputs where 0.00484087 and 0.03144414 (and 0.00009352 for a miners fee)
+
+The spender sent 0.015 to the receiver in this transaction, but that amount does not match any inputs or outputs as it is obfuscated. 
+
+The receiver collaborated by providing the 0.01644414 input and received this amount back plus the 0.015 payment for the total 0.03144414 output.
+
+The 0.00484087 output was the spender's change.
+
+An external observer would have no way of knowing this transaction is anything different than what is presented at face value. The common input ownership heuristics are broken because of the multiple inputs and outputs, the consideration must be made that multiple people contributed to the inputs.  
 
 ## Post-Mix Spending Tools - StonewallX2
 
