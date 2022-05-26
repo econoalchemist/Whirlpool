@@ -252,11 +252,20 @@ To compose a Stowaway transaction in Samourai Wallet:
 
 - Select your collaborator from your contact list.
 - Enter the amount you would like to send. Select `Review Transaction` when finished. 
-- Set your miner fee amount and select `Begin Stowaway`.
+- Set your miner fee amount.
+- Contact your collaborating peer and let them know to listen for your transaction from their wallet.
+- Select `Begin Stowaway`.
 
 ![](assets/stowaway11.png)
 
+- Details of the transaction will be communicated between peers encrypted over Tor on the Soroban communication layer. 
+- You will see the progress of the transaction build progress through 5 steps in less than 10 seconds. 
+- Once finished, review the details and select `Send`.
+- A pop up dialog will ask you if you are sure you want to broadcast this transaction, select yes. 
 
+![](assets/stowaway12.png)
+
+The collaborating peer will receive their input to the transaction back with the amount you sent them added to the new output. The actual amount sent is obfuscated. 
 
 ## Post-Mix Spending Tools - StonewallX2
 
