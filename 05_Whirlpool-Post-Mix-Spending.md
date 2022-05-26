@@ -267,6 +267,9 @@ To compose a Stowaway transaction in Samourai Wallet:
 
 The collaborating peer will receive their input to the transaction back with the amount you sent them added to the new output. The actual amount sent is obfuscated. 
 
+### Sparrow Wallet
+
+
 ## Post-Mix Spending Tools - StonewallX2
 
 ## Post-Mix Spending Tools - Stonewall
