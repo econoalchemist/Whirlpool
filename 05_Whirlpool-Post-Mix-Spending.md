@@ -221,7 +221,7 @@ Sparrow Wallet also has all the same features as just described with sending dir
  <img width="400" src="assets/paynym26.png">
 </p>
 
-## Post-Mix Spending Tools - Stowaway
+## Collaborative Post-Mix Spending Tools - Stowaway
 Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount being spent. The person you collaborate with will be the one receiving the spend. You provide some inputs, the receiver provides some inputs, you receive your change output, the receiver gets their change plus the amount you sent them thus the actual amount spent is hidden in that total. 
 
 ![](assets/stowaway00.png)
