@@ -310,7 +310,46 @@ The amount sent was 69 sats, but you would never know that as an external observ
 
 ![](assets/mempooltestnet.png)
 
-## Post-Mix Spending Tools - StonewallX2
+## Collaborative Post-Mix Spending Tools - StonewallX2
+StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. Two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner.
+
+Here is how a StonewallX2 will look on-chain:
+
+### Samourai Wallet
+
+### Sparrow Wallet
+- navigate to the `Postmix` tab then `Send`. 
+- Enter the address you want to spend to.
+- Add a label.
+- Enter an amount. 
+- Set the miners fee rate.
+- Click on the blue coin stack in the lower left-hand corner of the transaction graph and you will notice that it changes to a person icon.
+
+![](assets/sparrowstonewallx2_00.png)
+
+- In the pop-up window, select your collaborating peer from the drop-down list of contacts.
+- Then select `Next` to initiate the StonewallX2 transaction. 
+- This is when you will want to notify your collaborating peer to listen for your transaction request from their wallet, this is done with an out of band communication method of your choice.
+
+![](assets/sparrowstonewallx2_01.png)
+
+You will wait a moment while your collaborating peer accepts the request and the transaction is built. Both peers are providing inputs to the transaction.
+
+![](assets/sparrowstonewallx2_02.png)
+
+After a moment, you will be presented with a summary of the transaction that has been created. If everything looks good then select `Sign & Broadcast`.
+
+![](assets/sparrowstonewallx2_03.png)
+
+Once the transaction is broadcast, you will receive a a green check mark. 
+
+![](assets/sparrowstonewallx2_04.png)
+
+You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/d86ef43f016b8ed7d41f3a1520b6d641ee058eac53488fd33ad544213319536c)
+
+The transaction has four outputs and two of them are the same size, one 25,000 sat spend and one 25,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs.
+
+![](assets/mempoolstonewallx2.png)
 
 ## Post-Mix Spending Tools - Stonewall
 
