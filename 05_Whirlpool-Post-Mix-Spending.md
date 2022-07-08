@@ -154,8 +154,9 @@ The other way to use PayNyms is through collaborative transactions like Stowaway
 ### Samourai Wallet 
 First, making the on-chain connection will be demonstrated. 
 
-- Find the payment code you are interested in, paynym.is was used in this example. 
+- Find the payment code you are interested in, [paynym.is](https://paynym.is/) was used in this example. 
 - In Samourai Wallet, press the `blue "+" sign` then the `PayNym icon`.
+- Once on the PayNym screen, press the `blue "+" sign` again.
 - Press `SCAN QR CODE`, alternatively you can paste a copied payment code if you have it on your clipboard.
 - Scan the QR code for the payment code you want to establish a connection with. 
 
@@ -173,7 +174,7 @@ Once your on-chain connection has been confirmed, you can navigate back to your 
 
 ![](assets/paynym17.png)
 
-Alternativively, you spend from your Post-Mix wallet directly to your PayNym contact. 
+Alternativively, you can spend from your Post-Mix wallet directly to your PayNym contact. 
 
 - Navigate to your Post-Mix wallet, press the `blue "+" sign` and select `Send`.
 - Press the avatar icon in the uppeer right-hand corner. 
@@ -190,16 +191,16 @@ Sparrow Wallet also has all the same features as just described with sending dir
 - Then click on `Add Contact`.
 
 <p align="center">
- <img width="400" src="assets/paynym19.png">
- <img width="400" src="assets/paynym20.png">
+ <img width="500" src="assets/paynym19.png">
+ <img width="500" src="assets/paynym20.png">
 </p>
 
 - Once the PayNym is added, you will have the option to make the on-chain connection by clicking `Link Contact`.
 - A dialog box will appear informing you that this notification transaction will cost 546 sats. Click `Send` to initiate.
 
 <p align="center">
- <img width="400" src="assets/paynym21.png">
- <img width="400" src="assets/paynym22.png">
+ <img width="500" src="assets/paynym21.png">
+ <img width="500" src="assets/paynym22.png">
 </p>
 
 - You can send directly from your deposit wallet by navigating to the `Deposit` tab and then the `Send` tab. 
@@ -207,8 +208,8 @@ Sparrow Wallet also has all the same features as just described with sending dir
 - Select your connected PayNym contact then click on `Send Directly`. 
 
 <p align="center">
- <img width="400" src="assets/paynym23.png">
- <img width="400" src="assets/paynym24.png">
+ <img width="500" src="assets/paynym23.png">
+ <img width="500" src="assets/paynym24.png">
 </p>
 
 - Enter a label. 
@@ -217,8 +218,8 @@ Sparrow Wallet also has all the same features as just described with sending dir
 - All of those steps can be followed from the Post-Mix wallet to spend from there as well. 
 
 <p align="center">
- <img width="400" src="assets/paynym25.png">
- <img width="400" src="assets/paynym26.png">
+ <img width="500" src="assets/paynym25.png">
+ <img width="500" src="assets/paynym26.png">
 </p>
 
 ## Collaborative Post-Mix Spending Tools - Stowaway
@@ -268,7 +269,46 @@ To compose a Stowaway transaction in Samourai Wallet:
 The collaborating peer will receive their input to the transaction back with the amount you sent them added to the new output. The actual amount sent is obfuscated. 
 
 ### Sparrow Wallet
+To create a Stowaway transaction in Sparrow Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. 
 
+- Navigate to your `Postmix` wallet tab, then the `Send` tab.
+- Select the drop-down option on the right-hand side of the `Pay to` field. 
+- Select `PayNym or Payment code`.
+
+![](assets/sparrowstowaway00.png)
+
+- In the pop-up window, scroll down your contact list to your collaborator's PayNym and click on it.
+- Then select the option to `Send Collaboratively`.
+
+![](assets/sparrowstowaway01.png)
+
+- Enter a label for your transaction, enter the amount to send, and set the miner fee rate.
+- Then select the blue Mix Partner icon in the lower left-hand corner of the transaction graph.
+
+![](assets/sparrowstowaway02.png)
+
+- On the pop-up screen, you will see that your selected PayNym collaborator is already selected. 
+- Select `Next` to initiate the transaction. 
+- This is when you want to inform your collaborating partner that it is time for them to listen from their wallet. This is an out of band communication.
+
+![](assets/sparrowstowaway03.png)
+
+- Once your mix partner accepts the request, the transaction will be built.
+- It takes some inputs from both parties returning the appropriate change to each.
+- The receiver's change includes the amount you sent them.
+- If everything looks good, select `Sign & Broadcast`.
+
+![](assets/sparrowstowaway04.png)
+
+- Once the transaction is broadcast, you will receive a confirmation. 
+
+![](assets/sparrowstowaway05.png)
+
+You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/80a917fb9a64977bb032bd707efbde39ae92aee00db98d0d4c4c9e60cbf78784)
+
+The amount sent was 69 sats, but you would never know that as an external observor to this transaction. 
+
+![](assets/mempooltestnet.png)
 
 ## Post-Mix Spending Tools - StonewallX2
 
