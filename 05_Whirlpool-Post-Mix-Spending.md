@@ -313,7 +313,9 @@ The amount sent was 69 sats, but you would never know that as an external observ
 ## Collaborative Post-Mix Spending Tools - StonewallX2
 StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. Two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner.
 
-Here is how a StonewallX2 will look on-chain:
+Here is how a StonewallX2 will look [on-chain](https://kycp.org/#/4c49b28a82c4f43b8facf8538ffaf05fa76cce46194ca07b9ca4916f9faeff0e):
+
+![](assets/stonewall_example.png)
 
 ### Samourai Wallet
 
@@ -352,5 +354,6 @@ The transaction has four outputs and two of them are the same size, one 25,000 s
 ![](assets/mempoolstonewallx2.png)
 
 ## Post-Mix Spending Tools - Stonewall
+
 
 ## Post-Mix Spending Tools - Richochet
