@@ -311,9 +311,9 @@ The amount sent was 69 sats, but you would never know that as an external observ
 ![](assets/mempooltestnet.png)
 
 ## Collaborative Post-Mix Spending Tools - StonewallX2
-StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. Two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner.
+StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner.
 
-Here is how a StonewallX2 will look [on-chain](https://kycp.org/#/4c49b28a82c4f43b8facf8538ffaf05fa76cce46194ca07b9ca4916f9faeff0e):
+Here is how a StonewallX2 (and a Stonewall) will look [on-chain](https://kycp.org/#/4c49b28a82c4f43b8facf8538ffaf05fa76cce46194ca07b9ca4916f9faeff0e):
 
 ![](assets/Stonewall_example.png)
 
@@ -353,7 +353,47 @@ The transaction has four outputs and two of them are the same size, one 25,000 s
 
 ![](assets/mempoolstonewallx2.png)
 
-## Post-Mix Spending Tools - Stonewall
+## Non-Collaborative Post-Mix Spending Tools - Stonewall
 
+
+Here is how a Stonewall (and a StonewallX2) will look [on-chain](https://kycp.org/#/f1592e0bec2af9e812d6ada0a46c267885d36358eab54f55098867a718828f53):
+Stonewall is a non-collaborative spending tool that helps break on-chain heuristics and maintain anonymity. On-chain, Stonewall and StonewallX2 transactions are indistinguishable; they both always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to the sender's wallet. In the case of a Stonewall transaction, the wallet will build the transaction using multiple inputs and it will have four outputs, only one is the spend and the other three are all sent back to the sender's wallet with one of them being the same size as the spend. 
+
+![](assets/Stonewall_example2.png)
+
+### Samourai Wallet
+
+### Sparrow Wallet
+- Enter the address you wish to spend to.
+- Add a label.
+- Enter the amount to spend
+- Set the miner fee rate
+
+Notice the difference in how the transaction is constructed when selecting the `Efficiency` setting; there are two outputs, the spend and the change:
+
+![](assets/sparrow_stonewall_00.png)
+
+Contrast that with selecting the `Privacy` setting; this builds a Stonewall transaction where there are four outputs including a decoy spend:
+
+![](assets/sparrow_stonewall_01.png)
+
+- Click on `Create Transaction`.
+- Then on the next screen, click on `Finalize Transaction for Signing`.
+
+![](assets/sparrpw_stonewall_02.png)
+
+If everything looks good on the next screen, select `Sign`.
+
+![](assets/sparrpw_stonewall_03.png)
+
+Once signed, you can broadcast the transaction.
+
+![](assets/sparrpw_stonewall_04.png)
+
+You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/317c307730fa5c1a900b97dc6a7e2acce65c50d14dd9a645ece3c91e04a69d42)
+
+![](mempool_stonewall.png)
+
+The transaction has four outputs and two of them are the same size, one 690,000 sat spend and one 690,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs.
 
 ## Post-Mix Spending Tools - Richochet
