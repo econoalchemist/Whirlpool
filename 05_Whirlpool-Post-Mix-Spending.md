@@ -380,15 +380,15 @@ Contrast that with selecting the `Privacy` setting; this builds a Stonewall tran
 - Click on `Create Transaction`.
 - Then on the next screen, click on `Finalize Transaction for Signing`.
 
-![](assets/sparrpw_stonewall_02.png)
+![](assets/sparrow_stonewall_02.png)
 
 If everything looks good on the next screen, select `Sign`.
 
-![](assets/sparrpw_stonewall_03.png)
+![](assets/sparrow_stonewall_03.png)
 
 Once signed, you can broadcast the transaction.
 
-![](assets/sparrpw_stonewall_04.png)
+![](assets/sparrow_stonewall_04.png)
 
 You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/317c307730fa5c1a900b97dc6a7e2acce65c50d14dd9a645ece3c91e04a69d42)
 
