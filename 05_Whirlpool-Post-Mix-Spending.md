@@ -315,7 +315,7 @@ StonewallX2 is another collaborative spending tool that helps break on-chain heu
 
 Here is how a StonewallX2 will look [on-chain](https://kycp.org/#/4c49b28a82c4f43b8facf8538ffaf05fa76cce46194ca07b9ca4916f9faeff0e):
 
-![](assets/stonewall_example.png)
+![](assets/Stonewall_example.png)
 
 ### Samourai Wallet
 
