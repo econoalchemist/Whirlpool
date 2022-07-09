@@ -392,7 +392,7 @@ Once signed, you can broadcast the transaction.
 
 You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/317c307730fa5c1a900b97dc6a7e2acce65c50d14dd9a645ece3c91e04a69d42)
 
-![](mempool_stonewall.png)
+![](assets/mempool_stonewall.png)
 
 The transaction has four outputs and two of them are the same size, one 690,000 sat spend and one 690,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs.
 
