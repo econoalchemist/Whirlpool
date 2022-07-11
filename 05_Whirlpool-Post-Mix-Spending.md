@@ -152,7 +152,7 @@ PayNyms can be used in a couple of different ways. You can use them to make dire
 The other way to use PayNyms is through collaborative transactions like Stowaway and StonewallX2 which will be covered in later sections. 
 
 ### Samourai Wallet 
-First, making the on-chain connection will be demonstrated. 
+First, making the on-chain connection will be demonstrated: 
 
 - Find the payment code you are interested in, [paynym.is](https://paynym.is/) was used in this example. 
 - In Samourai Wallet, press the `blue "+" sign` then the `PayNym icon`.
@@ -381,16 +381,38 @@ The transaction has four outputs and two of them are the same size, one 25,000 s
 ![](assets/mempoolstonewallx2.png)
 
 ## Non-Collaborative Post-Mix Spending Tools - Stonewall
-
-
 Here is how a Stonewall (and a StonewallX2) will look [on-chain](https://kycp.org/#/f1592e0bec2af9e812d6ada0a46c267885d36358eab54f55098867a718828f53):
-Stonewall is a non-collaborative spending tool that helps break on-chain heuristics and maintain anonymity. On-chain, Stonewall and StonewallX2 transactions are indistinguishable; they both always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to the sender's wallet. In the case of a Stonewall transaction, the wallet will build the transaction using multiple inputs and it will have four outputs, only one is the spend and the other three are all sent back to the sender's wallet with one of them being the same size as the spend. 
+Stonewall is a non-collaborative spending tool that helps break on-chain heuristics and maintain anonymity. On-chain, Stonewall and StonewallX2 transactions are indistinguishable; they both always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned. In the case of a Stonewall transaction, the wallet will build the transaction using multiple inputs and four outputs, only one is the spend and the other three are all sent back to the sender's wallet with one of them being the same size as the spend. Both Samourai Wallet and Sparrow Wallet will attempt to compose a Stonewall transaction by default when spending.  
 
 ![](assets/Stonewall_example2.png)
 
 ### Samourai Wallet
+To make a Stonewall transaction with Samourai Wallet:
+
+- Navigate to your Post-Mix wallet and press the blue "+" sign.
+- Select `Send`.
+- Paste or scan the address you want to spend to.
+
+![](assets/samourai_stonewall_00.png)
+
+- Enter the amount to spend and press on `REVIEW TRANSACTION`.
+- Set the miner fee rate.
+- By default, Stonewall protection will be enabled if the wallet has the necessary UTXOs to create one. You will notice the entropy bits at the bottom, this can change if you slide the miner fee rate to different amounts. The wallet is trying different UTXOs for inputs as you do this.
+- If everything looks good, press `SEND`.
+- Confirm that you want to spend when prompted. 
+- Then you will get the green confirmation screen that the transaction has been broadcast.
+
+![](assets/samourai_stonewall_01.png)
+
+You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/5a951ba9898c5c3a74dad399d7121b286893fffb957093df0272d8a918d912ff)
+
+The transaction has four outputs and two of them are the same size, one 42,000 sat spend and one 42,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs. Three out of the four outputs are being returned to the sender's post-mix wallet.
+
+![](assets/mempool_samourai_stonewall.png)
 
 ### Sparrow Wallet
+To make a Stonewall spend with Sparrow Wallet:
+
 - Enter the address you wish to spend to.
 - Add a label.
 - Enter the amount to spend
