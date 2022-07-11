@@ -326,10 +326,10 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
 - Select `STONEWALLX2`.
 
 <p align="center">
- <img width="250" src="assets/samourai_stonewallX2_00.jpg">
- <img width="250" src="assets/samourai_stonewallX2_01.jpg">
- <img width="250" src="assets/samourai_stonewallX2_02.jpg">
- <img width="250" src="assets/samourai_stonewallX2_03.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_00.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_01.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_02.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_03.jpg">
  </p>
  
  - Select `Online`.
@@ -338,10 +338,10 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
  - Then press `REVIEW TRANSACTION`.
 
 <p align="center">
- <img width="250" src="assets/samourai_stonewallX2_04.jpg">
- <img width="250" src="assets/samourai_stonewallX2_05.jpg">
- <img width="250" src="assets/samourai_stonewallX2_06.jpg">
- <img width="250" src="assets/samourai_stonewallX2_07.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_04.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_05.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_06.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_07.jpg">
  </p>
  
  - Set the miners fee rate. 
@@ -353,10 +353,10 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
  - Then you will have a chance to review the transaction before broadcasting, you will also receive a promt asking you if you are sure you want to broadcast the transaction.
 
 <p align="center">
- <img width="250" src="assets/samourai_stonewallX2_08.jpg">
- <img width="250" src="assets/samourai_stonewallX2_09.jpg">
- <img width="250" src="assets/samourai_stonewallX2_10.jpg">
- <img width="250" src="assets/samourai_stonewallX2_11.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_08.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_09.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_10.jpg">
+ <img width="240" src="assets/samourai_stonewallX2_11.jpg">
  </p>
 
 ### Sparrow Wallet
