@@ -148,8 +148,7 @@ For example, you can log into your RoninDojo UI from your mobile phone with the 
 Once you are logged into your RoninDojo UI on mobile, then you can just copy/paste the .onion URL and password for the Explorer into your Tor browser as well, leave the username blank, you can book mark this page as well and now you have a mobile block explorer that uses your own Dojo as a backend and communicates with it via Tor. 
 
 <p align="center">
-  <img width="350" src="assets/RoninUI12.png">
-  <img width="350" src="assets/RoninUI13.png">
+  <img width="700" src="assets/RoninUI12.png">
 </p>
 
 ## Step 6: Install the Whirlpool GUI
