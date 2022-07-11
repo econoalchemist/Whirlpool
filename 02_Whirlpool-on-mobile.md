@@ -23,24 +23,19 @@ You can download the Samourai Wallet application from an [F-Droid](https://sover
 Simply install the application and follow the on-screen system prompts. Once you launch the application, select `MAINNET`.
 
 <p align="center">
-  <img width="350" src="assets/SW00.png">
-  <img width="350" src="assets/SW01.png">
+  <img src="assets/SW00.png">
 </p>
 
 Next, you will be greeted with a helpful on-boarding presentation. 
 
 <p align="center">
-  <img width="249" src="assets/SW02.png">
-  <img width="249" src="assets/SW03.png">
-  <img width="249" src="assets/SW04.png">
-  <img width="249" src="assets/SW05.png">
+  <img src="assets/SW01.png">
 </p>
 
 Next, you will be asked to choose a directory to store your encrypted wallet backup file. Then allow system access. 
 
 <p align="center">
-  <img width="350" src="assets/SW06.png">
-  <img width="350" src="assets/SW07.png">
+  <img src="assets/SW02.png">
 </p>
 
 Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node. Then press the `Create a new wallet` button in Samourai Wallet. Or if you have a wallet to import then select the option to `Restore an existing wallet` instead.  
