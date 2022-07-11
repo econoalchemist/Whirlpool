@@ -241,7 +241,7 @@ Anyone you are sending a Stowaway transaction to will need to be using Samourai 
 Collaborators will need to have a way of communicating with eachother out of band, like with a messaging app, phone call, etc.
 
 ### Samourai Wallet
-To compose a Stowaway transaction in Samourai Wallet:
+To create a collaborative Stowaway transaction in Samourai Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. 
 
 - navigate to your Post-Mix wallet.
 - Select the `blue "+" sign` then `Send`.
@@ -269,7 +269,7 @@ To compose a Stowaway transaction in Samourai Wallet:
 The collaborating peer will receive their input to the transaction back with the amount you sent them added to the new output. The actual amount sent is obfuscated. 
 
 ### Sparrow Wallet
-To create a Stowaway transaction in Sparrow Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. 
+To create a collaborative Stowaway transaction in Sparrow Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. 
 
 - Navigate to your `Postmix` wallet tab, then the `Send` tab.
 - Select the drop-down option on the right-hand side of the `Pay to` field. 
@@ -318,8 +318,50 @@ Here is how a StonewallX2 (and a Stonewall) will look [on-chain](https://kycp.or
 ![](assets/Stonewall_example.png)
 
 ### Samourai Wallet
+To create a StonewallX2 transaction in Samourai Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. Also, if the receiver of this collaborative spend is a PayNym then you need to be following them as well. 
+
+- Navigate to your Post-Mix wallet.
+- Press the blue "+" sign and select `Send`.
+- Paste or scan the receiving address, or if sending to a PayNym select them from your contact list by pressing the person icon.
+- Select `STONEWALLX2`.
+
+<p align="center">
+ <img width="250" src="assets/samourai_stonewallX2_00.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_01.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_02.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_03.jpg">
+ </p>
+ 
+ - Select `Online`.
+ - Select your collaborating peer from your contact list once it populates. 
+ - Enter an amount to send.
+ - Then press `REVIEW TRANSACTION`.
+
+<p align="center">
+ <img width="250" src="assets/samourai_stonewallX2_04.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_05.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_06.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_07.jpg">
+ </p>
+ 
+ - Set the miners fee rate. 
+ - Double check the details.
+ - Use your preferred out of band communication method to alert your collaborating peer to start listening for your request from their wallet.
+ - Press `BEGIN STONEWALLX2`.
+ - You will see the request being sent.
+ - You will see the progress of the 5 steps.
+ - Then you will have a chance to review the transaction before broadcasting, you will also receive a promt asking you if you are sure you want to broadcast the transaction.
+
+<p align="center">
+ <img width="250" src="assets/samourai_stonewallX2_08.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_09.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_10.jpg">
+ <img width="250" src="assets/samourai_stonewallX2_11.jpg">
+ </p>
 
 ### Sparrow Wallet
+To create a StonewallX2 transaction in Sparrow Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. Also, if the receiver of this collaborative spend is a PayNym then you need to be following them as well. 
+
 - navigate to the `Postmix` tab then `Send`. 
 - Enter the address you want to spend to.
 - Add a label.
