@@ -23,7 +23,7 @@ You can download the Samourai Wallet application from an [F-Droid](https://sover
 Simply install the application and follow the on-screen system prompts. Once you launch the application, select `MAINNET`.
 
 <p align="center">
-  <img src="assets/SW00.png">
+  <img width="700" src="assets/SW00.png">
 </p>
 
 Next, you will be greeted with a helpful on-boarding presentation. 
@@ -35,7 +35,7 @@ Next, you will be greeted with a helpful on-boarding presentation.
 Next, you will be asked to choose a directory to store your encrypted wallet backup file. Then allow system access. 
 
 <p align="center">
-  <img src="assets/SW02.png">
+  <img width="700" src="assets/SW02.png">
 </p>
 
 Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node. Then press the `Create a new wallet` button in Samourai Wallet. Or if you have a wallet to import then select the option to `Restore an existing wallet` instead.  
@@ -47,7 +47,7 @@ Next, you can toggle on the option to enable Tor. Leave the option to connect to
 Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. After entering your passphrase, the app will ask you if you would like to download the [recovery sheet](https://samouraiwallet.com/recovery). 
 
 <p align="center">
-  <img width="350" src="assets/SW04.png">
+  <img width="700" src="assets/SW04.png">
 </p>
 
 The next screen will present your 12-word seed phrase. Do not share these words with anyone for any reason. These 12-words are a human-readable representation of your Bitcoin private key. Anyone who gains access to these words and passphrase can take your bitcoin. Do not take a screenshot of these words. Do not take a picture of these words. Do not save them in a text file or other digital format. Make sure you write these down in order and then secure this seed phrase like it was cash, gold, or jewelry. Many people choose to stamp their wallet recovery information (seed phrase and passphrase) into metal that can withstand extreme environments such as fire and flooding. You can find further information on this topic [here](https://www.econoalchemist.com/post/backup).
@@ -59,8 +59,7 @@ The next screen will present your 12-word seed phrase. Do not share these words 
 Then you will be asked to confirm the passphrase you entered and then create a PIN. The PIN will be required to access the Samourai Wallet application, use a strong PIN that is not easy to guess or the same as your primary phone access PIN. 
 
 <p align="center">
-  <img width="350" src="assets/SW15.JPG">
-  <img width="350" src="assets/SW16.png">
+  <img width="700" src="assets/SW05.png">
 </p>
 
 Finally, you will be presented with your unique PayNym, you can claim it so that others can easily connect with you. Then you will be at the home screen, you can click on the blue `+` sign to see options for Whirlpool, Send, Receive, and PayNym. The receive option for example is where you can generate new Bitcoin addresses.   
