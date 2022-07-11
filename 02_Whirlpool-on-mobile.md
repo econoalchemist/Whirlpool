@@ -41,7 +41,7 @@ Next, you will be asked to choose a directory to store your encrypted wallet bac
 Next, you can toggle on the option to enable Tor. Leave the option to connect to your own Dojo toggled off to use the default settings which will communicate with the Samourai Wallet Dojo node instead of your own private Dojo node. Then press the `Create a new wallet` button in Samourai Wallet. Or if you have a wallet to import then select the option to `Restore an existing wallet` instead.  
 
 <p align="center">
-  <img width="350" src="assets/SW08.png">
+  <img width="350" src="assets/SW03.png">
 </p>
 
 Next you will be asked to create a passphrase. Using a strong, high-entropy passphrase will help protect your bitcoin in the event that your 12-word seed phrase is ever compromised. Check the box that says you understand that no one can help you recover a lost or forgotten passphrase. Keep in mind too that any passphrase you enter will generate a completely different wallet, so make sure you are writing this down correctly and double checking your work. If you ever need to restore your wallet and you enter a passphrase that is off by even a single character then it will generate a completely different wallet. After entering your passphrase, the app will ask you if you would like to download the [recovery sheet](https://samouraiwallet.com/recovery). 
