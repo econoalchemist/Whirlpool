@@ -325,24 +325,14 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
 - Paste or scan the receiving address, or if sending to a PayNym select them from your contact list by pressing the person icon.
 - Select `STONEWALLX2`.
 
-<p align="center">
- <img width="240" src="assets/samourai_stonewallX2_00.jpg">
- <img width="240" src="assets/samourai_stonewallX2_01.jpg">
- <img width="240" src="assets/samourai_stonewallX2_02.jpg">
- <img width="240" src="assets/samourai_stonewallX2_03.jpg">
- </p>
+![](assets/samourai_stonewallX2_00.png)
  
  - Select `Online`.
  - Select your collaborating peer from your contact list once it populates. 
  - Enter an amount to send.
  - Then press `REVIEW TRANSACTION`.
 
-<p align="center">
- <img width="240" src="assets/samourai_stonewallX2_04.jpg">
- <img width="240" src="assets/samourai_stonewallX2_05.jpg">
- <img width="240" src="assets/samourai_stonewallX2_06.jpg">
- <img width="240" src="assets/samourai_stonewallX2_07.jpg">
- </p>
+![](assets/samourai_stonewallX2_01.png)
  
  - Set the miners fee rate. 
  - Double check the details.
@@ -352,12 +342,7 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
  - You will see the progress of the 5 steps.
  - Then you will have a chance to review the transaction before broadcasting, you will also receive a promt asking you if you are sure you want to broadcast the transaction.
 
-<p align="center">
- <img width="240" src="assets/samourai_stonewallX2_08.jpg">
- <img width="240" src="assets/samourai_stonewallX2_09.jpg">
- <img width="240" src="assets/samourai_stonewallX2_10.jpg">
- <img width="240" src="assets/samourai_stonewallX2_11.jpg">
- </p>
+![](assets/samourai_stonewallX2_02.png)
 
 ### Sparrow Wallet
 To create a StonewallX2 transaction in Sparrow Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. Also, if the receiver of this collaborative spend is a PayNym then you need to be following them as well. 
