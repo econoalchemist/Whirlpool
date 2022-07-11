@@ -65,9 +65,7 @@ Then you will be asked to confirm the passphrase you entered and then create a P
 Finally, you will be presented with your unique PayNym, you can claim it so that others can easily connect with you. Then you will be at the home screen, you can click on the blue `+` sign to see options for Whirlpool, Send, Receive, and PayNym. The receive option for example is where you can generate new Bitcoin addresses.   
 
 <p align="center">
-  <img width="300" src="assets/SW17.png">
-  <img width="300" src="assets/SW18.png">
-  <img width="300" src="assets/SW19.png">
+  <img width="300" src="assets/SW06.png">
 </p>
 
 ## Step 4: Whirlpool on Mobile
@@ -79,16 +77,14 @@ Once you have received bitcoin that you would like to mix, simply follow these s
 - This will launch the mobile Whirlpool client, again select the `Whirlpool` button. 
 
 <p align="center">
- <img width="350" src="assets/SW20.png">
- <img width="350" src="assets/SW21.png">
+ <img width="700" src="assets/SW07.png">
 </p> 
 
 - Select the option to `Mix UTXOs`.  
 - A list of the available UTXOs from your deposit wallet will be displayed. Select the UTXOs you would like to mix and then click on `NEXT`. Keep in mind, if any of these UTXOs have history that you do not want connected on-chain, consider selecting them independent of each other. 
 
 <p align="center">
- <img width="350" src="assets/SW22.png">
- <img width="350" src="assets/SW23.png">
+ <img width="350" src="assets/SW08.png">
 </p> 
 
 - Select the cycle priority (miners fee), select the pool size appropriate for the amount you are mixing, and select `REVIEW CYCLE DETAILS`. 
