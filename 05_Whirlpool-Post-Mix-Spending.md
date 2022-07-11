@@ -2,7 +2,7 @@
 This section will explore some basic concepts related to the wallet structure around Whirlpool and demonstrate the post-mix spending tools built into [Samourai Wallet](https://samouraiwallet.com/) and [Sparrow Wallet](https://www.sparrowwallet.com/). Considerations should be made when spending Whirlpool Unspent Transaction Outputs (UTXOs) so that the anonymity benefits are kept intact. There are transaction tools that help you spend your post-mix bitcoin in a way that maintains anonymity, each tool offers different techniques and it's important to understand the differences so that you can always use the right tool for the job.
 
 ## Basic Wallet Structure
-In both Samourai Wallet and Sparrow Wallet, the Whirlpool implementation is such that there is a four wallet structure used. These four wallets are all managed by your wallet software in the background, and from the user's perspective you can navigate between wallets seamlessly. Structuring the wallets in such a way is important so that your UTXOs remain sequestered from eachother, this way your UTXOs follow a logical path through the different stages along their way to the post-mix stage and arrive there with out any deterministic links to prior transaction history.  
+In both Samourai Wallet and Sparrow Wallet, the Whirlpool implementation is such that there is a four wallet structure used. These four wallets are all managed by your wallet software in the background, and from the user's perspective you can navigate between wallets seamlessly. Structuring the wallets in such a way is important so that your UTXOs remain sequestered from each other, this way your UTXOs follow a logical path through the different stages along their way to the post-mix stage and arrive there with out any deterministic links to prior transaction history.  
 
 Both Samourai Wallet and Sparrow Wallet have support for the following address formats:
 
@@ -14,7 +14,7 @@ Both Samourai Wallet and Sparrow Wallet have support for the following address f
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
 
-The wallet software uses different derivation paths to achieve the separate wallets. Derivation paths use different numbers to represent diffenet details about the key path: `m / purpose' / coin_type' / identity'`. In the example below, the Deposit wallet can handle a variety of address types, hence the `m/44'|m/49'|m/84'|m/47'` for each of the different purposes. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84'` purpose. 
+The wallet software uses different derivation paths to achieve the separate wallets. Derivation paths use different numbers to represent different details about the key path: `m / purpose' / coin_type' / identity'`. In the example below, the Deposit wallet can handle a variety of address types, hence the `m/44'|m/49'|m/84'|m/47'` for each of the different purposes. The Pre-Mix, Post-Mix, & Bad Bank bank wallets only handle the `m/84'` purpose. 
 
 <p align="center">
  <img src="assets/derivationSW2.png">
@@ -69,7 +69,7 @@ Also note that the miner fee included with each pre-mix UTXO can accumulate to a
 
 tx0 applies in both Samourai Wallet and Sparrow Wallet. A tx0 is always constructed in such a way that one or more inputs from your deposit wallet are divided into:
 
-- Several like-sized outputs, these are the pre-mix UTXOs that will go into Whirlpol CoinJoins later.
+- Several like-sized outputs, these are the pre-mix UTXOs that will go into Whirlpool CoinJoins later.
 - One output for the Whirlpool coordinator fee.
 - One output for the remaining change, this is called "Toxic Change".
 
@@ -86,7 +86,7 @@ You can view this transaction [on KYCP.org](https://kycp.org/#/323df21f0b0756f98
 
 Each of the 16 equal sized outputs will be individually selected for inputs to down stream Whirlpool CoinJoins. These outputs reside in the Pre-Mix wallet temporarily as available inputs to Whirlpool CoinJoins. As new Whirlpool transactions are initiated, the coordinator will look for available inputs such as these. The Whirlpool coordinator enforces strict rules that ensure no two outputs from the same tx0 wind up in the same Whirlpool CoinJoin transaction. Each of these 16 outputs carries a small amount of extra bitcoin so that once they are selected as inputs, they can help cover the miners fee for the Whirlpool CoinJoin transaction. 
 
-The coordinator will randomly switch between creating transactions that have either 2 fresh participant UTXOs and 3 re-mix UTXOs or 3 fresh participant UTXOs and 2 re-mix UTXOs. The fresh particpant UTXOs always cover the miner fee and the "free-rider" UTXOs always get to re-mix for free. This way, you only pay the Whirlpool coordinator fee once and then your UTXOs can remain in your Post-Mix wallet remixing for free for as long as you want to keep them there.
+The coordinator will randomly switch between creating transactions that have either 2 fresh participant UTXOs and 3 re-mix UTXOs or 3 fresh participant UTXOs and 2 re-mix UTXOs. The fresh participant UTXOs always cover the miner fee and the "free-rider" UTXOs always get to re-mix for free. This way, you only pay the Whirlpool coordinator fee once and then your UTXOs can remain in your Post-Mix wallet remixing for free for as long as you want to keep them there.
 
 ## Toxic Change
 Special considerations should be given to toxic change from the tx0. By default, Samourai Wallet will prompt you to mark the toxic change UTXO as "unspendable" during the tx0 initiation. Marking this UTXO in such a way prevents your wallet from displaying it as an available UTXO and excludes it from your displayed balance. 
@@ -95,7 +95,7 @@ Special considerations should be given to toxic change from the tx0. By default,
 <img width="400" src="assets/toxic.png">
 </p>
 
-You can always navigate to the 3-dot menu in the upper right-hand corner of the Samourai Wallet application and select `Show unspent outputs`, scroll to the bottom of the list and you will see your toxic change listed under `DO Not Spend`. Select the UTXO of interest and then you can update the spending status to "Spedable" if you want to. Then it will be displayed as part of your Deposit wallet balance and spendable again.
+You can always navigate to the 3-dot menu in the upper right-hand corner of the Samourai Wallet application and select `Show unspent outputs`, scroll to the bottom of the list and you will see your toxic change listed under `DO Not Spend`. Select the UTXO of interest and then you can update the spending status to "Spendable" if you want to. Then it will be displayed as part of your Deposit wallet balance and spendable again.
 
 <p align="center">
 <img width="400" src="assets/toxic1.png">
@@ -105,7 +105,8 @@ In Sparrow Wallet, the toxic change is automatically sent to your bad bank walle
 
 ![](assets/toxic2.png)
 
-The issue with toxic change is that on-chain, it is still linked with the tx0 it came from. This means that it is also linked to all the previous transaction history of all the inputs to that tx0. So if an external observer was tracking the movement of bitcoin belonging to a known entity, then they would know that this toxic change output belongs to that entity. Therefore, using on-chain heuristics, the external observer could reasonably assume that any bitcoin combined with the toxic change in a future transaction also belongs to the known entity. 
+The issue with toxic change is that on-chain, it is still linked with the tx0 it came from. This means that it is also linked to all the previous transaction history of all the inputs to that tx0. So if an external observer was tracking the movement of bitcoin belonging to a known entity, then they would know that this toxic change
+ output belongs to that entity. Therefore, using on-chain heuristics, the external observer could reasonably assume that any bitcoin combined with the toxic change in a future transaction also belongs to the known entity. 
 
 Using that logic, combining a toxic change UTXO with a Post-Mix UTXO would undo the anonymity benefits gained in Whirlpool. However, because of the wallet structure, you would really need to go out of your way and do something weird to commingle a toxic change UTXO and a Whirlpool output. 
 
@@ -124,7 +125,7 @@ Here is another way to look at the same Whirlpool CoinJoin transaction, as a tab
   <img src="assets/wp12.png">
 </p>  
 
-Because all the outputs are the same size and have the same liklihood of belonging to any given input, there is no distinguishing characteristic about them. This is anonymity, the quality or state of being indistinguishable from a crowd. Once this anonymity is achieved, you want to ensure you preserve it so that you can continue spending bitcoin on a public blockchain without revealing details that would reveal prior on-chain transaction history that exposes further details about you as an entity. To learn more about anonymity sets in relation to Whirlpool CoinJoins, read [this article](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7). 
+Because all the outputs are the same size and have the same likelihood of belonging to any given input, there is no distinguishing characteristic about them. This is anonymity, the quality or state of being indistinguishable from a crowd. Once this anonymity is achieved, you want to ensure you preserve it so that you can continue spending bitcoin on a public blockchain without revealing details that would reveal prior on-chain transaction history that exposes further details about you as an entity. To learn more about anonymity sets in relation to Whirlpool CoinJoins, read [this article](https://medium.com/samourai-wallet/diving-head-first-into-whirlpool-anonymity-sets-4156a54b0bc7). 
 
 ## BIP47 & PayNyms
 [BIP47](https://github.com/bitcoin/bips/blob/master/bip-0047.mediawiki) enables reusable payment codes that can be displayed like a static Bitcoin address on a website or a shop window for example. The advantage with the payment code is that external observers cannot see any transaction history or balances from the payment code like they can with a Bitcoin address. 
@@ -174,10 +175,10 @@ Once your on-chain connection has been confirmed, you can navigate back to your 
 
 ![](assets/paynym17.png)
 
-Alternativively, you can spend from your Post-Mix wallet directly to your PayNym contact. 
+Alternatively, you can spend from your Post-Mix wallet directly to your PayNym contact. 
 
 - Navigate to your Post-Mix wallet, press the `blue "+" sign` and select `Send`.
-- Press the avatar icon in the uppeer right-hand corner. 
+- Press the avatar icon in the upper right-hand corner. 
 - Select your contact from the list that pops up. 
 - Enter your amount, review transaction, and broadcast.
 
@@ -236,9 +237,10 @@ Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount be
 
 An external observer would have no way of knowing this transaction is anything different than what is presented at face value. The common input ownership heuristics are broken because of the multiple inputs and outputs, the consideration must be made that multiple people contributed to the inputs. 
 
-Anyone you are sending a Stowaway transaction to will need to be using Samourai Wallet or Sparrow Wallet with their PayNym. At a minimum the PayNyms should be following each other but it is not necessary to make the on-chain notification transaction to "connect" the PayNyms. 
+Anyone you are sending a Stowaway transaction to will need to be using Samourai Wallet or Sparrow
+ Wallet with their PayNym. At a minimum the PayNyms should be following each other but it is not necessary to make the on-chain notification transaction to "connect" the PayNyms. 
 
-Collaborators will need to have a way of communicating with eachother out of band, like with a messaging app, phone call, etc.
+Collaborators will need to have a way of communicating with each other out of band, like with a messaging app, phone call, etc.
 
 ### Samourai Wallet
 To create a collaborative Stowaway transaction in Samourai Wallet, make sure you and your collaborator are following each other's PayNyms, it is not necessary to make the on-chain connection though. 
@@ -306,7 +308,7 @@ To create a collaborative Stowaway transaction in Sparrow Wallet, make sure you 
 
 You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/80a917fb9a64977bb032bd707efbde39ae92aee00db98d0d4c4c9e60cbf78784)
 
-The amount sent was 69 sats, but you would never know that as an external observor to this transaction. 
+The amount sent was 69 sats, but you would never know that as an external observer to this transaction. 
 
 ![](assets/mempooltestnet.png)
 
@@ -340,7 +342,7 @@ To create a StonewallX2 transaction in Samourai Wallet, make sure you and your c
  - Press `BEGIN STONEWALLX2`.
  - You will see the request being sent.
  - You will see the progress of the 5 steps.
- - Then you will have a chance to review the transaction before broadcasting, you will also receive a promt asking you if you are sure you want to broadcast the transaction.
+ - Then you will have a chance to review the transaction before broadcasting, you will also receive a prompt asking you if you are sure you want to broadcast the transaction.
 
 ![](assets/samourai_stonewallX2_02.png)
 
@@ -406,7 +408,8 @@ To make a Stonewall transaction with Samourai Wallet:
 
 You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/5a951ba9898c5c3a74dad399d7121b286893fffb957093df0272d8a918d912ff)
 
-The transaction has four outputs and two of them are the same size, one 42,000 sat spend and one 42,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs. Three out of the four outputs are being returned to the sender's post-mix wallet.
+The transaction has four outputs and two of them are the same size, one 42,000 sat spend and one 42,000 sat decoy. To an external observer they can not tell which outputs belong to the entity
+ in control of any of the inputs. Three out of the four outputs are being returned to the sender's post-mix wallet.
 
 ![](assets/mempool_samourai_stonewall.png)
 
@@ -446,7 +449,7 @@ You can review this transaction on your favorite Bitcoin Testnet explorer, for e
 The transaction has four outputs and two of them are the same size, one 690,000 sat spend and one 690,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs.
 
 ## Post-Mix Spending Tools - Ricochet
-Ricochet is a Post-Mix spending tool that creates multiple hops between the inital sending transaction and the final destination. This technique can be useful when sending bitcoin to a destination where the receiver will snoop back through your transaction history to determine if there is something about your UTXO they don't like. Often times this type of behavior is carried out by exchanges or some merchants; read [this](https://6102bitcoin.com/coinjoin-flagging/) article by 6102 for more details on CoinJoin flagging. There is no industry standard that these flagging companies adhere to, they will arbitrarily decide how many hops back is within their own risk tolerance. But the 5 hops that Ricochet provides seems to be doing the job. Sparrow Wallet does not support Ricochet transactions. Samourai Wallet collects a 100,000 sat fee for this service.
+Ricochet is a Post-Mix spending tool that creates multiple hops between the initial sending transaction and the final destination. This technique can be useful when sending bitcoin to a destination where the receiver will snoop back through your transaction history to determine if there is something about your UTXO they don't like. Often times this type of behavior is carried out by exchanges or some merchants; read [this](https://6102bitcoin.com/coinjoin-flagging/) article by 6102 for more details on CoinJoin flagging. There is no industry standard that these flagging companies adhere to, they will arbitrarily decide how many hops back is within their own risk tolerance. But the 5 hops that Ricochet provides seems to be doing the job. Sparrow Wallet does not support Ricochet transactions. Samourai Wallet collects a 100,000 sat fee for this service.
 
 To compose a Ricochet transaction in Samourai Wallet:
 
@@ -458,7 +461,10 @@ To compose a Ricochet transaction in Samourai Wallet:
 </p> 
 
 - Toggle on the `Ricochet` option.
-- Then toggle on the `Staggered delivery` option if you want each hop to be in a separate block. Otherwise all 5 hops will occur in the same block, which may be preferrable to you if time is of the essance. 
+- Then toggle on the `Staggered delivery` option if you want each hop to be in a separate block.
+
+Otherwise all 5 hops will occur in the same block, which may be preferable to you if time is of the essence. 
+
 - Then paste or scan the address you would like to spend to. 
 - Enter the amount to spend (the amount you want deposited to the final destination).
 - Then press `REVIEW TRANSACTION`.
