@@ -445,4 +445,34 @@ You can review this transaction on your favorite Bitcoin Testnet explorer, for e
 
 The transaction has four outputs and two of them are the same size, one 690,000 sat spend and one 690,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs.
 
-## Post-Mix Spending Tools - Richochet
+## Post-Mix Spending Tools - Ricochet
+Ricochet is a Post-Mix spending tool that creates multiple hops between the inital sending transaction and the final destination. This technique can be useful when sending bitcoin to a destination where the receiver will snoop back through your transaction history to determine if there is something about your UTXO they don't like. Often times this type of behavior is carried out by exchanges or some merchants; read [this](https://6102bitcoin.com/coinjoin-flagging/) article by 6102 for more details on CoinJoin flagging. There is no industry standard that these flagging companies adhere to, they will arbitrarily decide how many hops back is within their own risk tolerance. But the 5 hops that Ricochet provides seems to be doing the job. Sparrow Wallet does not support Ricochet transactions. Samourai Wallet collects a 100,000 sat fee for this service.
+
+To compose a Ricochet transaction in Samourai Wallet:
+
+- Navigate to your Post-Mix wallet and press the blue "+" sign.
+- Then select `Send`.
+
+<p align="center">
+<img width="700" src="assets/samourai_ricochet_00.png">
+</p> 
+
+- Toggle on the `Ricochet` option.
+- Then toggle on the `Staggered delivery` option if you want each hop to be in a separate block. Otherwise all 5 hops will occur in the same block, which may be preferrable to you if time is of the essance. 
+- Then paste or scan the address you would like to spend to. 
+- Enter the amount to spend (the amount you want deposited to the final destination).
+- Then press `REVIEW TRANSACTION`.
+
+![](assets/samourai_ricochet_01.png)
+
+- Set the miner fee rate (the miner fee for all 5 hops is figured in).
+- Review the transaction details.
+- If everything looks good, press `SEND` and then confirm the spend to broadcast the transaction to the network.
+
+<p align="center">
+<img width="700" src="assets/samourai_ricochet_02.png">
+</p> 
+
+[Here](https://mempool.space/testnet/address/tb1qcgr59653ppxzwhpqm4ly5yfea5rzle3vnky58e) is how this Ricochet transaction looks on Testnet. You can follow the hops along the way. 
+
+![](mempool_ricochet.png)
