@@ -65,7 +65,7 @@ Then you will be asked to confirm the passphrase you entered and then create a P
 Finally, you will be presented with your unique PayNym, you can claim it so that others can easily connect with you. Then you will be at the home screen, you can click on the blue `+` sign to see options for Whirlpool, Send, Receive, and PayNym. The receive option for example is where you can generate new Bitcoin addresses.   
 
 <p align="center">
-  <img width="300" src="assets/SW06.png">
+  <img src="assets/SW06.png">
 </p>
 
 ## Step 4: Whirlpool on Mobile
@@ -84,15 +84,14 @@ Once you have received bitcoin that you would like to mix, simply follow these s
 - A list of the available UTXOs from your deposit wallet will be displayed. Select the UTXOs you would like to mix and then click on `NEXT`. Keep in mind, if any of these UTXOs have history that you do not want connected on-chain, consider selecting them independent of each other. 
 
 <p align="center">
- <img width="350" src="assets/SW08.png">
+ <img width="700" src="assets/SW08.png">
 </p> 
 
 - Select the cycle priority (miners fee), select the pool size appropriate for the amount you are mixing, and select `REVIEW CYCLE DETAILS`. 
 - You will be presented with the details of the TX0 you are about to make. Select `BEGIN CYCLE` once ready and the transaction will be built and then broadcast to the Bitcoin network. 
 
 <p align="center">
- <img width="350" src="assets/SW24.png">
- <img width="350" src="assets/SW25.png">
+ <img width="700" src="assets/SW12.png">
 </p> 
 
 Now your resulting UTXOs from the TX0 will be registered as available inputs to new mixes. Once mixed, your UTXOs will be in your post-mix wallet. From there, anytime you open the Whirlpool client in your mobile Samourai Wallet application, those UTXOs will be registered as available inputs to mixes looking for free-riders. The mixing stops once you close the mobile Whirlpool client. 
