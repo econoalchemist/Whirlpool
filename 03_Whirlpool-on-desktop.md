@@ -134,8 +134,7 @@ You can click on `Manage` in the lower left-hand corner of the `Dojo` window and
 In your Samourai Wallet, from the home screen, press the icon at the top that looks like the WiFi symbol. Toggle on the option to connect to your own Dojo. Then click on `Scan QR` and the application will ask you to grant camera permission. Then scan the `Samourai Dojo` QR code in your Tanto dashboard from your mobile device. Make sure you toggle on the option to display values in your Tanto dashboard so the QR code is legible. 
 
 <p align="center">
-<img width="350" src="assets/SW09.png">
-<img width="350" src="assets/SW10.png">
+<img width="700" src="assets/SW09.png">
 </p>
 
 Now your mobile Samourai Wallet will communicate with your own full node. There are a couple other important options to go over before covering the desktop Whirlpool GUI. 
