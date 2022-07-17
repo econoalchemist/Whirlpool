@@ -9,7 +9,7 @@ Both Samourai Wallet and Sparrow Wallet have support for the following address f
 - Pay to Public Key Hash (P2PKH), addresses that look like `17SkEw2md5avVNyYgj6RiXuQKNwkXaxFyQ`, also referred to as "legacy". 
 - Pay to Script Hash (P2SH), addresses that look like `3EEJFjZURxShNr2AoJtbfcvCB749yzP7LP`, also referred to as "nested segwit".
 - Pay to Witness Public Key Hash (P2WPKH), addresses that look like `bc1qqmmc3s46efrdq0jglhf8l8jg0xw37exgne6q3k`, also referred to as "native segwit" or "Bech32".
-- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7`, also referred to as "Taproot". Samourai Wallet has support to spend to these addresses, Sparrow Wallet has support to spend to and receive from these addresses. 
+- Pay to Taproot (P2TR), addresses that look like `bc1p0004nx9sh2qkvd7nzrkffx4xe5wacl8ya9yv5gtqkasatqrtgpaqrrcdg7`, also referred to as "Taproot". Samourai Wallet has support to spend to these addresses, Sparrow Wallet has support to spend to and receive to these addresses. 
 - Testnet Pay to Witness Public Key Hash (P2WPKH), addresses that look like `tb1qqakszcjex7zvjg7slarps5mpdngwlwsc5ll8v7`, these are only for testing and retain no value.
 
 Having support for all these address types does not mean that they all work with Whirlpool. Whirlpool only works with P2WPKH addresses on both Bitcoin Mainnet and Bitcoin Testnet. Therefore the four wallets described below all handle receiving P2WPKH addresses only and can spend to P2PKH, P2SH, P2WPKH, or P2TR addresses. 
@@ -84,7 +84,7 @@ You can view this transaction [on KYCP.org](https://kycp.org/#/323df21f0b0756f98
 
 ![](assets/wp13.png)
 
-Each of the 16 equal sized outputs will be individually selected for inputs to down stream Whirlpool CoinJoins. These outputs reside in the Pre-Mix wallet temporarily as available inputs to Whirlpool CoinJoins. As new Whirlpool transactions are initiated, the coordinator will look for available inputs such as these. The Whirlpool coordinator enforces strict rules that ensure no two outputs from the same tx0 wind up in the same Whirlpool CoinJoin transaction. Each of these 16 outputs carries a small amount of extra bitcoin so that once they are selected as inputs, they can help cover the miners fee for the Whirlpool CoinJoin transaction. 
+Each of the 16 equal sized outputs will be individually selected for inputs to down stream Whirlpool CoinJoins. These outputs reside in the Pre-Mix wallet temporarily as available inputs to Whirlpool CoinJoins. As new Whirlpool transactions are initiated, the coordinator will look for available inputs such as these. The Whirlpool coordinator enforces strict rules that ensure no two outputs from the same tx0 or same wallet wind up in the same Whirlpool CoinJoin transaction. Each of these 16 outputs carries a small amount of extra bitcoin so that once they are selected as inputs, they can help cover the miners fee for the Whirlpool CoinJoin transaction. 
 
 The coordinator will randomly switch between creating transactions that have either 2 fresh participant UTXOs and 3 re-mix UTXOs or 3 fresh participant UTXOs and 2 re-mix UTXOs. The fresh participant UTXOs always cover the miner fee and the "free-rider" UTXOs always get to re-mix for free. This way, you only pay the Whirlpool coordinator fee once and then your UTXOs can remain in your Post-Mix wallet remixing for free for as long as you want to keep them there.
 
@@ -142,13 +142,13 @@ This can also be displayed as a QR code:
  <img width="300" src="assets/icysun189_QRcode.png">
 </p>
 
-PayNyms on the other hand, are an implementation of BIP47 used in Samourai Wallet and Sparrow Wallet. PayNyms are derived from hashing your payment code to generate a unique robot avatar and a unique name. The avatar and name make it easier for humans to interpret and handle. Samourai Wallet maintains a directory of PayNyms if you want to explore, search, and connect with others: [https://paynym.is/](https://paynym.is/).
+PayNyms on the other hand, are an implementation of BIP47 used in Samourai Wallet and Sparrow Wallet. PayNyms are derived from hashing your payment code to generate a unique robot avatar and a unique name. The avatar and name make it easier for humans to interpret and handle. Samourai Wallet maintains a directory of PayNyms if you want to explore, search, and connect with others: [https://paynym.is/](https://paynym.is/). This is an opt-in directory that you can use to register your PayNym if you choose the option to do so from the app while initializing. 
 
 <p align="center">
  <img src="assets/icysun189.png">
 </p>
 
-PayNyms can be used in a couple of different ways. You can use them to make direct payments to someone else's PayNym by making the on-chain connection and generating the index of secret addresses. There is no need for collaboration from the receiver; you can just scan their payment code, make the on-chain connection, and start sending payments to them. 
+PayNyms can be used in a couple of different ways. You can use them to make direct payments to someone else's PayNym by making the on-chain connection and generating the index of secret addresses. There is no need for collaboration from the receiver; you can just scan their payment code, make the on-chain connection, and start sending payments to them. The receiver will need to know your payment code in order to observe those addresses and detect incoming payments.
 
 The other way to use PayNyms is through collaborative transactions like Stowaway and StonewallX2 which will be covered in later sections. 
 
@@ -224,7 +224,7 @@ Sparrow Wallet also has all the same features as just described with sending dir
 </p>
 
 ## Collaborative Post-Mix Spending Tools - Stowaway
-Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount being spent. The person you collaborate with will be the one receiving the spend. You provide some inputs, the receiver provides some inputs, you receive your change output, the receiver gets their change plus the amount you sent them thus the actual amount spent is hidden in that total. 
+Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount being spent. The person you collaborate with will be the one receiving the spend. You provide some inputs, the receiver provides some inputs, you receive your change output, the receiver gets their change plus the amount you sent them thus the actual amount spent is hidden in that total. The sender pays the full miner fee. 
 
 ![](assets/stowaway00.png)
 
@@ -313,7 +313,7 @@ The amount sent was 69 sats, but you would never know that as an external observ
 ![](assets/mempooltestnet.png)
 
 ## Collaborative Post-Mix Spending Tools - StonewallX2
-StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner.
+StonewallX2 is another collaborative spending tool that helps break on-chain heuristics and maintain anonymity. StonewallX2 transactions always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned to both collaborators. Unlike Stowaway transactions, StonewallX2 transactions can be spent to a third party - the spend does not have to be made to the collaborating partner. The collaborating peers in a StonewallX2 transaction split the miners fee 50/50. The input selection algorithm enforces that no UTXOs that share the same previous transaction will be used as inputs together in a new transaction. 
 
 Here is how a StonewallX2 (and a Stonewall) will look [on-chain](https://kycp.org/#/4c49b28a82c4f43b8facf8538ffaf05fa76cce46194ca07b9ca4916f9faeff0e):
 
