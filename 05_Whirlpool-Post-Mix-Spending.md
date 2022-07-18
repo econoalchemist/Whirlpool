@@ -119,7 +119,7 @@ After moving from your deposit wallet to your pre-mix wallet through a tx0, your
 
 ![](assets/wp01.png)
 
-Here is another way to look at the same Whirlpool CoinJoin transaction, as a table listing the liklihood of value transfer between input and output.
+Here is another way to look at the same Whirlpool CoinJoin transaction, as a table listing the likelihood of value transfer between input and output.
 
 <p align="center">
   <img src="assets/wp12.png">
