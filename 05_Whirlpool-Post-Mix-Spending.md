@@ -229,7 +229,7 @@ Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount be
 ![](assets/stowaway00.png)
 
 - The above image illustrates a Stowaway transaction on-chain. 
-- You can see that the three inputs were 0.01, 0.00993439, & 0.01644414 for total of 0.03637853 input.
+- You can see that the three inputs were 0.01, 0.00993439, & 0.01644414 for a total of 0.03637853 input.
 - The two outputs where 0.00484087 and 0.03144414 (and 0.00009352 for a miners fee)
 - The spender sent 0.015 to the receiver in this transaction, but that amount does not match any inputs or outputs as it is obfuscated. 
 - The receiver collaborated by providing the 0.01644414 input and received this amount back plus the 0.015 payment for the total 0.03144414 output.
@@ -237,8 +237,7 @@ Stowaway is a collaborative Post-Mix spending tool that obfuscates the amount be
 
 An external observer would have no way of knowing this transaction is anything different than what is presented at face value. The common input ownership heuristics are broken because of the multiple inputs and outputs, the consideration must be made that multiple people contributed to the inputs. 
 
-Anyone you are sending a Stowaway transaction to will need to be using Samourai Wallet or Sparrow
- Wallet with their PayNym. At a minimum the PayNyms should be following each other but it is not necessary to make the on-chain notification transaction to "connect" the PayNyms. 
+Anyone you are sending a Stowaway transaction to will need to be using Samourai Wallet or Sparrow Wallet with their PayNym. At a minimum the PayNyms should be following each other but it is not necessary to make the on-chain notification transaction to "connect" the PayNyms. 
 
 Collaborators will need to have a way of communicating with each other out of band, like with a messaging app, phone call, etc.
 
@@ -372,7 +371,7 @@ After a moment, you will be presented with a summary of the transaction that has
 
 ![](assets/sparrowstonewallx2_03.png)
 
-Once the transaction is broadcast, you will receive a a green check mark. 
+Once the transaction is broadcast, you will receive a green check mark. 
 
 ![](assets/sparrowstonewallx2_04.png)
 
@@ -383,8 +382,7 @@ The transaction has four outputs and two of them are the same size, one 25,000 s
 ![](assets/mempoolstonewallx2.png)
 
 ## Non-Collaborative Post-Mix Spending Tools - Stonewall
-Here is how a Stonewall (and a StonewallX2) will look [on-chain](https://kycp.org/#/f1592e0bec2af9e812d6ada0a46c267885d36358eab54f55098867a718828f53):
-Stonewall is a non-collaborative spending tool that helps break on-chain heuristics and maintain anonymity. On-chain, Stonewall and StonewallX2 transactions are indistinguishable; they both always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned. In the case of a Stonewall transaction, the wallet will build the transaction using multiple inputs and four outputs, only one is the spend and the other three are all sent back to the sender's wallet with one of them being the same size as the spend. Both Samourai Wallet and Sparrow Wallet will attempt to compose a Stonewall transaction by default when spending.  
+Here is how a Stonewall (and a StonewallX2) will look [on-chain](https://kycp.org/#/f1592e0bec2af9e812d6ada0a46c267885d36358eab54f55098867a718828f53). Stonewall is a non-collaborative spending tool that helps break on-chain heuristics and maintain anonymity. On-chain, Stonewall and StonewallX2 transactions are indistinguishable; they both always have four outputs. The number of inputs can vary. At least two of those outputs are identical in size, this creates a decoy output the same size as the spend. The other two outputs are the change being returned. In the case of a Stonewall transaction, the wallet will build the transaction using multiple inputs and four outputs, only one is the spend and the other three are all sent back to the sender's wallet with one of them being the same size as the spend. Both Samourai Wallet and Sparrow Wallet will attempt to compose a Stonewall transaction by default when spending.  
 
 ![](assets/Stonewall_example2.png)
 
@@ -408,8 +406,7 @@ To make a Stonewall transaction with Samourai Wallet:
 
 You can review this transaction on your favorite Bitcoin Testnet explorer, for example on [mempool.space](https://mempool.space/testnet/tx/5a951ba9898c5c3a74dad399d7121b286893fffb957093df0272d8a918d912ff)
 
-The transaction has four outputs and two of them are the same size, one 42,000 sat spend and one 42,000 sat decoy. To an external observer they can not tell which outputs belong to the entity
- in control of any of the inputs. Three out of the four outputs are being returned to the sender's post-mix wallet.
+The transaction has four outputs and two of them are the same size, one 42,000 sat spend and one 42,000 sat decoy. To an external observer they can not tell which outputs belong to the entity in control of any of the inputs. Three out of the four outputs are being returned to the sender's post-mix wallet.
 
 ![](assets/mempool_samourai_stonewall.png)
 
@@ -482,3 +479,6 @@ Otherwise all 5 hops will occur in the same block, which may be preferable to yo
 [Here](https://mempool.space/testnet/address/tb1qcgr59653ppxzwhpqm4ly5yfea5rzle3vnky58e) is how this Ricochet transaction looks on Testnet. You can follow the hops along the way. 
 
 ![](mempool_ricochet.png)
+
+## Conclusion
+This article explained how the wallet structure works in the Whirlpool enabled wallets, [Samourai Wallet](https://samouraiwallet.com/) and [Sparrow Wallet](https://www.sparrowwallet.com/). Understanding the anonymity benefits achieved through Whirlpool, you can then better understand which post-mix spending tool is right for the job. Each post-mix spending tool was explained in detail with step-by-step instructions on how to use them and the additional anonymity preservation benefits they offer. To learn more, join the communities on the [Samourai Wallet Telegram Channel](https://t.me/SamouraiWallet) or the [Sparrow Wallet Telegram Channel](https://t.me/sparrowwallet), where you will find several other users helping each other out on a variety of topics.
