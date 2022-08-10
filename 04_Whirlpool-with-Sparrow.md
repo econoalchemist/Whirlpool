@@ -1,4 +1,4 @@
-# Whirlpool With Sparrow Wallet
+# Method 3: Whirlpool With Sparrow Wallet
 Sparrow Wallet is a Bitcoin wallet designed to be connected with your own node and ran from your desktop or laptop computer. This is a user-friendly wallet with an intuitive interface and many advanced features for a range of capabilities. To learn more about Sparrow Wallet and for installation instructions, visit the [Sparrow Wallet website](https://www.sparrowwallet.com/).
 
 In this guide you will see how to:
